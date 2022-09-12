@@ -1,17 +1,6 @@
 @use 'vars';
-body {
+html, body {
   font-family: 'Poppins', sans-serif;
-}
-
-h1, h2, h3 {
-  font-weight: normal;
-}
-
-img {
-  max-width: 100%;
-}
-
-input {
-  background-color: transparent!important;
-  border: none!important;
+  margin: 0;
+  padding: 0;
 }

@@ -2,9 +2,9 @@
 
 # dependencies
 /node_modules
+/src/assets/videos
 /.pnp
 .pnp.js
-.mov
 
 # testing
 /coverage
