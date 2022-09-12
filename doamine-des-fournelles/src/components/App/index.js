@@ -1,28 +1,19 @@
 // -- IMPORT NPM
 
+// --  IMPORT COMPONENTS
+import HeroPage from '../HeroPage';
+
 // -- IMPORT ASSETS
 import './styles.scss';
-
-// --  IMPORT COMPONENTS
 
 const App = () => {
 
   return (
 
     <div className="wrapper"> 
-
-      <div className="container-hero">
-
-        <div className="container-hero__video">
-
-        </div>
-
-        <div className="container-hero__logo">
-          
-        </div>
-
-      </div>
     
+      <HeroPage />
+
     </div>
 
   )
