@@ -1,6 +1,7 @@
 // -- IMPORT NPM
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { useNavigate } from 'react-router-dom';
 
 // --  IMPORT COMPONENTS
 
@@ -14,22 +15,20 @@ import Logo from '../../assets/images/HeroLogo.png';
 const HeroLogo = () => {
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const changeHeroPageState = () => {
-    dispatch(setHeroPage(true));
+    console.log('%c I click on the link', 'color: orange; font-weight: bold');
+    dispatch(setHeroPage(false));
+    navigate('/home');
   }
 
   return (
     
     <>
-      <a href="#" className="hero-logo-link">
+      <a className="hero-logo-link" onClick={changeHeroPageState}>
         <svg><rect></rect></svg>
-        <img 
-          src={Logo} 
-          alt="Logo" 
-          className="container-hero__logo" 
-          onClick={changeHeroPageState}
-        />
+        <img src={Logo} alt="Logo" className="container-hero__logo" />
       </a>
     </>
 

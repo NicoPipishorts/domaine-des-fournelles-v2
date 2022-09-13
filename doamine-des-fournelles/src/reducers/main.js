@@ -15,7 +15,7 @@ const reducer = (state = initialState, action = {}) => {
         ...state,
         // pour définir dynamiquement la propriété d'un objet, on utilise la
         // notation "crochet"
-        heroPage: true,
+        heroPage: action.value,
       };
 
     default:

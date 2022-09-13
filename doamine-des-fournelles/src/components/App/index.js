@@ -1,8 +1,10 @@
 // -- IMPORT NPM
 import { useSelector } from "react-redux";
+import { Routes, Route } from 'react-router-dom';
 
 // --  IMPORT COMPONENTS
 import HeroPage from '../HeroPage';
+import HomePage from '../HomePage';
 
 // -- IMPORT ASSETS
 import './styles.scss';
@@ -16,15 +18,21 @@ const App = () => {
   return (
 
     <div className="wrapper"> 
-    
-    {(stateHeroPage) && <HeroPage /> }
+    <Routes>
+    {(stateHeroPage) && 
 
-    {(!stateHeroPage) && (<>
+      <Route
+        path='/'
+        element={<HeroPage />}
+      /> 
       
-      <div> No Longer On Hero Page </div>
-    </>
-    )}
-
+    }{(!stateHeroPage) &&
+        <Route
+          path='/home' 
+          element={<HomePage />} 
+        />
+    }
+    </Routes>
     </div>
 
   )
