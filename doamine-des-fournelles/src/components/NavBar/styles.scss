@@ -25,10 +25,14 @@
   
   &__buttons {
 
-    color: #fff;
-    padding: 1.4rem 2rem;
+    color: #000;
+    padding: 1.4rem 1.1rem 1.4rem 2rem;
     // margin: 1rem 0;  
-    text-align: right;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    text-shadow: 0 0 5px vars.$navbar-shadow-color;
+    
 
     // border-radius: .5rem;
     border-right: 4px solid #fff;
@@ -40,6 +44,11 @@
     transition: background-position 0.8s; 
 
     // box-shadow: 0 0 15px vars.$navbar-shadow-color;
+
+    &--icons {
+      width: 3.5rem;
+      margin-left: .4rem;
+    }
 
     &--domaine {
       border-color: vars.$navbar-btn-domaine;
