@@ -1,9 +1,19 @@
 /* ----- Style Navbar, Header, Carousel ----- */
-$navbar_height: 6.4rem;
-$marginTop : $navbar_height;
+$navbar-btn-main: RGBA(255, 255, 255, .2);
+$navbar-btn-domaine: RGB(204, 89, 67);
+$navbar-btn-vins: RGB(233, 139, 46);
+$navbar-btn-boutique: RGB(159, 32, 50);
+$navbar-btn-news: RGB(19, 48, 66);
+$navbar-btn-contact: RGB(50, 97, 73);
+
+$navbar-shadow-color: rgba(25, 25, 25, .2);
+
+$navbar-font-size: 2rem;
+$navbar-font-family: 'karbon-light';
+$navbar-font-weight: 900;
 
 /* ----- FONT-COLORS ----- */
 $color-teal: #51B2AC;
 
 /* ----- BOX-SHADOW ------ */
-$shadow-color: rgba(25, 25, 25, 0.5);
+$shadow-color: rgba(25, 25, 25, 0.3);

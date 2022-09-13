@@ -1,0 +1,64 @@
+@font-face {
+  font-family: 'karbon-light';
+  src: url('../assets/fonts/karbon-light/karbon-light.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/karbon-light/karbon-light.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/karbon-light/karbon-light.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/karbon-light/karbon-light.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/fonts/karbon-light/karbon-light.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/karbon-light/karbon-light.svg#karbon-light') format('svg'); /* Legacy iOS */
+}
+
+
+@font-face {
+  font-family: 'karbon-bold';
+  src: url('../assets/fonts/karbon-bold/karbon-bold.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/karbon-bold/karbon-bold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/karbon-bold/karbon-bold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/karbon-bold/karbon-bold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/fonts/karbon-bold/karbon-bold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/karbon-bold/karbon-bold.svg#karbon-bold') format('svg'); /* Legacy iOS */
+}
+
+
+@font-face {
+  font-family: 'karbon-medium';
+  src: url('../assets/fonts/karbon-medium/karbon-medium.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/karbon-medium/karbon-medium.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/karbon-medium/karbon-medium.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/karbon-medium/karbon-medium.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/fonts/karbon-medium/karbon-medium.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/karbon-medium/karbon-medium.svg#karbon-medium') format('svg'); /* Legacy iOS */
+}
+
+
+@font-face {
+  font-family: 'karbon-regular';
+  src: url('../assets/fonts/karbon-regular/karbon-regular.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/karbon-regular/karbon-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/karbon-regular/karbon-regular.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/karbon-regular/karbon-regular.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/fonts/karbon-regular/karbon-regular.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/karbon-regular/karbon-regular.svg#karbon-regular') format('svg'); /* Legacy iOS */
+}
+
+
+@font-face {
+  font-family: 'karbon-semibold';
+  src: url('../assets/fonts/karbon-semibold/karbon-semibold.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/karbon-semibold/karbon-semibold.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/karbon-semibold/karbon-semibold.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/karbon-semibold/karbon-semibold.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/fonts/karbon-semibold/karbon-semibold.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/karbon-semibold/karbon-semibold.svg#karbon-semibold') format('svg'); /* Legacy iOS */
+}
+
+
+@font-face {
+  font-family: 'karbon-thin';
+  src: url('../assets/fonts/karbon-thin/karbon-thin.eot'); /* IE9 Compat Modes */
+  src: url('../assets/fonts/karbon-thin/karbon-thin.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+       url('../assets/fonts/karbon-thin/karbon-thin.woff2') format('woff2'), /* Super Modern Browsers */
+       url('../assets/fonts/karbon-thin/karbon-thin.woff') format('woff'), /* Pretty Modern Browsers */
+       url('../assets/fonts/karbon-thin/karbon-thin.ttf')  format('truetype'), /* Safari, Android, iOS */
+       url('../assets/fonts/karbon-thin/karbon-thin.svg#karbon-thin') format('svg'); /* Legacy iOS */
+}

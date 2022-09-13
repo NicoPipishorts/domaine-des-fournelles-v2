@@ -4,7 +4,7 @@ import { Routes, Route } from 'react-router-dom';
 
 // --  IMPORT COMPONENTS
 import HeroPage from '../HeroPage';
-import HomePage from '../HomePage';
+import DomainePage from '../DomainePage';
 
 // -- IMPORT ASSETS
 import './styles.scss';
@@ -19,19 +19,16 @@ const App = () => {
 
     <div className="wrapper"> 
     <Routes>
-    {(stateHeroPage) && 
 
       <Route
         path='/'
         element={<HeroPage />}
       /> 
-      
-    }{(!stateHeroPage) &&
-        <Route
-          path='/home' 
-          element={<HomePage />} 
-        />
-    }
+      <Route
+        path='/domaine' 
+        element={<DomainePage />} 
+      />
+    
     </Routes>
     </div>
 

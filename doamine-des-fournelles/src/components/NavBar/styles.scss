@@ -1,0 +1,100 @@
+@use "../../styles/vars";
+
+.navbar {
+
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  height: 100vh;
+  padding-left: 1rem;
+
+  font-family: vars.$navbar-font-family;
+  font-size: vars.$navbar-font-size;
+  font-weight: vars.$navbar-font-weight;
+  
+  //  background-color: #F0F;
+
+  &__container {
+    box-shadow: 0 0 15px vars.$navbar-shadow-color;
+  }
+  
+  &__buttons {
+
+    color: #fff;
+    padding: 1.4rem 2rem;
+    // margin: 1rem 0;  
+    text-align: right;
+
+    // border-radius: .5rem;
+    border-right: 4px solid #fff;
+
+    background-size: 200% 200%;
+    background-position: left;
+    -webkit-transition: background-position 0.8s;
+    -moz-transition: background-position 0.8s;
+    transition: background-position 0.8s; 
+
+    // box-shadow: 0 0 15px vars.$navbar-shadow-color;
+
+    &--domaine {
+      border-color: vars.$navbar-btn-domaine;
+
+      background-image: linear-gradient(to left, vars.$navbar-btn-domaine 50%, vars.$navbar-btn-main 0);
+    }
+
+    &--vins {
+      border-color: vars.$navbar-btn-vins;
+
+      background-image: linear-gradient(to left, vars.$navbar-btn-vins 50%, vars.$navbar-btn-main 0);
+    }
+
+    &--boutique {
+      border-color: vars.$navbar-btn-boutique;
+
+      background-image: linear-gradient(to left, vars.$navbar-btn-boutique 50%, vars.$navbar-btn-main 0);
+    }
+
+    &--news {
+      border-color: vars.$navbar-btn-news;
+
+      background-image: linear-gradient(to left, vars.$navbar-btn-news 50%, vars.$navbar-btn-main 0);
+    }
+
+    &--contact {
+      border-color: vars.$navbar-btn-contact;
+
+      background-image: linear-gradient(to left, vars.$navbar-btn-contact 50%, vars.$navbar-btn-main 0);
+    }
+
+  }
+
+  &__buttons:hover {
+
+    background-position: right;
+
+  }
+
+}
+
+.box {
+  width: 200px; height: 100px;
+  background-size: 100% 200%;
+  background-image: linear-gradient(to bottom, red 50%, black 50%);
+  -webkit-transition: background-position 1s;
+  -moz-transition: background-position 1s;
+  transition: background-position 1s;
+}
+
+.box:hover {
+  background-position: 0 -100%;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+}
