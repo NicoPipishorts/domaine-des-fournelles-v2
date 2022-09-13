@@ -1,4 +1,5 @@
 // -- IMPORT NPM
+import { useState } from 'react';
 
 // --  IMPORT COMPONENTS
 import HeroPage from '../HeroPage';
@@ -12,7 +13,13 @@ const App = () => {
 
     <div className="wrapper"> 
     
-      <HeroPage />
+    {(isOnHeroPage) && <HeroPage /> }
+
+    {(!isOnHeroPage) && (<>
+      
+      <div> No Longer On Hero Page </div>
+    </>
+    )}
 
     </div>
 
