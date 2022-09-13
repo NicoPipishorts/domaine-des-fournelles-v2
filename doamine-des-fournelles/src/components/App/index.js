@@ -1,5 +1,5 @@
 // -- IMPORT NPM
-import { useState } from 'react';
+import {useDispatch, useSelector } from "react-redux";
 
 // --  IMPORT COMPONENTS
 import HeroPage from '../HeroPage';
