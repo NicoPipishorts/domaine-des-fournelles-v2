@@ -1,5 +1,5 @@
 // -- IMPORT NPM
-import {useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 // --  IMPORT COMPONENTS
 import HeroPage from '../HeroPage';
@@ -9,13 +9,17 @@ import './styles.scss';
 
 const App = () => {
 
+  const stateHeroPage = useSelector((state) => (state.main.heroPage));
+
+  console.log('The state of Hero Page is :' , stateHeroPage);
+
   return (
 
     <div className="wrapper"> 
     
-    {(isOnHeroPage) && <HeroPage /> }
+    {(stateHeroPage) && <HeroPage /> }
 
-    {(!isOnHeroPage) && (<>
+    {(!stateHeroPage) && (<>
       
       <div> No Longer On Hero Page </div>
     </>
