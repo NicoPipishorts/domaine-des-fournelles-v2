@@ -1,16 +1,50 @@
-.container-homepage {
+.homepage-container {
 
-  background-image: url(../../assets/images/HomePage-1.jpg);
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-  width: 100%;
-  height: 100vh;
+
   color: #FFF;
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+
+}
+
+.homepage {
+
+  &__section-text {
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 100vh;
+    box-sizing: border-box;
+    padding-right: 2rem;
+    padding-left: 10rem;
+
+    text-align: right;
+
+    background-color: rgba(0,0,0, 0.5);
+
+    p {
+      font-size: 1.4rem;
+      font-family: 'Karbon-Light';
+    }
+
+  }
+
+  &__section-images {
+    
+    width: 50%;
+    height: 100vh;
+    
+  }
 
 }
