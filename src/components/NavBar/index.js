@@ -1,6 +1,5 @@
 // -- IMPORT NPM
 import React from 'react';
-import { NavLink } from 'react-router-dom';
 
 // --  IMPORT COMPONENTS
 import NavbarButton from './Button';

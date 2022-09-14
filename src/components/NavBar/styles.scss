@@ -47,6 +47,11 @@
         color: vars.$navbar-label-domaine;
       }
 
+      &-selected {
+        border-color: vars.$navbar-btn-domaine;
+        background-color: vars.$navbar-btn-domaine;
+      }
+
     }
 
     &--vins {
@@ -55,6 +60,11 @@
 
       &-label {
         color: vars.$navbar-label-vins;
+      }
+
+      &-selected {
+        border-color: vars.$navbar-btn-vins;
+        background-color: vars.$navbar-btn-vins;
       }
 
     }
@@ -66,6 +76,11 @@
       &-label {
         color: vars.$navbar-label-boutique;
       }
+
+      &-selected {
+        border-color: vars.$navbar-btn-boutique;
+        background-color: vars.$navbar-btn-boutique;
+      }
     }
 
     &--news {
@@ -74,6 +89,11 @@
 
       &-label {
         color: vars.$navbar-label-news;
+      }
+
+      &-selected {
+        border-color: vars.$navbar-btn-news;
+        background-color: vars.$navbar-btn-news;
       }
     }
 
@@ -84,6 +104,11 @@
       &-label {
         color: vars.$navbar-label-contact;
         text-decoration: none;
+      }
+
+      &-selected {
+        border-color: vars.$navbar-btn-contact;
+        background-color: vars.$navbar-btn-contact;
       }
     }
 
