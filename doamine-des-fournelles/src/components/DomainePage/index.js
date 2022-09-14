@@ -6,18 +6,6 @@ import NavBar from '../NavBar';
 
 // -- IMPORT ASSETS
 import './styles.scss';
-import Image1 from '../../assets/images/HomePage-1.jpg';
-import Image2 from '../../assets/images/HomePage-2.jpg';
-import Image3 from '../../assets/images/HomePage-3.jpg';
-import Image4 from '../../assets/images/HomePage-4.jpg';
-import Image5 from '../../assets/images/HomePage-5.jpg';
-import Image6 from '../../assets/images/HomePage-6.jpg';
-import Image7 from '../../assets/images/HomePage-7.jpg';
-import Image8 from '../../assets/images/HomePage-8.jpg';
-import Image9 from '../../assets/images/HomePage-9.jpg';
-import Image10 from '../../assets/images/HomePage-10.jpg';
-
-const images = [ Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8, Image9, Image10 ];
 
 const DomainePage = () => {
 
@@ -42,7 +30,7 @@ const DomainePage = () => {
 
       <NavBar />
       
-      <main className="homepage-container" style={{ backgroundImage: `url('${images[value]}')` }}>
+      <main className={`homepage-container homepage-container__bg${value}`}>
 
         <section className="homepage__section-text">
           
