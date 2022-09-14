@@ -18,7 +18,6 @@ const DomainePage = () => {
 
   useEffect(() => {
     const interval = setInterval(() => {
-      console.log('%c This is the interval value:', 'color: orange', value)
       setValue(randomNumberInRange(0, 9));
     }, 15000);
     return () => clearInterval(interval);
