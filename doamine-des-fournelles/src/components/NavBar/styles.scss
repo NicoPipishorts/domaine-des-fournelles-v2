@@ -26,10 +26,11 @@
   &__buttons {
 
     color: #000;
-    padding: 1.4rem 1.1rem 1.4rem 2rem;
+    // padding: 1.4rem 1.1rem 1.4rem 2rem;
+    padding: 1.4rem;
     // margin: 1rem 0;  
     display: flex;
-    justify-content: end;
+    justify-content: center;
     align-items: center;
     text-shadow: 0 0 5px vars.$navbar-shadow-color;
     
@@ -39,15 +40,15 @@
 
     background-size: 200% 200%;
     background-position: left;
-    -webkit-transition: background-position 0.8s;
-    -moz-transition: background-position 0.8s;
-    transition: background-position 0.8s; 
+    -webkit-transition: background-position 0.5s;
+    -moz-transition: background-position 0.5s;
+    transition: background-position 0.5s; 
 
     // box-shadow: 0 0 15px vars.$navbar-shadow-color;
 
     &--icons {
       width: 3.5rem;
-      margin-left: .4rem;
+      // margin-left: .4rem;
     }
 
     &--domaine {
