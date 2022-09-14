@@ -16,12 +16,7 @@
   font-family: vars.$navbar-font-family;
   font-size: vars.$navbar-font-size;
   font-weight: vars.$navbar-font-weight;
-  
-  //  background-color: #F0F;
-
-  &__container {
-    // box-shadow: 0 0 15px vars.$navbar-shadow-color;
-  }
+  text-shadow: 0 0 15px vars.$navbar-text-shadow-color;
   
   &__buttons {
 
@@ -46,32 +41,49 @@
 
     &--domaine {
       border-color: vars.$navbar-btn-domaine;
-
       background-image: linear-gradient(to left, vars.$navbar-btn-domaine 50%, vars.$navbar-btn-main 0);
+
+      &-label {
+        color: vars.$navbar-label-domaine;
+      }
+
     }
 
     &--vins {
       border-color: vars.$navbar-btn-vins;
-
       background-image: linear-gradient(to left, vars.$navbar-btn-vins 50%, vars.$navbar-btn-main 0);
+
+      &-label {
+        color: vars.$navbar-label-vins;
+      }
+
     }
 
     &--boutique {
       border-color: vars.$navbar-btn-boutique;
-
       background-image: linear-gradient(to left, vars.$navbar-btn-boutique 50%, vars.$navbar-btn-main 0);
+
+      &-label {
+        color: vars.$navbar-label-boutique;
+      }
     }
 
     &--news {
       border-color: vars.$navbar-btn-news;
-
       background-image: linear-gradient(to left, vars.$navbar-btn-news 50%, vars.$navbar-btn-main 0);
+
+      &-label {
+        color: vars.$navbar-label-news;
+      }
     }
 
     &--contact {
       border-color: vars.$navbar-btn-contact;
-
       background-image: linear-gradient(to left, vars.$navbar-btn-contact 50%, vars.$navbar-btn-main 0);
+
+      &-label {
+        color: vars.$navbar-label-contact;
+      }
     }
 
     &--parent {
@@ -83,7 +95,6 @@
     &--parent span {
       padding: 0 .5rem;
       font-size: 2.5rem;
-      color: #fff;
       visibility: hidden;
       opacity: 0;
       transition: visibility 0s, opacity 0.5s linear;
