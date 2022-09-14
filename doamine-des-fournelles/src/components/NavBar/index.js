@@ -1,7 +1,9 @@
 // -- IMPORT NPM
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 // --  IMPORT COMPONENTS
+import NavbarButton from './Button';
 
 // -- IMPORT ASSETS
 import './styles.scss';
@@ -13,46 +15,37 @@ import IconContact from '../../assets/icons/contact-w.png';
 
 const NavBar = () => {
 
-  return (
+  return (   
     
-    <>
-      
-      <nav className="navbar">
-        <ul className="navbar__container">
-          <div className='navbar__buttons--parent'>
-            <li className="navbar__buttons navbar__buttons--domaine">
-              <img src={IconDomaine} alt='Button Domaine' className='navbar__buttons--icons' />
-            </li>  
-            <span className='navbar__buttons--domaine-label'>Domaine</span>
-          </div>
-          <div className='navbar__buttons--parent'>
-            <li className="navbar__buttons navbar__buttons--vins">
-              <img src={IconWine} alt='Button Domaine' className='navbar__buttons--icons' />
-            </li>  
-            <span className='navbar__buttons--vins-label'>Nos Vins</span>
-          </div>
-          <div className='navbar__buttons--parent'>
-            <li className="navbar__buttons navbar__buttons--news">
-              <img src={IconNews} alt='Button Domaine' className='navbar__buttons--icons' />
-            </li>  
-            <span className='navbar__buttons--news-label'>News</span>
-          </div>
-          <div className='navbar__buttons--parent'>
-            <li className="navbar__buttons navbar__buttons--boutique">
-              <img src={IconBoutique} alt='Button Domaine' className='navbar__buttons--icons' />
-            </li>  
-            <span className='navbar__buttons--boutique-label'>Boutique</span>
-          </div>
-          <div className='navbar__buttons--parent'>
-            <li className="navbar__buttons navbar__buttons--contact">
-              <img src={IconContact} alt='Button Domaine' className='navbar__buttons--icons' />
-            </li>
-            <span className='navbar__buttons--contact-label'>Contact</span>
-          </div>
-        </ul>
-      </nav> 
-
-    </>
+    <nav className="navbar">
+      <ul className="navbar__container">
+        <NavbarButton
+          title='Domaine'
+          section='domaine'
+          icon={IconDomaine}
+        />
+        <NavbarButton
+          title='Nos Vins'
+          section='vins'
+          icon={IconWine}
+        />
+        <NavbarButton
+          title='News'
+          section='news'
+          icon={IconNews}
+        />
+        <NavbarButton
+          title='Boutique'
+          section='boutique'
+          icon={IconBoutique}
+        />
+        <NavbarButton
+          title='Contact'
+          section='contact'
+          icon={IconContact}
+        />
+      </ul>
+    </nav> 
 
   )
 
