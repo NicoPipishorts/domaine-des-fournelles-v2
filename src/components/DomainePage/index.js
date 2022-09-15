@@ -1,8 +1,8 @@
 // -- IMPORT NPM
-import { useState, useEffect } from 'react';
 
 // --  IMPORT COMPONENTS
 import NavBar from '../NavBar';
+import Thumb from './Thumb';
 
 // -- IMPORT ASSETS
 import './styles.scss';
@@ -17,102 +17,49 @@ import Image8 from '../../assets/images/HomePage-8.jpg';
 import Image9 from '../../assets/images/HomePage-9.jpg';
 import Image10 from '../../assets/images/HomePage-10.jpg';
 
+const GalleryImages = [
+
+  Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8, Image9, Image10 
+]
+
 const DomainePage = () => {
 
-  //* Not Using rotating Background image for now.
-  // const [value, setValue] = useState(0);
-
-  // function randomNumberInRange(min, max) {
-  //   // 👇️ get number between min (inclusive) and max (inclusive)
-  //   return Math.floor(Math.random() * (max - min + 1)) + min;
-  // }
-
-  // useEffect(() => {
-  //   const interval = setInterval(() => {
-  //     setValue(randomNumberInRange(0, 9));
-  //   }, 15000);
-  //   return () => clearInterval(interval);
-  // }, []);
 
   return (
     <>
+    <NavBar />
+    
+    <main className={`domainepage-container`}>
 
-      <NavBar />
-      
-      <main className={`domainepage-container`}>
+      <section className="domainepage__section-text">
+        
+          <h1><span className="domainepage__section--h1-span">Domaine des fournelles</span></h1>
 
-        <section className="domainepage__section-text">
+          <p>En 1947, François Bernillon s'installe commme viticulteur sur les hauteurs du Mont Brouilly. En 1973, son fils Alain reprend l'exploitation et fait prospérer l'entreprise. Depuis 2015, le Domaine a été repris par sa fille et son gendre, Mariannick et Guillaume qui représente ainsi la 3eme génération de viticulteur. La propriété s'étend aujourd'hui sur 7 Hectares sur la commune de Saint-Lager. Notre domaine produit deux crus du Beaujolais : Brouilly et Côte de Brouilly.</p>
+
+          <p>Notre vignoble bien exposé à flanc de coteaux est situé sur le versant sud-est de la célèbre Montagne de Brouilly. Le plus grand soin est apporté tant à la culture qu'à la vinification. Nos crus sont élaborés à partir d'un cépage unique de Gamay noir à jus blanc. Les vendanges sont exclusivement manuelles et la récolte est triée méticuleusement.</p>
+
+          <p>Toute la saveur, l'originalité et la qualité des vins du domaine sont issues du savoir-faire d'une production élaborée dans les respect du terroir alliée aux connaissances scientifiques oenologiques, aux techniques de productions et de transformation les plus modernes.</p>
+    
+      </section>
+
+      <section className="domainepage__section-photos">
+
+        <ul className="domainepage__section-photos--ul">
+
+        {
+          GalleryImages.map((image) => (
           
-            <h1>Domaine des fournelles</h1>
+            <Thumb photo={image} />
 
-            <p>En 1947, François Bernillon s'installe commme viticulteur sur les hauteurs du Mont Brouilly. En 1973, son fils Alain reprend l'exploitation et fait prospérer l'entreprise. Depuis 2015, le Domaine a été repris par sa fille et son gendre, Mariannick et Guillaume qui représente ainsi la 3eme génération de viticulteur. La propriété s'étend aujourd'hui sur 7 Hectares sur la commune de Saint-Lager. Notre domaine produit deux crus du Beaujolais : Brouilly et Côte de Brouilly.</p>
+          ))
+        }
 
-            <p>Notre vignoble bien exposé à flanc de coteaux est situé sur le versant sud-est de la célèbre Montagne de Brouilly. Le plus grand soin est apporté tant à la culture qu'à la vinification. Nos crus sont élaborés à partir d'un cépage unique de Gamay noir à jus blanc. Les vendanges sont exclusivement manuelles et la récolte est triée méticuleusement.</p>
+        </ul>
 
-            <p>Toute la saveur, l'originalité et la qualité des vins du domaine sont issues du savoir-faire d'une production élaborée dans les respect du terroir alliée aux connaissances scientifiques oenologiques, aux techniques de productions et de transformation les plus modernes.</p>
-      
-        </section>
+      </section>
 
-        <section className="domainepage__section-photos">
-
-          <ul className="domainepage__section-photos--ul">
-
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image1})`}}>
-              <span className="domainepage__section-photos--open">
-                ouvrir
-              </span>
-            </li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image2})`}}>
-              <span className="domainepage__section-photos--open">
-                ouvrir
-              </span>
-            </li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image3})`}}>
-              <span className="domainepage__section-photos--open">
-                ouvrir
-              </span>
-            </li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image4})`}}>
-              <span className="domainepage__section-photos--open">
-                ouvrir
-              </span>
-            </li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image5})`}}>
-              <span className="domainepage__section-photos--open">
-                ouvrir
-              </span>
-            </li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image6})`}}>
-              <span className="domainepage__section-photos--open">
-                ouvrir
-              </span>
-            </li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image7})`}}>
-              <span className="domainepage__section-photos--open">
-                ouvrir
-              </span>
-            </li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image8})`}}>
-              <span className="domainepage__section-photos--open">
-                ouvrir
-              </span>
-            </li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image9})`}}>
-              <span className="domainepage__section-photos--open">
-                ouvrir
-              </span>
-            </li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image10})`}}>
-              <span className="domainepage__section-photos--open">
-                ouvrir
-              </span>
-            </li>
-
-          </ul>
-
-        </section>
-
-      </main>
+    </main>
 
     </>
 

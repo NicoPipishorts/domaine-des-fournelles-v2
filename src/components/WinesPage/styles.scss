@@ -12,7 +12,7 @@
   background-position: center center;
   background-size: cover;
 
-  color: #FFF;
+  color: vars.$color-white;
   font-size: 2rem;
   font-weight: bold;
 
@@ -26,6 +26,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: end;
+    text-align: right;
     width: 50%;
     height: 100vh;
     box-sizing: border-box;
@@ -35,10 +36,16 @@
     background-color: rgba(0,0,0, 0.5);
 
     h1 {
+
       margin: 0;
-      padding: 0;
-      text-align: left;
-      mix-blend-mode:color-burn;
+      padding: .3rem .8rem;
+      border-radius: .6rem;
+      font-size: 3.2rem;
+      color: black;      
+      background-color: vars.$color-white;
+      mix-blend-mode: screen;
+      box-shadow: 0 0 15px 0 rgba(245, 245, 245, 0.5);
+
     }
 
     p {
@@ -94,7 +101,7 @@
       mix-blend-mode: overlay;
       background-color: vars.$color-yellow;
       background: linear-gradient(-45deg, vars.$color-green,vars.$color-yellow,vars.$color-green);
-      color: white;
+      color: vars.$color-white;
 
       opacity: 0;
       transition: visibility 0s, opacity 0.3s linear;

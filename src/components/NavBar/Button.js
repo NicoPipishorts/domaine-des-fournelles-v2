@@ -17,8 +17,6 @@ const NavBarButton = ( {icon, section, title} ) => {
     selected = true;
   }
 
-  console.log(`the ${pathname} == ${section}`);
-
   return (   
 
     <NavLink to={`/${section}`} style={{ textDecoration: 'none' }}>

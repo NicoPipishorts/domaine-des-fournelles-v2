@@ -26,7 +26,7 @@
     justify-content: center;
     align-items: center;
     text-shadow: 0 0 5px vars.$navbar-shadow-color;
-    border-right: 4px solid #fff;
+    border-right: 4px solid vars.$color-white;
     background-size: 200% 200%;
     background-position: left;
     -webkit-transition: background-position 0.5s;
