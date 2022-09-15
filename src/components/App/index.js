@@ -5,6 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 // --  IMPORT COMPONENTS
 import HeroPage from '../HeroPage';
 import DomainePage from '../DomainePage';
+import WinesPage from '../WinesPage';
 
 // -- IMPORT ASSETS
 import './styles.scss';
@@ -27,6 +28,10 @@ const App = () => {
       <Route
         path='/domaine' 
         element={<DomainePage />} 
+      />
+      <Route
+        path='/vins' 
+        element={<WinesPage />} 
       />
     
     </Routes>
