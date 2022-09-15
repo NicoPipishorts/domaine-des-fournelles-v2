@@ -116,3 +116,43 @@
   }
 
 }
+
+.modal-photos {
+
+  &__container {
+
+    z-index: 100;
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    background-color: vars.$modal-bg-color;
+
+  }
+
+  &__photo {
+    display: block;
+    width: 70vw;
+    border-radius: 2rem;
+    box-shadow: 0 0 35px vars.$color-dgrey;
+    border: 1px solid vars.$modal-bg-color;
+  }
+
+}
+
+.modal-photos__container.enter-done {
+  opacity: 1;
+  pointer-events: visible;
+}
+
+.modal-photos__container.modal.exit {
+  opacity: 0;
+}

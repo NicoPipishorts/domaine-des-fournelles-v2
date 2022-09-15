@@ -28,6 +28,12 @@ $color-red : RGB(159, 32, 50);
 $color-brown : RGB(138, 80, 40);
 $color-white: #fefefe;
 $color-black: #151515;
+$color-dgrey: #222222;
+$color-ngrey: #777777;
+$color-lgrey: #999;
 
 /* ----- BOX-SHADOW ------ */
 $shadow-color: rgba(25, 25, 25, 0.3);
+
+/* ----- MODAL STYLING ------ */
+$modal-bg-color: RGBA(138, 80, 40, .8);

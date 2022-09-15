@@ -24,7 +24,6 @@ const GalleryImages = [
 
 const DomainePage = () => {
 
-
   return (
     <>
     <NavBar />
@@ -50,7 +49,10 @@ const DomainePage = () => {
         {
           GalleryImages.map((image) => (
           
-            <Thumb photo={image} />
+            <Thumb 
+              photo={image}
+              key={image}
+            />
 
           ))
         }
