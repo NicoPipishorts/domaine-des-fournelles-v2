@@ -5,9 +5,11 @@
 
   display: flex;
   justify-content: center;
-  align-items: center;
+  align-items: start;
   width: 100%;
   height: 100vh;
+  box-sizing: border-box;
+  padding: 4rem;
   
   background-image: url(../../assets/images/HomePage-2.jpg);
   background-repeat: no-repeat;
