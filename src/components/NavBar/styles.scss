@@ -2,6 +2,7 @@
 
 .navbar {
 
+  z-index: 50;
   position: absolute;
   top: 0;
   left: 0;
@@ -20,12 +21,14 @@
   
   &__buttons {
 
-    max-width: fit-content;
+    z-index: 40;
     padding: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
+
     text-shadow: 0 0 5px vars.$navbar-shadow-color;
+    
     border-right: 4px solid vars.$color-white;
     background-size: 200% 200%;
     background-position: left;
@@ -39,12 +42,43 @@
       // margin-left: .4rem;
     }
 
+    &--parent {
+      position: relative;
+      display: flex;
+      justify-content: start;
+      align-items: center;
+    }
+
+    &--parent span {
+
+      z-index: 30;
+      position: absolute;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      top: 0;
+      left: 6rem;
+      padding: 0 .5rem;
+      
+      font-size: 2.5rem;
+      white-space: nowrap;
+      visibility: hidden;
+      opacity: 0;
+      background-size: 200% 200%;
+      background-position: right;
+      -webkit-transition: background-position 0.5s;
+      -moz-transition: background-position 0.5s;
+      transition: background-position 0.5s; 
+    }
+
     &--domaine {
       border-color: vars.$navbar-btn-domaine;
       background-image: linear-gradient(to left, vars.$navbar-btn-domaine 50%, vars.$navbar-btn-main 0);
 
       &-label {
-        color: vars.$navbar-label-domaine;
+        min-height: 100%;
+        color: vars.$color-white;
+        background-image: linear-gradient(to right, vars.$navbar-btn-domaine 50%, vars.$navbar-btn-main 0);
       }
 
       &-selected {
@@ -59,7 +93,9 @@
       background-image: linear-gradient(to left, vars.$navbar-btn-vins 50%, vars.$navbar-btn-main 0);
 
       &-label {
-        color: vars.$navbar-label-vins;
+        min-height: 100%;
+        color: vars.$color-white;
+        background-image: linear-gradient(to right, vars.$navbar-btn-vins 50%, vars.$navbar-btn-main 0);
       }
 
       &-selected {
@@ -74,7 +110,9 @@
       background-image: linear-gradient(to left, vars.$navbar-btn-boutique 50%, vars.$navbar-btn-main 0);
 
       &-label {
-        color: vars.$navbar-label-boutique;
+        min-height: 100%;
+        color: vars.$color-white;
+        background-image: linear-gradient(to right, vars.$navbar-btn-boutique 50%, vars.$navbar-btn-main 0);
       }
 
       &-selected {
@@ -88,7 +126,9 @@
       background-image: linear-gradient(to left, vars.$navbar-btn-news 50%, vars.$navbar-btn-main 0);
 
       &-label {
-        color: vars.$navbar-label-news;
+        min-height: 100%;
+        color: vars.$color-white;
+        background-image: linear-gradient(to right, vars.$navbar-btn-news 50%, vars.$navbar-btn-main 0);
       }
 
       &-selected {
@@ -102,28 +142,15 @@
       background-image: linear-gradient(to left, vars.$navbar-btn-contact 50%, vars.$navbar-btn-main 0);
 
       &-label {
-        color: vars.$navbar-label-contact;
-        text-decoration: none;
+        min-height: 100%;
+        color: vars.$color-white;
+        background-image: linear-gradient(to right, vars.$navbar-btn-contact 50%, vars.$navbar-btn-main 0);
       }
 
       &-selected {
         border-color: vars.$navbar-btn-contact;
         background-color: vars.$navbar-btn-contact;
       }
-    }
-
-    &--parent {
-      display: flex;
-      justify-content: start;
-      align-items: center;
-    }
-
-    &--parent span {
-      padding: 0 .5rem;
-      font-size: 2.5rem;
-      visibility: hidden;
-      opacity: 0;
-      transition: visibility 0s, opacity 0.5s linear;
     }
 
   }
@@ -133,6 +160,7 @@
   }
 
   &__buttons:hover + span {
+    background-position: left;
     visibility: visible;
     opacity: 1;
   }
