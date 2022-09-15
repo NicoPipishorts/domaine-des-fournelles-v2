@@ -38,6 +38,7 @@
       margin: 0;
       padding: 0;
       text-align: left;
+      mix-blend-mode:color-burn;
     }
 
     p {
@@ -76,8 +77,33 @@
       background-position: center center;
       background-repeat: no-repeat;
       background-size: cover;
+      font-size: 5rem;
 
       border: 4px solid  vars.$color-pink;
+
+    }
+
+    &--open {
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      box-sizing: border-box;
+      height: 100%;
+      padding: .5rem;
+      mix-blend-mode: overlay;
+      background-color: vars.$color-yellow;
+      background: linear-gradient(-45deg, vars.$color-green,vars.$color-yellow,vars.$color-green);
+      color: white;
+
+      opacity: 0;
+      transition: visibility 0s, opacity 0.3s linear;
+
+    }
+
+    &--li:hover > span {
+      opacity: 1;
+
     }
     
   }

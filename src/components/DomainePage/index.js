@@ -57,16 +57,56 @@ const DomainePage = () => {
 
           <ul className="domainepage__section-photos--ul">
 
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image1})`}}></li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image2})`}}></li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image3})`}}></li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image4})`}}></li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image5})`}}></li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image6})`}}></li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image7})`}}></li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image8})`}}></li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image9})`}}></li>
-            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image10})`}}></li>
+            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image1})`}}>
+              <span className="domainepage__section-photos--open">
+                ouvrir
+              </span>
+            </li>
+            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image2})`}}>
+              <span className="domainepage__section-photos--open">
+                ouvrir
+              </span>
+            </li>
+            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image3})`}}>
+              <span className="domainepage__section-photos--open">
+                ouvrir
+              </span>
+            </li>
+            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image4})`}}>
+              <span className="domainepage__section-photos--open">
+                ouvrir
+              </span>
+            </li>
+            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image5})`}}>
+              <span className="domainepage__section-photos--open">
+                ouvrir
+              </span>
+            </li>
+            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image6})`}}>
+              <span className="domainepage__section-photos--open">
+                ouvrir
+              </span>
+            </li>
+            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image7})`}}>
+              <span className="domainepage__section-photos--open">
+                ouvrir
+              </span>
+            </li>
+            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image8})`}}>
+              <span className="domainepage__section-photos--open">
+                ouvrir
+              </span>
+            </li>
+            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image9})`}}>
+              <span className="domainepage__section-photos--open">
+                ouvrir
+              </span>
+            </li>
+            <li className="domainepage__section-photos--li" style={{ backgroundImage: `url(${Image10})`}}>
+              <span className="domainepage__section-photos--open">
+                ouvrir
+              </span>
+            </li>
 
           </ul>
 
