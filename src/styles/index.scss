@@ -11,3 +11,16 @@ html, body {
 .hidden {
   display: none;
 }
+
+h1 {
+
+  margin: 0;
+  padding: .3rem .8rem;
+  border-radius: .6rem;
+  font-size: 3.2rem;
+  color: black;      
+  background-color: vars.$color-white;
+  mix-blend-mode: screen;
+  box-shadow: 0 0 15px 0 rgba(245, 245, 245, 0.5);
+
+}

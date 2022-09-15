@@ -14,7 +14,7 @@ const DomainePage = () => {
 
       <NavBar />
       
-      <main className={`homepage-container homepage-container__bg2`}>
+      <main className={`winespage-container`}>
           
           <h1>Nos Vins</h1>
 
