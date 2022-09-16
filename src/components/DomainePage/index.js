@@ -16,6 +16,7 @@ import Image7 from '../../assets/images/DomainePage-7.jpg';
 import Image8 from '../../assets/images/DomainePage-8.jpg';
 import Image9 from '../../assets/images/DomainePage-9.jpg';
 import Image10 from '../../assets/images/DomainePage-10.jpg';
+import Image11 from '../../assets/images/DomainePage-11.jpg';
 
 import Image1Thumb from '../../assets/images/DomainePage-1-thumb.jpg';
 import Image2Thumb from '../../assets/images/DomainePage-2-thumb.jpg';
@@ -27,6 +28,7 @@ import Image7Thumb from '../../assets/images/DomainePage-7-thumb.jpg';
 import Image8Thumb from '../../assets/images/DomainePage-8-thumb.jpg';
 import Image9Thumb from '../../assets/images/DomainePage-9-thumb.jpg';
 import Image10Thumb from '../../assets/images/DomainePage-10-thumb.jpg';
+import Image11Thumb from '../../assets/images/DomainePage-11-thumb.jpg';
 
 const GalleryImages = [
 
@@ -34,6 +36,7 @@ const GalleryImages = [
   { photo : Image2, thumb :  Image2Thumb },
   { photo : Image3, thumb :  Image3Thumb },
   { photo : Image4, thumb :  Image4Thumb },
+  { photo : Image11, thumb :  Image11Thumb },
   { photo : Image5, thumb :  Image5Thumb },
   { photo : Image6, thumb :  Image6Thumb },
   { photo : Image7, thumb :  Image7Thumb },

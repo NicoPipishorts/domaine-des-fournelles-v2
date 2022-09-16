@@ -32,6 +32,9 @@ const ModalPhotos = ( { photo, onClose, show }) => {
       <section className='modal-photos__container' onClick={onClose}>
         <div className="modal-photos__content" onClick={e => e.stopPropagation()}>
           <img src={photo} alt="Domaine des Fournelles" className="modal-photos__photo" />
+          <button className="modal-photos__close" onClick={onClose}>
+            X
+          </button>
         </div>
       </section>
 

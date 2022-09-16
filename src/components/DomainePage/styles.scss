@@ -7,7 +7,7 @@
   width: 100%;
   height: 100vh;
   
-  background-image: url(../../assets/images/DomainePage-1.jpg);
+  background-image: url(../../assets/images/DomainePage-BG.jpg);
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
@@ -112,8 +112,6 @@
     position: fixed;
     left: 0;
     top: 0;
-    right: 0;
-    bottom: 0;
     width: 100%;
     height: 100vh;
     display: flex;
@@ -125,12 +123,39 @@
 
   }
 
+  &__content {
+
+    position: relative;
+
+  }
+
   &__photo {
-    display: block;
+
     width: 70vw;
     border-radius: 1rem;
     box-shadow: 0 0 35px vars.$color-dgrey;
     border: 1px solid vars.$modal-bg-color;
+
+  }
+
+  &__close {
+
+    position: absolute;
+    box-sizing: border-box;
+    top: -50px;
+    right: -50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 2.3rem;
+    height: 2.3rem;
+    background-color: rgba(vars.$color-white, 0.6);
+    border: none;
+    border-radius: 50%;
+    font-family: 'karbon-bold';
+    font-size: 1.6rem;
+    color: vars.$color-brown;
+
   }
 
 }
