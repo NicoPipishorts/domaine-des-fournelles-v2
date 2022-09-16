@@ -6,23 +6,46 @@ import Thumb from './Thumb';
 
 // -- IMPORT ASSETS
 import './styles.scss';
-import Image1 from '../../assets/images/HomePage-1.jpg';
-import Image2 from '../../assets/images/HomePage-2.jpg';
-import Image3 from '../../assets/images/HomePage-3.jpg';
-import Image4 from '../../assets/images/HomePage-4.jpg';
-import Image5 from '../../assets/images/HomePage-5.jpg';
-import Image6 from '../../assets/images/HomePage-6.jpg';
-import Image7 from '../../assets/images/HomePage-7.jpg';
-import Image8 from '../../assets/images/HomePage-8.jpg';
-import Image9 from '../../assets/images/HomePage-9.jpg';
-import Image10 from '../../assets/images/HomePage-10.jpg';
+import Image1 from '../../assets/images/DomainePage-1.jpg';
+import Image2 from '../../assets/images/DomainePage-2.jpg';
+import Image3 from '../../assets/images/DomainePage-3.jpg';
+import Image4 from '../../assets/images/DomainePage-4.jpg';
+import Image5 from '../../assets/images/DomainePage-5.jpg';
+import Image6 from '../../assets/images/DomainePage-6.jpg';
+import Image7 from '../../assets/images/DomainePage-7.jpg';
+import Image8 from '../../assets/images/DomainePage-8.jpg';
+import Image9 from '../../assets/images/DomainePage-9.jpg';
+import Image10 from '../../assets/images/DomainePage-10.jpg';
+
+import Image1Thumb from '../../assets/images/DomainePage-1-thumb.jpg';
+import Image2Thumb from '../../assets/images/DomainePage-2-thumb.jpg';
+import Image3Thumb from '../../assets/images/DomainePage-3-thumb.jpg';
+import Image4Thumb from '../../assets/images/DomainePage-4-thumb.jpg';
+import Image5Thumb from '../../assets/images/DomainePage-5-thumb.jpg';
+import Image6Thumb from '../../assets/images/DomainePage-6-thumb.jpg';
+import Image7Thumb from '../../assets/images/DomainePage-7-thumb.jpg';
+import Image8Thumb from '../../assets/images/DomainePage-8-thumb.jpg';
+import Image9Thumb from '../../assets/images/DomainePage-9-thumb.jpg';
+import Image10Thumb from '../../assets/images/DomainePage-10-thumb.jpg';
 
 const GalleryImages = [
 
-  Image1, Image2, Image3, Image4, Image5, Image6, Image7, Image8, Image9, Image10 
+  { photo : Image1, thumb :  Image1Thumb },
+  { photo : Image2, thumb :  Image2Thumb },
+  { photo : Image3, thumb :  Image3Thumb },
+  { photo : Image4, thumb :  Image4Thumb },
+  { photo : Image5, thumb :  Image5Thumb },
+  { photo : Image6, thumb :  Image6Thumb },
+  { photo : Image7, thumb :  Image7Thumb },
+  { photo : Image8, thumb :  Image8Thumb },
+  { photo : Image9, thumb :  Image9Thumb },
+  { photo : Image10, thumb :  Image10Thumb },
+  
 ]
 
 const DomainePage = () => {
+
+  console.table(GalleryImages);
 
   return (
     <>
@@ -50,7 +73,8 @@ const DomainePage = () => {
           GalleryImages.map((image) => (
           
             <Thumb 
-              photo={image}
+            photo={image.photo}
+            thumb={image.thumb}
               key={image}
             />
 
