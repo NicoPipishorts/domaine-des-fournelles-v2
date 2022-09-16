@@ -3,9 +3,7 @@
 .domainepage-container {
 
   display: flex;
-  align-items: center;
   width: 100%;
-  height: 100vh;
   
   background-image: url(../../assets/images/DomainePage-BG.jpg);
   background-repeat: no-repeat;
@@ -16,6 +14,8 @@
   font-size: 2rem;
   font-weight: bold;
 
+  overflow: hidden;
+
 }
 
 .domainepage {
@@ -25,29 +25,36 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: end;
+    align-items: flex-end;
     text-align: right;
     width: calc(100% / 3 ) * 2;
-    height: 100vh;
-    box-sizing: border-box;
+    overflow: scroll;
+    box-sizing: border-box;    
     padding-right: 2rem;
-    padding-left: 12vw;
-
+    padding-left: 15vw;
+    padding: 2rem 2rem 2rem 15vw; 
     background-color: rgba(0,0,0, 0.5);
 
     p {
+      z-index: 10;
       font-size: 1.4rem;
       font-family: 'Karbon-Light';
+    }
+
+    h1 {
+      z-index: 10;
     }
 
   }
 
   &__section-photos {
     
+    z-index: 5;
     width: calc(100vw / 3 ) * 1;
     height: 100vh;
     margin: 0;
     padding: 0;
+    box-shadow: 0 0 55px vars.$color-dgrey;;
 
     overflow: scroll;
     background-color: vars.$color-pink;

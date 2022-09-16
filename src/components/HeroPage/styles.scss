@@ -1,3 +1,5 @@
+@use "../../styles/vars";
+
 video {
 
   width: 100%;
@@ -12,6 +14,10 @@ video {
   height: 100vh;
   padding: 0px;
   margin: 0;
+  overflow: hidden;
+  background-image: url(../../assets/images/HeroPage-VideoBG.jpg);
+  background-position: center center;
+  background-size: cover;
 
   &__filter-container {
 
@@ -50,23 +56,25 @@ video {
     */
   }
 
-  a.hero-logo-link {
+  button.hero-logo-link {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     transition: 0.5s;
+    background: transparent;
+    border: none;
+    padding: 0;
     cursor: pointer;
   }
 
   &__logo {
     width: 480px;
     height: 480px;
-    cursor: pointer;
   }
 
-  a.hero-logo-link svg,
-  a.hero-logo-link svg rect {
+  button.hero-logo-link svg,
+  button.hero-logo-link svg rect {
     position: absolute;
     top: 0;
     left: 0;
@@ -75,7 +83,7 @@ video {
     fill: transparent;
   }
 
-  a.hero-logo-link svg rect {
+  button.hero-logo-link svg rect {
     stroke: #9F2032;
     stroke-width: 1;
     transition: 1.5s;
@@ -83,7 +91,7 @@ video {
     stroke-dashoffset: 1928;
   }
 
-  a.hero-logo-link:hover svg rect {
+  button.hero-logo-link:hover svg rect {
     stroke: #E98B2E;
     stroke-width: 10;
     stroke-dashoffset: 0;

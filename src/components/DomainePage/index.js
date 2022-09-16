@@ -54,9 +54,9 @@ const DomainePage = () => {
     <>
     <NavBar />
     
-    <main className={`domainepage-container`}>
+    <main className="domainepage-container">
 
-      <section className="domainepage__section-text">
+      <article className="domainepage__section-text">
         
           <h1><span className="domainepage__section--h1-span">Domaine des fournelles</span></h1>
 
@@ -66,7 +66,7 @@ const DomainePage = () => {
 
           <p>Toute la saveur, l'originalité et la qualité des vins du domaine sont issues du savoir-faire d'une production élaborée dans les respect du terroir alliée aux connaissances scientifiques oenologiques, aux techniques de productions et de transformation les plus modernes.</p>
     
-      </section>
+      </article>
 
       <section className="domainepage__section-photos">
 
@@ -78,7 +78,7 @@ const DomainePage = () => {
             <Thumb 
             photo={image.photo}
             thumb={image.thumb}
-              key={image}
+            key={image.thumb}
             />
 
           ))
