@@ -26,10 +26,10 @@ const HeroLogo = () => {
   return (
     
     <>
-      <a className="hero-logo-link" onClick={changeHeroPageState}>
+      <button className="hero-logo-link" onClick={changeHeroPageState}>
         <svg><rect></rect></svg>
         <img src={Logo} alt="Logo" className="container-hero__logo" />
-      </a>
+      </button>
     </>
 
   )

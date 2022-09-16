@@ -3,9 +3,7 @@
 .domainepage-container {
 
   display: flex;
-  align-items: center;
   width: 100%;
-  height: 100vh;
   
   background-image: url(../../assets/images/DomainePage-BG.jpg);
   background-repeat: no-repeat;
@@ -16,6 +14,8 @@
   font-size: 2rem;
   font-weight: bold;
 
+  overflow: hidden;
+
 }
 
 .domainepage {
@@ -24,30 +24,33 @@
     
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: end;
+    justify-content: start;
+    align-items: flex-end;
     text-align: right;
     width: calc(100% / 3 ) * 2;
     height: 100vh;
-    box-sizing: border-box;
+    overflow: scroll;
+    box-sizing: border-box;    
     padding-right: 2rem;
-    padding-left: 12vw;
-
+    padding-left: 15vw;
+    padding: 2rem 2rem 2rem 15vw; 
     background-color: rgba(0,0,0, 0.5);
 
     p {
       font-size: 1.4rem;
-      font-family: 'Karbon-Light';
+      font-weight:300;
     }
 
   }
 
   &__section-photos {
     
+    z-index: 5;
     width: calc(100vw / 3 ) * 1;
     height: 100vh;
     margin: 0;
     padding: 0;
+    box-shadow: 0 0 35px vars.$color-dgrey;;
 
     overflow: scroll;
     background-color: vars.$color-pink;
@@ -83,21 +86,25 @@
       justify-content: center;
       align-items: center;
       box-sizing: border-box;
-      height: 100%;
-      padding: .5rem;
+      border: none;
+      margin: 0;
+      padding: 0;
+      min-width: 100%;
+      min-height: 100%;
       mix-blend-mode: overlay;
       background-color: vars.$color-yellow;
       background: linear-gradient(-45deg, vars.$color-green,vars.$color-yellow,vars.$color-green);
+      font-size: 2.3rem;
       color: vars.$color-white;
-
       opacity: 0;
       transition: visibility 0s, opacity 0.3s linear;
 
+      cursor: pointer;
+
     }
 
-    &--li:hover > span {
+    &--li:hover > button {
       opacity: 1;
-
     }
     
   }
@@ -108,7 +115,7 @@
 
   &__container {
 
-    z-index: 100;
+    z-index: 1000;
     position: fixed;
     left: 0;
     top: 0;
@@ -133,8 +140,7 @@
 
     width: 70vw;
     border-radius: 1rem;
-    box-shadow: 0 0 35px vars.$color-dgrey;
-    border: 1px solid vars.$modal-bg-color;
+    box-shadow: 0 0 35px rgba(vars.$color-black, 0.5);
 
   }
 
@@ -151,10 +157,12 @@
     height: 2.3rem;
     background-color: rgba(vars.$color-white, 0.6);
     border: none;
+    box-shadow: 0 0 15px rgba(vars.$color-black, 0.7);
     border-radius: 50%;
-    font-family: 'karbon-bold';
     font-size: 1.6rem;
+    font-weight: 900;
     color: vars.$color-brown;
+    cursor: pointer;
 
   }
 
@@ -168,3 +176,5 @@
 .modal-photos__container.modal.exit {
   opacity: 0;
 }
+
+@import './responsive.scss';

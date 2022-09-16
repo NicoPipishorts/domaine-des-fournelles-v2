@@ -1,11 +1,10 @@
 @use 'vars';
-@import '_fonts.css';
 
 html, body {
-  font-family: 'Poppins', sans-serif;
   font-size: 18px;
   margin: 0;
   padding: 0;
+  font-family: vars.$font;
 }
 
 .hidden {
@@ -17,7 +16,7 @@ h1 {
   margin: 0;
   padding: .3rem .8rem;
   border-radius: .6rem;
-  font-size: 3.2rem;
+  font-size: 3.6rem;
   color: black;      
   background-color: vars.$color-white;
   mix-blend-mode: screen;
