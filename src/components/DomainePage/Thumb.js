@@ -22,12 +22,10 @@ const Thumb = ( { photo, thumb } ) => {
     <li 
       className="domainepage__section-photos--li" 
       style={{ backgroundImage: `url(${thumb})`}}
-      onClick={() => {
-        setShow(true)}} 
     >
-      <span className="domainepage__section-photos--open">
-        ouvrir
-      </span>
+      <button className="domainepage__section-photos--open" onClick={() => { setShow(true) }} >
+          ouvrir
+      </button>
     </li>
     </>
 
