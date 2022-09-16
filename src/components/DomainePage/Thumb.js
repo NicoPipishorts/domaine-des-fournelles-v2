@@ -13,11 +13,6 @@ const Thumb = ( { photo, thumb } ) => {
 
   return (
     <>
-    <ModalPhotos 
-      photo={photo}
-      onClose={() => setShow(false)} 
-      show={show}
-    />
     
     <li 
       className="domainepage__section-photos--li" 
@@ -27,6 +22,11 @@ const Thumb = ( { photo, thumb } ) => {
           ouvrir
       </button>
     </li>
+    <ModalPhotos 
+      photo={photo}
+      onClose={() => setShow(false)} 
+      show={show}
+    />
     </>
 
   )
