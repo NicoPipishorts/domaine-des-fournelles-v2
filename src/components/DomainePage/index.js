@@ -70,6 +70,8 @@ const DomainePage = () => {
 
       <section className="domainepage__section-photos">
 
+        {/* <h1>Photos</h1> */}
+
         <ul className="domainepage__section-photos--ul">
 
         {

@@ -1,30 +1,30 @@
 @use '../../styles/vars';
 
-.domainepage-container {
-
-  display: flex;
-  width: 100%;
-  
-  background-image: url(../../assets/images/DomainePage-BG.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-
-  color: vars.$color-white;
-  font-size: 2rem;
-  font-weight: bold;
-
-  overflow: hidden;
-
-}
-
 .domainepage {
+  
+  &-container {
+
+    display: flex;
+    width: 100%;
+    
+    background-image: url(../../assets/images/DomainePage-BG.jpg);
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+
+    color: vars.$color-white;
+    font-size: 2rem;
+    font-weight: bold;
+
+    overflow: hidden;
+
+  }
 
   &__section-text {
     
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: center;
     align-items: flex-end;
     text-align: right;
     width: calc(100% / 3 ) * 2;
