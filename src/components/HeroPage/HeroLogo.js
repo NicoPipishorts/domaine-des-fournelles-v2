@@ -18,7 +18,6 @@ const HeroLogo = () => {
   const navigate = useNavigate();
 
   const changeHeroPageState = () => {
-    console.log('%c I click on the link', 'color: orange; font-weight: bold');
     dispatch(setHeroPage(false));
     navigate('/domaine');
   }

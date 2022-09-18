@@ -5,6 +5,11 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: vars.$font;
+  padding:
+    env(safe-area-inset-top, 20px)
+    env(safe-area-inset-right, 20px)
+    env(safe-area-inset-bottom, 20px)
+    env(safe-area-inset-left, 20px);
 }
 
 .hidden {
@@ -20,7 +25,6 @@ h1 {
   color: black;      
   background-color: vars.$color-white;
   mix-blend-mode: screen;
-  box-shadow: 0 0 15px 0 rgba(245, 245, 245, 0.5);
 
 }
 
@@ -28,6 +32,7 @@ h1 {
 
   h1 {
     padding: .7rem 1rem;
+    margin-bottom: 2rem;
     font-size: 1.3rem;
     text-align: center;
     color: vars.$color-dgrey;      
