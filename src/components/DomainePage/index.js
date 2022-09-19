@@ -58,25 +58,25 @@ const DomainePage = () => {
 
         <div className="domainepage__section-text--logo"></div>
         
-          <h1><span className="domainepage__section--h1-span">Domaine des fournelles</span></h1>
+        <h1><span className="domainepage__section--h1-span">Domaine des fournelles</span></h1>
 
-          <div className="domainepage__section-text--p-container">
-            <p className="domainepage__section-text--p1">
-              En 1947, François Bernillon s'installe commme viticulteur sur les hauteurs du Mont Brouilly. En 1973, son fils Alain reprend l'exploitation et fait prospérer l'entreprise. Depuis 2015, le Domaine a été repris par sa fille et son gendre, Mariannick et Guillaume qui représente ainsi la 3eme génération de viticulteur. La propriété s'étend aujourd'hui sur 7 Hectares sur la commune de Saint-Lager. Notre domaine produit deux crus du Beaujolais : Brouilly et Côte de Brouilly.
-            </p>
-          </div>
+        <div className="domainepage__section-text--p-container">
+          <p className="domainepage__section-text--p1">
+            En 1947, François Bernillon s'installe commme viticulteur sur les hauteurs du Mont Brouilly. En 1973, son fils Alain reprend l'exploitation et fait prospérer l'entreprise. Depuis 2015, le Domaine a été repris par sa fille et son gendre, Mariannick et Guillaume qui représente ainsi la 3eme génération de viticulteur. La propriété s'étend aujourd'hui sur 7 Hectares sur la commune de Saint-Lager. Notre domaine produit deux crus du Beaujolais : Brouilly et Côte de Brouilly.
+          </p>
+        </div>
 
-          <div className="domainepage__section-text--p-container domainepage__section-text--p-container--right">
-            <p className="domainepage__section-text--p2">
-              Notre vignoble bien exposé à flanc de coteaux est situé sur le versant sud-est de la célèbre Montagne de Brouilly. Le plus grand soin est apporté tant à la culture qu'à la vinification. Nos crus sont élaborés à partir d'un cépage unique de Gamay noir à jus blanc. Les vendanges sont exclusivement manuelles et la récolte est triée méticuleusement.
-            </p>
-          </div>
+        <div className="domainepage__section-text--p-container domainepage__section-text--p-container--right">
+          <p className="domainepage__section-text--p2">
+            Notre vignoble bien exposé à flanc de coteaux est situé sur le versant sud-est de la célèbre Montagne de Brouilly. Le plus grand soin est apporté tant à la culture qu'à la vinification. Nos crus sont élaborés à partir d'un cépage unique de Gamay noir à jus blanc. Les vendanges sont exclusivement manuelles et la récolte est triée méticuleusement.
+          </p>
+        </div>
 
-          <div className="domainepage__section-text--p-container">
-            <p className="domainepage__section-text--p3">
-              Toute la saveur, l'originalité et la qualité des vins du domaine sont issues du savoir-faire d'une production élaborée dans les respect du terroir alliée aux connaissances scientifiques oenologiques, aux techniques de productions et de transformation les plus modernes.
-            </p>
-          </div>
+        <div className="domainepage__section-text--p-container">
+          <p className="domainepage__section-text--p3">
+            Toute la saveur, l'originalité et la qualité des vins du domaine sont issues du savoir-faire d'une production élaborée dans les respect du terroir alliée aux connaissances scientifiques oenologiques, aux techniques de productions et de transformation les plus modernes.
+          </p>
+        </div>
     
       </article>
 

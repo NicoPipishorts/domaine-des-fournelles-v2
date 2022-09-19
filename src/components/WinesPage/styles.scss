@@ -1,23 +1,77 @@
 @use '../../styles/vars';
 
 
-.winespage-container {
-
-  display: flex;
-  justify-content: center;
-  align-items: start;
-  width: 100%;
-  height: 100vh;
-  box-sizing: border-box;
-  padding: 4rem;
+.winespage {
   
-  background-image: url(../../assets/images/DomainePage-2.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
+  &-container {
 
-  color: #FFF;
-  font-size: 2rem;
-  font-weight: bold;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: start;
+    width: 100%;
+    padding-bottom: calc((100vw / 5) + 1rem);
+    box-sizing: border-box;
+
+    background-image: url(../../assets/images/WinesPage-BG.png);
+
+    color: #FFF;
+    font-size: 2rem;
+    font-weight: bold;
+
+  }
+
+  &__logo {
+
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 1rem;
+    width: 110px;
+    height: 110px;
+
+    background-image: url(../../assets/images/PageLogo-W.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+  }
+
+  &__bottles {
+
+    &--bottle {
+    
+      &-container {
+
+        min-width: 100vw;
+        height: 85vh;
+        background-image: url(../../assets/images/Wine-BottleElixir.png);
+        background-position: top 10vh center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &-Elixir {
+          background-image: url(../../assets/images/Wine-BottleElixir.png);
+        }
+      
+      }
+
+      &-name {
+
+        min-width: 100vw;
+        height: 85vh;
+        background-position: top 30vh center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &-Elixir {
+          background-image: url(../../assets/images/Wine-TitleElixir.png);
+        }
+
+      }
+
+    }
+
+  }
 
 }
