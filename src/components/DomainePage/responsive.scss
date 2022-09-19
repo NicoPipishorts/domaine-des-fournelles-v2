@@ -33,27 +33,29 @@
       background-size: cover;
       background-attachment: scroll;
 
-      h1 {
-        width: 90%;
-        margin-top: 1rem;
-        padding: 2rem 0;
-        
+      &--logo {
 
-        font-size: 2.5rem;
-        text-transform: uppercase;
-        color: rgba(vars.$color-black, 1);
-        background: rgba(vars.$color-white, 1);
-        mix-blend-mode: screen;
-        box-shadow: 0 0 15px rgabrgba(vars.$color-black, 1);
+        display: block;
+        width: 100%;
+        height: 30vh;
+      
+        background-image: url(../../assets/images/DomainePageLogo.png);
+        background-repeat: no-repeat;
+        background-position: center center;
+        background-size: contain;
 
       }
 
+      h1 {
+        display: none;
+      }
+
       p {
-        width: 85%;        
-        padding: 1rem;
+        width: 80%;        
+        padding: 0.8rem;
         box-shadow: 0 0 15px vars.$color-black;
         background-color: rgba(vars.$color-dgrey, .8);
-        font-size: 1rem;
+        font-size: .9rem;
         line-height: 1.5rem;
         letter-spacing: 1px;
         color: vars.$color-white;
@@ -63,13 +65,12 @@
       &--p-container {
         
         display: flex;
-        justify-content: flex-st;
         width: 100%;
 
-      }
+        &--right {
+          justify-content: flex-end!important;
+        }
 
-      div:has(.domainepage__section-text--p2){
-        justify-content: flex-end;
       }
 
       &--p1 {
@@ -119,6 +120,12 @@
         height: calc((100vw/3)*2);
         box-sizing: unset;
         border: none;
+
+      }
+
+      &--open {
+
+        display: none;
 
       }
   

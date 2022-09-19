@@ -55,6 +55,8 @@ const DomainePage = () => {
     <main className="domainepage-container">
 
       <article className="domainepage__section-text">
+
+        <div className="domainepage__section-text--logo"></div>
         
           <h1><span className="domainepage__section--h1-span">Domaine des fournelles</span></h1>
 
@@ -64,7 +66,7 @@ const DomainePage = () => {
             </p>
           </div>
 
-          <div className="domainepage__section-text--p-container">
+          <div className="domainepage__section-text--p-container domainepage__section-text--p-container--right">
             <p className="domainepage__section-text--p2">
               Notre vignoble bien exposé à flanc de coteaux est situé sur le versant sud-est de la célèbre Montagne de Brouilly. Le plus grand soin est apporté tant à la culture qu'à la vinification. Nos crus sont élaborés à partir d'un cépage unique de Gamay noir à jus blanc. Les vendanges sont exclusivement manuelles et la récolte est triée méticuleusement.
             </p>
