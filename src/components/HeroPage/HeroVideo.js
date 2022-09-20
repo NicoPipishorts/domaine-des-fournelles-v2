@@ -11,7 +11,15 @@ const HeroVideo = () => {
 
   return (
 
-    <video src={Video} autoPlay loop muted />
+    <video 
+      src={Video} 
+      autoPlay={true} 
+      loop={true}
+      controls={false}
+      playsInline
+      muted 
+      type="video/mp4"
+    />
 
   )
 
