@@ -4,7 +4,7 @@
   
     &-wrapper {
 
-      padding-bottom: calc((100vw / 5) + 1rem);
+      // padding-bottom: calc((100vw / 5) + 1rem);
   
     }
   
@@ -45,6 +45,8 @@
       &--info {
 
         &-container {
+
+          min-height: 170vh!important;
 
           &-Elixir {
             border-top: 2px solid vars.$color-Elixir-blue2;
@@ -125,6 +127,8 @@
         &-hve {
           width: 80vw;
           justify-content: flex-end;
+          font-size: 1.2rem;
+          height: 90px;
         }
   
       }
@@ -215,6 +219,28 @@
 
         &-container > p {
           font-size: 1rem;
+        }
+  
+        &-container > h3 {
+          padding: 0;
+          margin-top: 0;
+          font-size: 1.4rem;
+        }
+    
+        &-container > aside > ul {
+          font-size: 1rem;
+          font-weight: 200;
+
+          li {
+            padding-left: 1rem;
+            line-height: 1.8rem;;
+          }
+        
+        }
+
+        &-hve {
+          width: 40vw;
+          justify-content: flex-end;
         }
 
       }

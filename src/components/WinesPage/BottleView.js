@@ -66,7 +66,7 @@ const BottleWiew = ( {
             </ul>
           </aside>
       
-          <div className={`winespage__bottles--info-hve`}>
+          <div className={`winespage__bottles--info-hve winespage__bottles--info-hve-${bottle}`}>
           La Haute Valeur <br />Environnementale
           </div>
           
