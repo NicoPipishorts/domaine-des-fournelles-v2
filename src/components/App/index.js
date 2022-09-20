@@ -2,6 +2,7 @@
 import { Routes, Route } from 'react-router-dom';
 
 // --  IMPORT COMPONENTS
+import NavBar from "../NavBar";
 import HeroPage from '../HeroPage';
 import DomainePage from '../DomainePage';
 import WinesPage from '../WinesPage';
@@ -14,6 +15,8 @@ const App = () => {
   return (
 
     <div className="wrapper"> 
+
+    <NavBar />
     <Routes>
 
       <Route

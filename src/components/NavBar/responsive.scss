@@ -110,17 +110,21 @@
 }
 
 
-@media only screen and (min-width: 481px) and (max-width: 801px) {
+@media only screen and (min-width: 481px) and (max-width: 850px) {
   
   .navbar {
 
     font-size: 1.6rem;
+    padding-left: 0;
     
     &__buttons {
-
+      
+      padding: 0;
+      width: calc(100vh / 5);
+      height: calc(100vh / 5);
 
       &--icons {
-        width: 2.4rem;
+        width: calc(100vh / 5) -  5vh;
       }
 
       &--parent span {
@@ -135,6 +139,31 @@
 
 }
 
-@media only screen and (min-width: 802px) and (max-width: 1366px) {
+@media only screen and (min-width: 850px) and (max-width: 1366px) {
+  
+  .navbar {
+
+    font-size: 1.6rem;
+    padding-left: 0;
+    
+    &__buttons {
+      
+      padding: 0;
+      width: calc(100vh / 10);
+      height: calc(100vh / 10);
+
+      &--icons {
+        width: calc(100vh / 10)-2vh;
+      }
+
+      &--parent span {
+  
+        left: 5.05rem;
+        
+      }
+
+    }
+
+  }
 
 }
