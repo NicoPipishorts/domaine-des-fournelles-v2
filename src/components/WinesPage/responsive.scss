@@ -1,0 +1,226 @@
+@media only screen and (max-width: 480px) {
+
+  .winespage {
+  
+    &-wrapper {
+
+      padding-bottom: calc((100vw / 5) + 1rem);
+  
+    }
+  
+    &__logo {
+  
+      width: 110px;
+      height: 110px;
+  
+    }
+  
+    &__bottles {
+  
+      &--bottle {
+      
+        &-container {
+          
+          height: 85vh;
+          background-position: top 10vh center;
+
+          &-Elixir {
+            background-color: vars.$color-Elixir-blue2;
+            background-position: top center;
+            background-image: url(../../assets/images/Wine-BottleElixir.png), 
+                              radial-gradient(circle, vars.$color-Elixir-blue1, vars.$color-Elixir-blue2);
+          }
+  
+          &-Godefroy {
+            background-color: vars.$color-Godefroy-yellow2;
+            background-position: top center;
+            background-image: url(../../assets/images/Wine-BottleGodefroy.png), 
+                              radial-gradient(circle, vars.$color-Godefroy-yellow1, vars.$color-Godefroy-yellow2);
+          }
+        
+        }
+  
+      }
+
+      &--info {
+
+        &-container {
+
+          &-Elixir {
+            border-top: 2px solid vars.$color-Elixir-blue2;
+            background: linear-gradient(vars.$color-Elixir-blue1,  vars.$color-Elixir-blue2);
+            box-shadow: 0 5px 25px rgba(vars.$color-Elixir-blue2, .8); 
+          }
+  
+          &-Godefroy {
+            border-top: 2px solid vars.$color-Godefroy-yellow2;
+            background: linear-gradient(vars.$color-Godefroy-yellow2,  vars.$color-Godefroy-yellow1);
+            box-shadow: 0 5px 25px rgba(vars.$color-black, .8); 
+          }
+
+          p > em {
+            line-height: 0rem;
+          }
+          
+        }
+
+        &-title {
+          margin-top: 1rem;
+          padding: 2rem 0;
+
+          &-Elixir {
+            min-width: 90vw;
+            max-height: 8vh;
+            background-image: url(../../assets/images/Wine-TitleElixir.png);
+            background-size: 60vw;
+          }
+  
+          &-Godefroy {
+            min-width: 90vw;
+            max-height: 8vh;
+            background-image: url(../../assets/images/Wine-TitleGodefroy.png);
+          }
+  
+        }
+  
+        &-container > p {
+          width: 85vw;
+          font-size: .9rem;
+          line-height: 1.3rem;
+          letter-spacing: .05rem;
+          text-align: justify;
+        }
+
+          p.Elixir {
+            background: -webkit-linear-gradient(#fefefe, #cecece);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          p.Godefroy {
+            background: -webkit-linear-gradient(vars.$color-red, #111);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+  
+        &-container > h3 {
+          width: 85vw;
+          padding: 0;
+          margin-top: 0;
+          font-size: 1.2rem;
+        }
+    
+        &-container > aside > ul {
+          width: 85vw;
+          font-size: .9rem;
+          font-weight: 200;
+
+          li {
+            padding-left: 1rem;
+            line-height: 1.5rem;;
+          }
+  
+        }
+
+        &-hve {
+          width: 80vw;
+          justify-content: flex-end;
+        }
+  
+      }
+  
+    }
+  
+  }
+
+}
+
+
+@media only screen and (min-width: 481px) and (max-width: 850px) {
+  
+  .winespage {
+
+    &__logo {
+      width: 110px;
+      height: 110px;
+    }
+
+    &__bottles {
+
+      &--bottle {
+      
+        &-container {
+
+          min-width: 100vw;
+          height: 105vh;
+          background-image: url(../../assets/images/Wine-BottleElixir.png);
+          background-position: top center;
+          background-size: contain;
+          background-repeat: no-repeat;
+
+          &-Elixir {
+            background-image: url(../../assets/images/Wine-BottleElixir.png);
+          }
+        
+        }
+
+      }
+
+      &--info {
+  
+        &-container > p {
+          font-size: .9rem;
+          line-height: 1.3rem;
+          letter-spacing: .05rem;
+          text-align: justify;
+        }
+  
+        &-container > h3 {
+          padding: 0;
+          margin-top: 2rem;
+        }
+    
+        &-container > aside > ul {
+          font-size: .9rem;
+          font-weight: 100;
+  
+        }
+
+        &-hve {
+          width: 70vw;
+          justify-content: flex-end;
+        }
+  
+      }
+
+    }
+
+  }
+
+}
+
+
+@media only screen and (min-width: 850px) and (max-width: 1366px) {
+  
+  .winespage {
+
+    &__logo {
+      width: 130px;
+      height: 130px;
+    }
+
+    &__bottles {
+
+      &--info {
+
+        &-container > p {
+          font-size: 1rem;
+        }
+
+      }
+
+    }
+
+  }
+
+}
