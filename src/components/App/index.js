@@ -15,8 +15,6 @@ const App = () => {
   return (
 
     <div className="wrapper"> 
-
-    <NavBar />
     <Routes>
 
       <Route

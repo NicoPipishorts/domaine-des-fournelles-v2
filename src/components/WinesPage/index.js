@@ -1,6 +1,7 @@
 // -- IMPORT NPM
 
 // --  IMPORT COMPONENTS
+import NavBar from '../NavBar';
 import BottleView from './BottleView';
 
 // -- IMPORT ASSETS
@@ -15,7 +16,8 @@ const WinesPage = () => {
   return (
 
     <>
-      
+    <NavBar />
+    
     <main className="winespage-wrapper">
 
         <BottleView bottle="Elixir" {...DataElixir} />
