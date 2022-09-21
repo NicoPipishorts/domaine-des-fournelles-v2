@@ -1,0 +1,137 @@
+@use "../../styles/vars";
+
+.contactpage {
+
+  &__wrapper {
+
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    background-color: vars.$color-red;
+    color: vars.$color-white;
+    
+  }
+
+  &__logo {
+
+    position: fixed;
+    top: 0;
+    right: 0;
+    margin: 1rem;
+    width: 150px;
+    height: 150px;
+
+    background-image: url(../../assets/images/PageLogo-W.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+
+  }
+
+  &__container {
+
+    width: 65vw;
+    margin-left: -5vw;
+    padding-top: 150px;
+
+  }
+
+  &__container h1 {
+
+    max-width: 40vw;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    mix-blend-mode: unset;
+    color: vars.$color-white;
+    font-weight: 300;
+    font-size: 4rem;
+    text-align: left;
+    // border-bottom: 1px solid rgba(vars.$color-white, .3);
+    // border-radius: 0;
+
+  }
+
+  &__container h2 {
+
+    max-width: 40vw;
+    font-weight: 300;
+    font-size: 2.2rem;
+    // border-bottom: 1px solid rgba(vars.$color-white, .3);
+
+  }
+
+  &__container p {
+
+    font-weight: 100;
+    font-size: 1.2rem;
+    margin-top: 2.4rem;
+    
+  }
+
+  &__form {
+
+    max-width: 40vw;
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+  }
+  
+  &__form div:last-child {
+
+    display: flex;
+    justify-content: flex-start;
+
+  }
+
+  &__form input, &__form input::placeholder  {
+    
+    z-index: 1000;
+    width: 100%;
+    margin-top: 1.5rem;
+    margin-bottom: .5rem;
+    box-sizing: border-box;
+    padding: .6rem 1rem;
+    padding-left: 5px;
+    color: vars.$color-white;
+    font-family: Roboto, "Helvetica Neue",;
+    font-weight: 100;
+    font-size: 1.4rem;
+    background: transparent;
+    border: 0;
+    border-bottom: 1px solid vars.$color-yellow;
+    outline: none;
+
+  }
+
+  &__form input[type="submit"]  {
+    
+    width: unset;
+    padding: .4rem 1rem;
+    color: vars.$color-red;
+    font-weight: 500;
+    background: vars.$color-yellow;
+    border-radius: .3rem;
+    border: 0;
+
+  }
+
+  &__map {
+
+    width: 100vw;
+    height: 45vh;
+    margin-top: 5rem;
+    background-image: url('../../assets/images/ContactPage-Map.png');
+    background-size: cover;
+    background-position: center center;
+    cursor: pointer;
+
+  }
+
+}
+
+@import './responsive.scss';

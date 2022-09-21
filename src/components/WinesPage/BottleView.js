@@ -25,6 +25,8 @@ const BottleWiew = ( {
 
     <div className="winespage__bottles--container">
 
+      <div className="winespage__logo"></div>
+
       <div className={`winespage__bottles`}>
       
         <div className={`winespage__bottles--bottle-container winespage__bottles--bottle-container-${bottle}`}>

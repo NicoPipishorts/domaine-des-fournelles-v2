@@ -2,10 +2,10 @@
 import { Routes, Route } from 'react-router-dom';
 
 // --  IMPORT COMPONENTS
-import NavBar from "../NavBar";
 import HeroPage from '../HeroPage';
 import DomainePage from '../DomainePage';
 import WinesPage from '../WinesPage';
+import ContactPage from '../ContactPage';
 
 // -- IMPORT ASSETS
 import './styles.scss';
@@ -28,6 +28,10 @@ const App = () => {
       <Route
         path='/vins' 
         element={<WinesPage />} 
+      />
+      <Route
+        path='/contact' 
+        element={<ContactPage />} 
       />
     
     </Routes>

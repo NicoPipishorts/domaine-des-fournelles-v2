@@ -1,0 +1,204 @@
+@media only screen and (max-width: 480px) {
+
+  .contactpage {
+
+    &__wrapper {
+  
+      padding-bottom: calc(100vw/5);
+      overflow-x: hidden;
+      
+    }
+  
+    &__logo {
+  
+      width: 110px;
+      height: 110px;
+  
+    }
+  
+    &__container {
+      
+      width: 90vw;
+      margin-left: unset;
+      padding: 1.5rem;
+      padding-top: 130px;
+  
+    }
+  
+    &__container h1 {
+  
+      max-width: unset;
+      font-size: 2.5rem;
+  
+    }
+  
+    &__container h2 {
+
+      max-width: unset;
+      font-size: 1.5rem;
+  
+    }
+  
+    &__container p {
+  
+      font-size: 1rem;
+      
+    }
+
+    &__form {
+
+      max-width: unset;
+
+    }
+  
+    &__form input, &__form input::placeholder  {
+      
+      font-size: 1.2rem;
+  
+    }
+  
+    &__form div:last-child {
+  
+      display: flex;
+      justify-content: flex-end;
+
+    }
+
+    &__map {
+
+      background-size: 200%;
+  
+    }  
+  
+  }
+
+}
+
+@media only screen and (min-width: 481px) and (max-width: 850px) {
+
+  .contactpage {
+  
+    &__logo {
+  
+      width: 130px;
+      height: 130px;
+  
+    }
+  
+    &__container {
+      
+      width: 70vw;
+      margin-left: unset;
+      padding: 1.5rem;
+      padding-top: 80px;
+  
+    }
+  
+    &__container h1 {
+  
+      max-width: unset;
+      font-size: 2.5rem;
+  
+    }
+  
+    &__container h2 {
+
+      max-width: unset;
+      font-size: 1.5rem;
+  
+    }
+  
+    &__container p {
+  
+      font-size: 1rem;
+      
+    }
+
+    &__form {
+
+      max-width: 65vw;
+
+    }
+  
+    &__form input, &__form input::placeholder  {
+      
+      font-size: 1.2rem;
+  
+    }
+  
+    &__form div:last-child {
+  
+      display: flex;
+      justify-content: flex-end;
+
+    }
+
+    &__map {
+      
+      height: 70vh;;
+  
+    }    
+  
+  }
+
+}
+
+
+@media only screen and (min-width: 850px) and (max-width: 1366px) {
+
+  .contactpage {
+  
+    &__logo {
+  
+      width: 150px;
+      height: 150px;
+  
+    }
+  
+    &__container {
+      
+      margin-left: unset;
+      padding: 1.5rem;
+      padding-top: 150px;
+  
+    }
+  
+    &__container h1 {
+  
+      font-size: 3rem;
+  
+    }
+  
+    &__container h2 {
+  
+      font-size: 1.5rem;
+  
+    }
+  
+    &__container p {
+  
+      font-size: 1rem;
+      
+    }
+
+    &__form {
+      max-width: unset;
+    }
+  
+    &__form input, &__form input::placeholder  {
+      
+      font-size: 1.2rem;
+  
+    }
+  
+    &__form div:last-child {
+  
+      display: flex;
+      justify-content: flex-end;
+
+    }
+  
+  
+  }
+
+}
