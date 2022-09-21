@@ -23,9 +23,9 @@
 
   &__controls li {
 
-    width: 4rem;
-    height: 4rem;
-
+    width: 3.6rem;
+    height: 3.6rem;
+    
   }
 
   &__controls li:before {
@@ -143,6 +143,24 @@
 @media only screen and (min-width: 481px) and (max-width: 850px) {
   
   .winespage {
+
+    &__controls {
+
+    width: 4rem;
+    }
+
+    &__controls li {
+  
+      width: 4rem;
+      height: 4rem;
+      
+    }
+  
+    &__controls li:before {
+      width: 1rem;
+      height: 1rem;
+  
+    }
 
     &__logo {
       width: 110px;
