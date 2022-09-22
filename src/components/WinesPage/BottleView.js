@@ -21,6 +21,8 @@ const BottleWiew = ( {
 
   return (
 
+    <>
+
     <div className="winespage__bottles--container">
 
       <div className={`winespage__bottles`}>
@@ -75,7 +77,7 @@ const BottleWiew = ( {
       </div>
 
     </div>
-
+    </>
   )
 
 }
