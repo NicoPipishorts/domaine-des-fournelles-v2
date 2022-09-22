@@ -1,5 +1,5 @@
 {
-  "name": "doamine-des-fournelles",
+  "name": "Domaine-des-Fournelles",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -38,5 +38,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "description": "Site vitrine pour les vins de Guillaume Dumontet, Domaine des Fournelles",
+  "main": "index.js",
+  "repository": "git@github.com:NicoPipishorts/domaine-des-fournelles-v2.git",
+  "author": "NicoPipishorts <87517338+NicoPipishorts@users.noreply.github.com>",
+  "license": "MIT"
 }
