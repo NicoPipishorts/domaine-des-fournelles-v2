@@ -1,5 +1,7 @@
 // -- IMPORT NPM
 import { Routes, Route } from 'react-router-dom';
+// import { useEffect } from 'react';
+// import { useDispatch } from 'react-redux';
 
 // --  IMPORT COMPONENTS
 import HeroPage from '../HeroPage';
@@ -9,8 +11,18 @@ import ContactPage from '../ContactPage';
 
 // -- IMPORT ASSETS
 import './styles.scss';
+import { getWines } from '../../actions/main';
 
 const App = () => {
+
+  // const dispatch = useDispatch();
+
+  // useEffect(
+  //   () => {
+  //     dispatch(getWines());
+  //     console.log("%c Dispatching request to retreive the wines list", "color: orange; font-weight: bold");
+  //   }, []
+  // );
 
   return (
 

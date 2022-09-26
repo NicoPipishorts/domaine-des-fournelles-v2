@@ -99,16 +99,30 @@
         background-repeat: no-repeat;
 
         &-Elixir {
-          background-color: vars.$color-Elixir-blue2;
+          background-color: vars.$color-Elixir-D;
           background-image: url(../../assets/images/Wine-BottleElixir.png), 
-                            radial-gradient(circle, vars.$color-Elixir-blue1, vars.$color-Elixir-blue2);
+                            radial-gradient(circle, vars.$color-Elixir-L, vars.$color-Elixir-D);
         }
 
         &-Godefroy {
-          background-color: vars.$color-Godefroy-yellow2;
+          background-color: vars.$color-Godefroy-D;
           background-position: top center;
           background-image: url(../../assets/images/Wine-BottleGodefroy.png), 
-                            radial-gradient(circle, vars.$color-Godefroy-yellow1, vars.$color-Godefroy-yellow2);
+                            radial-gradient(circle, vars.$color-Godefroy-D, vars.$color-Godefroy-L);
+        }
+
+        &-Brouilly {
+          background-color: vars.$color-Brouilly-D;
+          background-position: top center;
+          background-image: url(../../assets/images/Wine-BottleBrouilly.png), 
+                            radial-gradient(circle, vars.$color-Brouilly-D, vars.$color-Brouilly-L);
+        }
+
+        &-CDB {
+          background-color: vars.$color-CDB-D;
+          background-position: top center;
+          background-image: url(../../assets/images/Wine-BottleCDB.png), 
+                            radial-gradient(circle, vars.$color-CDB-L, vars.$color-CDB-D);
         }
       
       }
@@ -128,14 +142,26 @@
         bottom: 0;
 
         &-Elixir {
-          border-top: 2px solid vars.$color-Elixir-blue2;
-          background: linear-gradient(vars.$color-Elixir-blue1,  vars.$color-Elixir-blue2);
-          box-shadow: 0 5px 25px rgba(vars.$color-Elixir-blue2, .8); 
+          border-top: 2px solid vars.$color-Elixir-D;
+          background: linear-gradient(vars.$color-Elixir-L,  vars.$color-Elixir-D);
+          box-shadow: 0 5px 25px rgba(vars.$color-Elixir-D, .8); 
         }
 
         &-Godefroy {
-          border-top: 2px solid vars.$color-Godefroy-yellow2;
-          background: linear-gradient(vars.$color-Godefroy-yellow2,  vars.$color-Godefroy-yellow1);
+          border-top: 2px solid vars.$color-Godefroy-D;
+          background: linear-gradient(vars.$color-Godefroy-L,  vars.$color-Godefroy-D);
+          box-shadow: 0 5px 25px rgba(vars.$color-black, .8); 
+        }
+
+        &-Brouilly {
+          border-top: 2px solid vars.$color-Brouilly-D;
+          background: linear-gradient(vars.$color-Brouilly-D,  vars.$color-Brouilly-L);
+          box-shadow: 0 5px 25px rgba(vars.$color-black, .8); 
+        }
+
+        &-CDB {
+          border-top: 2px solid vars.$color-CDB-D;
+          background: linear-gradient(vars.$color-CDB-D,  vars.$color-CDB-L);
           box-shadow: 0 5px 25px rgba(vars.$color-black, .8); 
         }
         
@@ -146,11 +172,19 @@
         }
 
           em.Elixir {
-            color: vars.$color-pink;
+            color: vars.$color-hve;
           }
 
           em.Godefroy {
             color: vars.$color-red;
+          }
+
+          em.Brouilly {
+            color: vars.$color-yellow;
+          }
+
+          em.CDB {
+            color: vars.$color-Elixir-D;
           }
 
         p > em {
@@ -179,6 +213,18 @@
             -webkit-text-fill-color: transparent;
           }
 
+          p.Brouilly {
+            background: -webkit-linear-gradient(#fefefe, #cecece);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          p.CDB {
+            background: -webkit-linear-gradient(#fefefe, #cecece);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
 
       }
 
@@ -201,6 +247,18 @@
           background-image: url(../../assets/images/Wine-TitleGodefroy.png);
         }
 
+        &-Brouilly {
+          min-width: 480px;
+          height: 150px;
+          background-image: url(../../assets/images/Wine-TitleBrouilly.png);
+        }
+
+        &-CDB {
+          min-width: 480px;
+          height: 150px;
+          background-image: url(../../assets/images/Wine-TitleCDB.png);
+        }
+
       }
 
       &-container > h3 {
@@ -212,7 +270,19 @@
       }
 
         &-container > h3.Elixir {
-          color: vars.$color-white;
+          color: vars.$color-hve;
+        }
+
+        &-container > h3.Godefroy {
+          color: vars.$color-red;
+        }
+
+        &-container > h3.Brouilly {
+          color: vars.$color-yellow;
+        }
+
+        &-container > h3.CDB {
+          color: vars.$color-Elixir-D;
         }
 
       &-container > aside > ul {
@@ -222,14 +292,20 @@
 
         li {
           padding-left: 1rem;
-          line-height: 2rem;;
+          line-height: 2.4rem;;
         }
 
       }
 
-        &-container > aside > ul.Elixir {
-          color: vars.$color-white;
-        }
+      &-container > aside > ul.Elixir, 
+      &-container > aside > ul.Brouilly, 
+      &-container > aside > ul.CDB {
+        color: vars.$color-white;
+      }
+
+      &-container > aside >  {
+        color: vars.$color-white;
+      }
 
       &-hve {
         width: 30vw;
@@ -252,8 +328,18 @@
         }
 
         &-Godefroy{
-          background-image: url(../../assets/images/HVE-B.png);
-          color: vars.$color-black;
+          background-image: url(../../assets/images/HVE-R.png);
+          color: vars.$color-red;
+        }
+
+        &-Brouilly{
+          background-image: url(../../assets/images/HVE-Y.png);
+          color: vars.$color-yellow;
+        }
+
+        &-CDB{
+          background-image: url(../../assets/images/HVE-DB.png);
+          color: vars.$color-Elixir-D;
         }
       
       }

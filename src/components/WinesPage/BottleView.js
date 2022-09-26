@@ -16,7 +16,8 @@ const BottleWiew = ( {
   degree, 
   grape, 
   ground, 
-  aging 
+  aging,
+  recompenses
 } ) => {
 
   return (
@@ -62,11 +63,22 @@ const BottleWiew = ( {
               <li><em className={`${bottle}`}>Domaine</em> : Domaine des Fournelles</li>
               <li><em className={`${bottle}`}>Millésime</em> : {year}</li>
               <li><em className={`${bottle}`}>Région</em> : {region}</li>
-              <li><em className={`${bottle}`}>Appéllation</em> : {appel}</li>
+              <li><em className={`${bottle}`}>Appellation</em> : {appel}</li>
               <li><em className={`${bottle}`}>Degré</em> : {degree}&deg;</li>
               <li><em className={`${bottle}`}>Cépage</em> : {grape}</li>
               <li><em className={`${bottle}`}>Nature du sol</em> : {ground}</li>
               <li><em className={`${bottle}`}>Elevage</em> : {aging}</li>
+              <li><em className={`${bottle}`}>Récompense</em> : 
+                <ul>
+                  {
+                    recompenses.map((rec, i) => (
+                      <>
+                      <li key={bottle+i}>- {rec}</li>
+                      </>
+                    ))
+                  }
+                </ul>              
+              </li>
             </ul>
           </aside>
       

@@ -1,5 +1,5 @@
 // -- IMPORT NPM
-import React, { useState, useLayoutEffect } from 'react';
+import React, { useLayoutEffect } from 'react';
 
 // --  IMPORT COMPONENTS
 import NavBar from '../NavBar';
@@ -13,6 +13,8 @@ const WinesPage = () => {
 
   const DataElixir = Data.Elixir;
   const DataGodefroy = Data.Godefroy;
+  const DataBrouilly = Data.Brouilly;
+  const DataCDB = Data.CDB;
 
   let i=0;
   const slides  = document.getElementsByClassName('winespage__bottles--container');
@@ -29,8 +31,6 @@ const WinesPage = () => {
     i = ((i - 1 + slides.length) % slides.length);
     slides[i].classList.add(activeClass);
   }
-
-  console.log('th current slide value is:  ', i);
 
   useLayoutEffect(
     () => {
@@ -52,6 +52,10 @@ const WinesPage = () => {
     <BottleView bottle="Elixir" {...DataElixir} />
 
     <BottleView bottle="Godefroy" {...DataGodefroy} />
+
+    <BottleView bottle="Brouilly" {...DataBrouilly} />
+
+    <BottleView bottle="CDB" {...DataCDB} />
 
     </>
 
