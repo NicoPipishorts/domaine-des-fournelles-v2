@@ -152,6 +152,26 @@
   
         }
 
+        &-container > aside > ul > li > ul > li > em {
+          font-weight: 300;
+          display: inline-block;
+          min-width: 22vw;
+          text-transform: capitalize;
+        }
+
+        //* ----------------------------------------------------------------------
+        //* This is the CSS for the Characteristics of the wine ------------------ 
+        &-container > aside > ul > li > ul > li > span {
+  
+          width: .6rem;
+          height: .6rem;
+        
+        }
+  
+        &-container > aside > ul > li > ul > li > span {
+          border: 1px solid transparent;
+        }
+
         &-hve {
           width: 80vw;
           justify-content: flex-end;
@@ -212,6 +232,28 @@
   
         }
 
+        &-container > aside > ul {
+
+          li {
+            padding-left: 1rem;
+            line-height: 2rem;;
+          }
+  
+        }
+
+        //* ----------------------------------------------------------------------
+        //* This is the CSS for the Characteristics of the wine ------------------ 
+        &-container > aside > ul > li > ul > li > span {
+  
+          width: .6rem;
+          height: .6rem;
+        
+        }
+  
+        &-container > aside > ul > li > ul > li > span {
+          border: 1px solid transparent;
+        }
+
         &-hve {
           width: 70vw;
           justify-content: flex-end;
@@ -255,7 +297,7 @@
 
           li {
             padding-left: 1rem;
-            line-height: 1.8rem;
+            line-height: 2rem;
           }
         
         }

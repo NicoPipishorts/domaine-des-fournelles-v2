@@ -259,32 +259,32 @@
         background-repeat: no-repeat;
 
         &-Elixir {
-          min-width: 280px;
-          height: 150px;
+          min-width: 380px;
+          height: 180px;
           background-image: url(../../assets/images/Wine-TitleElixir.png);
         }
 
         &-Godefroy {
-          min-width: 480px;
-          height: 150px;
+          min-width: 580px;
+          height: 180px;
           background-image: url(../../assets/images/Wine-TitleGodefroy.png);
         }
 
         &-Brouilly {
-          min-width: 480px;
-          height: 150px;
+          min-width: 580px;
+          height: 180px;
           background-image: url(../../assets/images/Wine-TitleBrouilly.png);
         }
 
         &-CDB {
-          min-width: 480px;
-          height: 150px;
+          min-width: 580px;
+          height: 180px;
           background-image: url(../../assets/images/Wine-TitleCDB.png);
         }
 
         &-Passion {
-          min-width: 480px;
-          height: 150px;
+          min-width: 580px;
+          height: 180px;
           background-image: url(../../assets/images/Wine-TitlePassion.png);
         }
 
@@ -325,7 +325,7 @@
 
         li {
           padding-left: 1rem;
-          line-height: 2.4rem;;
+          line-height: 2.8rem;;
         }
 
       }
@@ -342,8 +342,8 @@
       &-container > aside > ul > li > ul > li > span {
 
         display: inline-block;
-        width: .6rem;
-        height: .6rem;
+        width: .8rem;
+        height: .8rem;
         margin-left: .5rem;
         border-radius: 50%;
       
@@ -352,7 +352,7 @@
       &-container > aside > ul > li > ul > li > em {
         font-weight: 300;
         display: inline-block;
-        min-width: 22vw;
+        min-width: 10vw;
         text-transform: capitalize;
       }
 
