@@ -1,27 +1,36 @@
 // -- IMPORT NPM
 
 // --  IMPORT COMPONENTS
+import DotRating from './DotRating';
 
 // -- IMPORT ASSETS
 import './styles.scss';
 
 const BottleWiew = ( { 
   bottle, 
-  desc, 
-  assoc, 
-  conserv, 
-  year, 
-  region, 
-  appel, 
-  degree, 
-  grape, 
-  ground, 
-  aging,
-  recompenses
+  region,
+  appel,
+  cepage,
+  conditionnement,
+  desc,
+  caract,
+  garde,
+  temp,
+  assoc,
 } ) => {
+  
+  const dots =
+    Object.entries(caract).map(([key, value]) => {      
+      return (
+        <li key={key}><em className={bottle}>{key} : </em>
+          <DotRating caracts={value} bottle={bottle} />
+        </li>
+      );
+      });
 
+  console.table(caract);
+  
   return (
-
     <>
 
     <div className="winespage__bottles--container">
@@ -41,42 +50,30 @@ const BottleWiew = ( {
           <div className={`winespage__bottles--info-title winespage__bottles--info-title-${bottle}`}></div>
       
           <p className={`${bottle}`}>
-          {desc}
+            <em>COMMENTAIRE DE DEGUSTATION</em> 
+            <br />
+            {desc}
           </p>
           
           <p className={`${bottle}`}>
-            <em>ASSOCIATION METS ET VINS</em> 
+            <em>ACCORD METS ET VINS</em> 
             <br /> 
             {assoc}
           </p> 
-          
-          <p className={`${bottle}`}>
-            <em>CONSERVATION ET CONSEIL DE SERVICE </em> 
-            <br /> 
-            {conserv}
-          </p>
       
           <h3 className={`${bottle}`}>Information sur le vin</h3>
-      
+
           <aside>
             <ul className={`${bottle}`}>
               <li><em className={`${bottle}`}>Domaine</em> : Domaine des Fournelles</li>
-              <li><em className={`${bottle}`}>Millésime</em> : {year}</li>
               <li><em className={`${bottle}`}>Région</em> : {region}</li>
               <li><em className={`${bottle}`}>Appellation</em> : {appel}</li>
-              <li><em className={`${bottle}`}>Degré</em> : {degree}&deg;</li>
-              <li><em className={`${bottle}`}>Cépage</em> : {grape}</li>
-              <li><em className={`${bottle}`}>Nature du sol</em> : {ground}</li>
-              <li><em className={`${bottle}`}>Elevage</em> : {aging}</li>
-              <li><em className={`${bottle}`}>Récompense</em> : 
+              <li><em className={`${bottle}`}>Cépage</em> : {cepage}</li>
+              <li><em className={`${bottle}`}>Conditionnement</em> : {conditionnement}</li>
+              <li><em className={`${bottle}`}>Garde</em> : {garde}</li>
+              <li><em className={`${bottle}`}>Caracterisque du Vin</em> : 
                 <ul>
-                  {
-                    recompenses.map((rec, i) => (
-                      <>
-                      <li key={bottle+i}>- {rec}</li>
-                      </>
-                    ))
-                  }
+                  {dots}
                 </ul>              
               </li>
             </ul>

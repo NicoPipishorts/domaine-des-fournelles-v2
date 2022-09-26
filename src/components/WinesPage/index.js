@@ -15,6 +15,7 @@ const WinesPage = () => {
   const DataGodefroy = Data.Godefroy;
   const DataBrouilly = Data.Brouilly;
   const DataCDB = Data.CDB;
+  const DataPassion = Data.Passion;
 
   let i=0;
   const slides  = document.getElementsByClassName('winespage__bottles--container');
@@ -56,6 +57,8 @@ const WinesPage = () => {
     <BottleView bottle="Brouilly" {...DataBrouilly} />
 
     <BottleView bottle="CDB" {...DataCDB} />
+
+    <BottleView bottle="Passion" {...DataPassion} />
 
     </>
 

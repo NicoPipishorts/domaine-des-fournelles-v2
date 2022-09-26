@@ -7,7 +7,7 @@
       z-index: 500;
       position: fixed;
       transform: unset;
-      width: 100vw;
+      min-width: 100vw;
 
     }
 
@@ -21,11 +21,10 @@
 
     }
 
-    &__controls {
-    width: 3.2rem;
-    height: 3.2rem;
-    margin-left: 0;
-  }
+    &__controls li {
+    width: 3.5rem;
+    height: 3.5rem;
+    } 
 
   &__controls li:before {
     width: 1rem;
@@ -75,6 +74,13 @@
             background-image: url(../../assets/images/Wine-BottleCDB.png), 
                               radial-gradient(circle, vars.$color-CDB-L, vars.$color-CDB-D);
           }
+  
+          &-Passion {
+            background-color: vars.$color-Passion-D;
+            background-position: top center;
+            background-image: url(../../assets/images/Wine-BottlePassion.png), 
+                              radial-gradient(circle, vars.$color-Passion-L, vars.$color-Passion-D);
+          }
         
         }
   
@@ -84,7 +90,7 @@
 
         &-container {
 
-          min-height: 170vh!important;
+          min-height: 175vh!important;
 
           p > em {
             line-height: 0rem;
@@ -141,7 +147,7 @@
 
           li {
             padding-left: 1rem;
-            line-height: 1.5rem;
+            line-height: 1.8rem;
           }
   
         }
