@@ -23,15 +23,14 @@
 
   &__controls li {
 
-    width: 4rem;
-    height: 4rem;
-
+    width: 3.2rem;
+    height: 3.2rem;
+    margin-left: 0;
   }
 
   &__controls li:before {
     width: 1rem;
     height: 1rem;
-
   }
   
     &__logo {
@@ -51,17 +50,31 @@
           background-position: top 10vh center;
 
           &-Elixir {
-            background-color: vars.$color-Elixir-blue2;
+            background-color: vars.$color-Elixir-D;
             background-position: top center;
             background-image: url(../../assets/images/Wine-BottleElixir.png), 
-                              radial-gradient(circle, vars.$color-Elixir-blue1, vars.$color-Elixir-blue2);
+                              radial-gradient(circle, vars.$color-Elixir-L, vars.$color-Elixir-D);
           }
   
           &-Godefroy {
-            background-color: vars.$color-Godefroy-yellow2;
+            background-color: vars.$color-Godefroy-D;
             background-position: top center;
             background-image: url(../../assets/images/Wine-BottleGodefroy.png), 
-                              radial-gradient(circle, vars.$color-Godefroy-yellow1, vars.$color-Godefroy-yellow2);
+                              radial-gradient(circle, vars.$color-Godefroy-L, vars.$color-Godefroy-D);
+          }
+  
+          &-Brouilly {
+            background-color: vars.$color-Brouilly-D;
+            background-position: top center;
+            background-image: url(../../assets/images/Wine-BottleBrouilly.png), 
+                              radial-gradient(circle, vars.$color-Brouilly-L, vars.$color-Brouilly-D);
+          }
+  
+          &-CDB {
+            background-color: vars.$color-CDB-D;
+            background-position: top center;
+            background-image: url(../../assets/images/Wine-BottleCDB.png), 
+                              radial-gradient(circle, vars.$color-CDB-L, vars.$color-CDB-D);
           }
         
         }
@@ -91,6 +104,16 @@
           }
   
           &-Godefroy {
+            min-width: 90vw;
+            max-height: 8vh;
+          }
+  
+          &-Brouilly {
+            min-width: 90vw;
+            max-height: 8vh;
+          }
+  
+          &-CDB {
             min-width: 90vw;
             max-height: 8vh;
           }
@@ -220,7 +243,7 @@
         }
 
         &-hve {
-          width: 40vw;
+          width: 50vw;
           justify-content: flex-end;
         }
 

@@ -142,6 +142,7 @@
 
     &__section-text {
 
+      justify-content: flex-start;
       width: calc(100% / 4 ) * 3;
 
       h1 {
@@ -182,14 +183,16 @@
 
     &__section-text {
 
+      justify-content: flex-start;
+
       h1 {
         z-index: 0;
-        font-size: 2.6rem;;
+        font-size: 1.8rem;;
       }
 
       p {
         z-index: 0;
-        font-size: 1.2rem;
+        font-size: .9rem;
         font-weight:300;
       }
     
