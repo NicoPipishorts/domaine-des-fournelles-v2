@@ -24,9 +24,47 @@
 
 @media only screen and (min-width: 481px) and (max-width: 800px) {
 
+  .container-hero {
+
+    height: 102vh;
+
+    &__logo {
+
+    width: 240px;
+    height: 240px;
+
+    }
+
+  }
+
+  button.hero-logo-link svg rect {
+    transition: 3.5s;
+    stroke-dasharray: 968;
+    stroke-dashoffset: 968;
+  }
+
 }
 
 
 @media only screen and (min-width: 801px) and (max-width: 1366px) {
+
+  .container-hero {
+
+    height: 102vh;
+
+    &__logo {
+
+    width: 340px;
+    height: 340px;
+
+    }
+
+  }
+
+  button.hero-logo-link svg rect {
+    transition: 3.5s;
+    stroke-dasharray: 1368;
+    stroke-dashoffset: 1368;
+  }
 
 }
