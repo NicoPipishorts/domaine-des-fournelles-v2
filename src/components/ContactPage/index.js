@@ -54,52 +54,60 @@ const ContactPage = () => {
 
       <main className="contactpage__container">
 
-        <h1>Contact</h1>
+        <section className="contactpage__col-left">
+          
+          <h1>Contact</h1>
 
-        <h2> Domaine des Fournelles</h2>
+          <h2> Domaine des Fournelles</h2>
+          
+          <p>Guillaume Dumontet et Mariannick Bernillon.</p>
+          
+          <p>
+            137 Montée de Godefoyr, <br /> 
+            69220 Saint-Lager, <br />
+            France
+          </p>
+          
+          <p>
+            Mariannick: +33 6 71 01 11 66 <br /> 
+            Guillaume: +33 6 79 17 27 53 <br />
+          </p>
+          
+          <p>
+            Email: domainedesfournelles@outlook.fr
+          </p>
         
-        <p>Guillaume Dumontet et Mariannick Bernillon.</p>
+        </section>
+
+        <section className="contactpage__col-right">
+
+          <form className="contactpage__form">
+
+            <h2> Envoyez nous un message</h2>
+
+            <div>
+            {/* <label>Name</label> */}
+            <input type="text" placeholder="Prénom Nom" value={formName} onChange={handleChangeName} />
+            </div>
+
+            <div>
+            {/* <label>Téléphone</label> */}
+            <input type="text" placeholder="Numéro de téléphone" value={formTel} onChange={handleChangeTel} />
+            </div>
+
+            <div>
+            {/* <label>Email</label> */}
+            <input type="email" placeholder="Adresse Mail"  value={formEmail} onChange={handleChangeEmail} />
+            </div>
+
+            <div>
+            {/* <label>Email</label> */}
+            <input type="submit" value="send" />
+            </div>
+
+          </form>
         
-        <p>
-          137 Montée de Godefoyr, <br /> 
-          69220 Saint-Lager, <br />
-          France
-        </p>
-        
-        <p>
-          Mariannick: +33 6 71 01 11 66 <br /> 
-          Guillaume: +33 6 79 17 27 53 <br />
-        </p>
-        
-        <p>
-          Email: domainedesfournelles@outlook.fr
-        </p>
-
-        <form className="contactpage__form">
-
-          <h2> Envoyez nous un message</h2>
-
-          <div>
-          {/* <label>Name</label> */}
-          <input type="text" placeholder="Prénom Nom" value={formName} onChange={handleChangeName} />
-          </div>
-
-          <div>
-          {/* <label>Téléphone</label> */}
-          <input type="text" placeholder="Numéro de téléphone" value={formTel} onChange={handleChangeTel} />
-          </div>
-
-          <div>
-          {/* <label>Email</label> */}
-          <input type="email" placeholder="Adresse Mail"  value={formEmail} onChange={handleChangeEmail} />
-          </div>
-
-          <div>
-          {/* <label>Email</label> */}
-          <input type="submit" value="send" />
-          </div>
-
-        </form>
+        </section>
 
       </main>
 

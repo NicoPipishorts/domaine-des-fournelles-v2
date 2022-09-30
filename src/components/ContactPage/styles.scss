@@ -32,9 +32,27 @@
 
   &__container {
 
-    width: 65vw;
+    width: 90%;
     margin-left: -5vw;
     padding-top: 150px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: start;
+
+  }
+
+  &__col-right, &__col-left {
+
+    width: 40%;
+
+  }
+
+  &__col-right {
+
+    padding-top: 10px;
 
   }
 
