@@ -1,5 +1,5 @@
 // -- IMPORT NPM
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 // --  IMPORT COMPONENTS
 import NavBar from '../NavBar';
@@ -39,7 +39,9 @@ const ContactPage = () => {
       window.open("https://maps.google.com/maps?daddr=:46.10987668364198,4.6699302204054645&amp;ll=");
   }
 
-  console.log("%c The vlue for the Email is : ", "color: aquamarine; font-weight: bold", formEmail);
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   return (
 

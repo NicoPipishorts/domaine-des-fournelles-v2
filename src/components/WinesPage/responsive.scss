@@ -81,6 +81,13 @@
             background-image: url(../../assets/images/Wine-BottlePassion.png), 
                               radial-gradient(circle, vars.$color-Passion-L, vars.$color-Passion-D);
           }
+  
+          &-SansArtifice {
+            background-color: vars.$color-SansArtifice-D;
+            background-position: top center;
+            background-image: url(../../assets/images/Wine-BottleSansArtifice.png), 
+                              radial-gradient(circle, vars.$color-SansArtifice-L, vars.$color-SansArtifice-D);
+          }
         
         }
   
@@ -102,25 +109,23 @@
           margin-top: 1rem;
           padding: 2rem 0;
 
-          &-Elixir {
+          &-Elixir,
+          &-Godefroy,
+          &-Brouilly,
+          &-CDB,
+          &-Passion,
+          &-SansArtifice {
             min-width: 90vw;
             max-height: 8vh;
-            background-size: 60vw;
+            background-size: 70vw;
           }
-  
-          &-Godefroy {
-            min-width: 90vw;
-            max-height: 8vh;
+
+          &-Passion {
+            background-size: 80vw;
           }
-  
-          &-Brouilly {
-            min-width: 90vw;
-            max-height: 8vh;
-          }
-  
-          &-CDB {
-            min-width: 90vw;
-            max-height: 8vh;
+          
+          &-SansArtifice {
+            background-size: 80vw;
           }
   
         }
@@ -173,10 +178,14 @@
         }
 
         &-hve {
-          width: 80vw;
-          justify-content: flex-end;
-          font-size: 1.2rem;
-          height: 90px;
+
+          &__container {
+            padding-left: unset;
+          }
+          
+          font-size: 1.1rem;
+          height: 80px;
+          padding-left: 100px;
         }
   
       }
@@ -255,8 +264,8 @@
         }
 
         &-hve {
-          width: 70vw;
-          justify-content: flex-end;
+          height: 90px;
+          padding-left: 110px;
         }
   
       }
@@ -303,8 +312,8 @@
         }
 
         &-hve {
-          width: 50vw;
-          justify-content: flex-end;
+          height: 90px;
+          padding-left: 110px;
         }
 
       }

@@ -131,6 +131,13 @@
           background-image: url(../../assets/images/Wine-BottlePassion.png), 
                             radial-gradient(circle, vars.$color-Passion-L, vars.$color-Passion-D);
         }
+
+        &-SansArtifice {
+          background-color: vars.$color-SansArtifice-D;
+          background-position: top center;
+          background-image: url(../../assets/images/Wine-BottleSansArtifice.png), 
+                            radial-gradient(circle, vars.$color-SansArtifice-L, vars.$color-SansArtifice-D);
+        }
       
       }
 
@@ -177,7 +184,14 @@
           background: linear-gradient(vars.$color-Passion-D,  vars.$color-Passion-L);
           box-shadow: 0 5px 25px rgba(vars.$color-black, .8); 
         }
+
+        &-SansArtifice {
+          border-top: 2px solid vars.$color-SansArtifice-D;
+          background: linear-gradient(vars.$color-SansArtifice-D,  vars.$color-SansArtifice-L);
+          box-shadow: 0 5px 25px rgba(vars.$color-black, .8); 
+        }
         
+        //* ----- Color for the LI list EM tabgs  ----------------------------------------
         em {
           font-style: normal;
           font-weight: 500;
@@ -202,6 +216,10 @@
 
           em.Passion {
             color: vars.$color-pink;
+          }
+
+          em.SansArtifice {
+            color: vars.$color-brown;
           }
 
         p > em {
@@ -248,6 +266,12 @@
             -webkit-text-fill-color: transparent;
           }
 
+          p.SansArtifice {
+            background: -webkit-linear-gradient(#fefefe, #F0F0F0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
 
       }
 
@@ -257,6 +281,7 @@
         background-position: center center;
         background-size: contain;
         background-repeat: no-repeat;
+        overflow: hidden;
 
         &-Elixir {
           min-width: 380px;
@@ -288,6 +313,12 @@
           background-image: url(../../assets/images/Wine-TitlePassion.png);
         }
 
+        &-SansArtifice {
+          min-width: 580px;
+          height: 180px;
+          background-image: url(../../assets/images/Wine-TitleSansArtifice.png);
+        }
+
       }
 
       &-container > h3 {
@@ -297,6 +328,8 @@
         font-weight: 500;
         font-size: 1.6rem;
       }
+
+      //* ----- Colors for the HR3 for the wine Information --------------------------- 
 
         &-container > h3.Elixir {
           color: vars.$color-hve;
@@ -318,6 +351,10 @@
           color: vars.$color-pink;
         }
 
+        &-container > h3.SansArtifice {
+          color: vars.$color-brown;
+        }
+
       &-container > aside > ul {
         width: 70vw;
         font-size: 1.4rem;
@@ -333,7 +370,8 @@
       &-container > aside > ul.Elixir, 
       &-container > aside > ul.Brouilly, 
       &-container > aside > ul.CDB, 
-      &-container > aside > ul.Passion {
+      &-container > aside > ul.Passion,
+      &-container > aside > ul.SansArtifice, {
         color: vars.$color-white;
       }
 
@@ -360,6 +398,7 @@
         border: 1px solid transparent;
       }
 
+        //* ----- Dot Notation for Elixir --------------------------------------------
         &-container > aside > ul > li > ul > li > em.Elixir {
           color: vars.$color-white;
           } 
@@ -374,6 +413,7 @@
             border-color: vars.$color-hve;
           } 
 
+        //* ----- Dot Notation for Godefroy --------------------------------------------
         &-container > aside > ul > li > ul > li > em.Godefroy {
           color: vars.$color-black;
           } 
@@ -388,6 +428,7 @@
             border-color: vars.$color-red;
           } 
 
+        //* ----- Dot Notation for Brouilly --------------------------------------------
         &-container > aside > ul > li > ul > li > em.Brouilly {
           color: vars.$color-white;
           } 
@@ -402,6 +443,7 @@
             border-color: vars.$color-yellow;
           } 
 
+        //* ----- Dot Notation for Cote de Brouilly : CDB --------------------------------------------
         &-container > aside > ul > li > ul > li > em.CDB {
           color: vars.$color-white;
           } 
@@ -416,6 +458,7 @@
             border-color: vars.$color-Elixir-D;
           } 
 
+        //* ----- Dot Notation for Passion --------------------------------------------
         &-container > aside > ul > li > ul > li > em.Passion {
           color: vars.$color-white;
           } 
@@ -429,19 +472,41 @@
             background-color: transparent;
             border-color: vars.$color-pink;
           } 
+
+        //* ----- Dot Notation for Sans Artifice --------------------------------------------
+        &-container > aside > ul > li > ul > li > em.SansArtifice {
+          color: vars.$color-white;
+          } 
+
+          &-container > aside > ul > li > ul > li > span.SansArtifice {
+            background-color: vars.$color-brown;
+            border-color: vars.$color-brown;
+          } 
+
+          &-container > aside > ul > li > ul > li > span.emptySansArtifice {
+            background-color: transparent;
+            border-color: vars.$color-brown;
+          } 
       
       &-hve {
-        width: 30vw;
+
+        &__container {
+          width: 70%;
+          box-sizing: border-box;
+          padding-left: 1.5rem;
+        }
+
         height: 110px;
         margin-top: 3rem;
+        padding-left: 130px;
         display: flex;
-        justify-content: flex-end;
+        justify-content: flex-start;
         align-items: center;
         background-position: center left;
         background-size: contain;
         background-repeat: no-repeat;
         color: vars.$color-hve;
-        text-align: right;
+        text-align: left;
         font-size: 1.6rem;
         font-weight: 300;
 
@@ -466,8 +531,13 @@
         }
 
         &-Passion{
-          background-image: url(../../assets/images/HVE-W.png);
-          color: vars.$color-white;
+          background-image: url(../../assets/images/HVE-P.png);
+          color: vars.$color-pink;
+        }
+
+        &-SansArtifice{
+          background-image: url(../../assets/images/HVE-Br.png);
+          color: vars.$color-brown;
         }
       
       }

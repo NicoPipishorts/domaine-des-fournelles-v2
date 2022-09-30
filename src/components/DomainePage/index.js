@@ -1,4 +1,5 @@
 // -- IMPORT NPM
+import { useEffect } from 'react';
 
 // --  IMPORT COMPONENTS
 import NavBar from '../NavBar';
@@ -47,6 +48,10 @@ const GalleryImages = [
 ]
 
 const DomainePage = () => {
+
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []);
 
   return (
     <>

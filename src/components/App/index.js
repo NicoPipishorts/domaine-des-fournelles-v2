@@ -11,18 +11,8 @@ import ContactPage from '../ContactPage';
 
 // -- IMPORT ASSETS
 import './styles.scss';
-import { getWines } from '../../actions/main';
 
 const App = () => {
-
-  // const dispatch = useDispatch();
-
-  // useEffect(
-  //   () => {
-  //     dispatch(getWines());
-  //     console.log("%c Dispatching request to retreive the wines list", "color: orange; font-weight: bold");
-  //   }, []
-  // );
 
   return (
 
