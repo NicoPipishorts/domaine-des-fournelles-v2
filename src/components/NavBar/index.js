@@ -28,7 +28,7 @@ const NavBar = () => {
           section='vins'
           icon={IconWine}
         />
-        <NavbarButton
+        {/* <NavbarButton
           title='News'
           section='news'
           icon={IconNews}
@@ -37,7 +37,7 @@ const NavBar = () => {
           title='Boutique'
           section='boutique'
           icon={IconBoutique}
-        />
+        /> */}
         <NavbarButton
           title='Contact'
           section='contact'

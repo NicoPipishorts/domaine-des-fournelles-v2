@@ -8,6 +8,7 @@ import HeroPage from '../HeroPage';
 import DomainePage from '../DomainePage';
 import WinesPage from '../WinesPage';
 import ContactPage from '../ContactPage';
+import BoutiquePage from '../BoutiquePage';
 
 // -- IMPORT ASSETS
 import './styles.scss';
@@ -30,6 +31,10 @@ const App = () => {
       <Route
         path='/vins' 
         element={<WinesPage />} 
+      />
+      <Route
+        path='/boutique' 
+        element={<BoutiquePage />} 
       />
       <Route
         path='/contact' 

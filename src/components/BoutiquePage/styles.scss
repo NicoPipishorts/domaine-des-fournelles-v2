@@ -1,0 +1,37 @@
+@use "../../styles/vars";
+
+.boutique {
+
+  &__wrapper {
+
+    min-width: 100%;
+    min-height: 100%;
+    box-sizing: border-box;
+    padding: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    background-image: radial-gradient(circle, vars.$color-CDB-L, vars.$color-CDB-D);
+
+  }
+
+  &__wrapper h1 {
+
+    font-size: 3rem;
+
+  }
+
+  &__logo {
+
+    position: absolute;
+    top: 20px;
+    right: 50px;
+    width: 180px;
+    height: 180px;
+    background-image: url(../../assets/images/PageLogo-W.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+
+  }
+
+}

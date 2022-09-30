@@ -23,10 +23,10 @@
       padding: 0;
       margin: 0;
       min-width: calc(100vw / 5);
-      min-height: calc(100vw / 5);
+      max-height: 70%;
       box-sizing: border-box;
-      padding-top: .5rem;
-      padding-bottom: 1.3rem;
+      padding-top: .7rem;
+      padding-bottom: .7rem;
 
       border-right: none;
       border-top: 4px solid vars.$color-white;
@@ -34,7 +34,7 @@
 
 
       &--icons {
-        width: 70%;
+        width: 50%;
         // margin-left: .4rem;
       }
 
