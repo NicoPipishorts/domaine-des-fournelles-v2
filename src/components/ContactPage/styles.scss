@@ -40,8 +40,13 @@
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: center;
-    align-items: start;
+    align-items: flex-start;
 
+  }
+
+  &__col-left > p > a {
+    color: vars.$color-white;
+    text-decoration: none;
   }
 
   &__col-right, &__col-left {
@@ -50,10 +55,8 @@
 
   }
 
-  &__col-right {
-
-    padding-top: 10px;
-
+  &__col-right > h1 {
+    color: vars.$color-red!important;
   }
 
   &__container h1 {
@@ -92,7 +95,6 @@
   &__form {
 
     max-width: 40vw;
-    margin-top: 3rem;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;

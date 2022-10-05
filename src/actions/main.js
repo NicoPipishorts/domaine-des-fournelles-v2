@@ -20,3 +20,12 @@ export const setWines = (value) => ({
   type: SET_WINES,
   value,
 });
+
+// ACTION TYPE SET_FORM_FIELD
+export const SET_FORM_FIELD = 'SET_FORM_FIELD';
+// ACTION CREATOR setFormField
+export const setFormField = (field, value) => ({
+  type: SET_FORM_FIELD,
+  field,
+  value,
+});

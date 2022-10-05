@@ -1,9 +1,11 @@
 // -- IMPORT NPM
 import { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import axios from 'axios';
 
 // --  IMPORT COMPONENTS
 import NavBar from '../NavBar';
+import { setFormField } from "../../actions/main";
 
 // -- IMPORT ASSETS
 import './styles.scss';
@@ -12,46 +14,16 @@ const ContactPage = () => {
 
   const API_PATH = process.env.REACT_APP_URL;
 
-  const [ formFName, setFormFName ] = useState('');
-  const [ formLName, setFormLName ] = useState('');
-  const [ formTel, setFormTel ] = useState('');
-  const [ formEmail, setFormEmail ] = useState('');
-  const [ formText, setFormText ] = useState('Laissez nous un message.');
-  const [ formSent, setFormSent ] = useState(false);
-  const [ formError, setFormError ] = useState();
+  const dispatch = useDispatch();
+  const contact = useSelector((state) => state.main.contact);
 
-  const handleFormError = (v) => {
-    setFormError(v);
-  }
-
-  const handleChangeFName = (event) => {
-    setFormFName(event.target.value);
-  }
-
-  const handleChangeLName = (event) => {
-    setFormLName(event.target.value);
-  }
-
-  const handleChangeTel = (event) => {
-    setFormTel(event.target.value);
-  }
-
-  const handleChangeEmail = (event) => {
-    setFormEmail(event.target.value);
-  }
-
-  const handleChangeText = (event) => {
-    setFormText(event.target.value);
+  const handleFormField = (e) => {
+    dispatch(setFormField(e.target.name, e.target.value));
   }
 
   const handleFormSubmit = (e) => {
 
     const data = {
-      fname: formFName,
-      lname: formLName,
-      tel: formTel,
-      email: formEmail,
-      message: formText
     };
 
     e.preventDefault();
@@ -66,11 +38,9 @@ const ContactPage = () => {
       data: data
     })
       .then(result => {
-        setFormSent(result.data.sent);
         console.log("%c The email was sent with success", "color: green; font-weight: bold;", result.data);
       })
       .catch(error => {
-        setFormError(error.message);
         console.log("%c An error occured, here is the error message:", "color: red; font-weight: bold;", error);
       });
   };
@@ -106,7 +76,7 @@ const ContactPage = () => {
 
           <h2> Domaine des Fournelles</h2>
           
-          <p>Guillaume Dumontet et Mariannick Bernillon.</p>
+          <p>Guillaume et Mariannick Dumontet.</p>
           
           <p>
             137 Montée de Godefoyr, <br /> 
@@ -120,12 +90,14 @@ const ContactPage = () => {
           </p>
           
           <p>
-            Email: domainedesfournelles@outlook.fr
+            <a href="mailto: domainedesfournelles@outlook.fr">Email: domainedesfournelles@outlook.fr</a>
           </p>
         
         </section>
 
         <section className="contactpage__col-right">
+          
+          <h1 area-hidden="true">Contact</h1>
 
           <form className="contactpage__form">
 
@@ -135,35 +107,35 @@ const ContactPage = () => {
 
               <div>
                 {/* <label>Name</label> */}
-                <input type="text" placeholder="Prénom" value={formFName} 
-                  onChange={handleChangeFName} 
+                <input type="text" placeholder="Prénom" name="fname" value={contact.fname} 
+                  onChange={handleFormField} 
                 />
               </div>
 
               <div>
                 {/* <label>Name</label> */}
-                <input type="text" placeholder="Nom" value={formLName} 
-                  onChange={handleChangeLName} 
+                <input type="text" placeholder="Nom" name="lname" value={contact.lname} 
+                  onChange={handleFormField} 
                 />
               </div>
             </div>
 
             <div>
             {/* <label>Téléphone</label> */}
-            <input type="text" placeholder="Numéro de téléphone" value={formTel} onChange={handleChangeTel} />
+            <input type="text" placeholder="Numéro de téléphone" name="tel" value={contact.tel} onChange={handleFormField} />
             </div>
 
             <div>
             {/* <label>Email</label> */}
-            <input type="email" placeholder="Adresse Mail"  value={formEmail} onChange={handleChangeEmail} />
+            <input type="email" placeholder="Adresse Mail"  name="email" value={contact.email} onChange={handleFormField} />
             </div>
 
             <div>
             {/* <label>Email</label> */}
-            <textarea value={formText} 
-              onFocus={() => {if(formText === "Laissez nous un message."){ setFormText("")}}} 
-              onBlur={() => {if(formText === ""){ setFormText("Laissez nous un message.")}}} 
-              onChange={handleChangeText} 
+            <textarea name="message" value={contact.message} 
+              onFocus={() => {if(contact.message === "Laissez nous un message."){dispatch(setFormField("message", ""))}}} 
+              onBlur={() => {if(contact.message === ""){dispatch(setFormField("message", "Laissez nous un message."))}}} 
+              onChange={handleFormField} 
               />
             </div>
 
