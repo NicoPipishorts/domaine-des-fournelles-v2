@@ -1,5 +1,6 @@
 // -- IMPORT NPM
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 // --  IMPORT COMPONENTS
 import NavBar from '../NavBar';
@@ -9,25 +10,70 @@ import './styles.scss';
 
 const ContactPage = () => {
 
-  const [ formName, setFormName ] = useState('');
+  const API_PATH = process.env.REACT_APP_URL;
+
+  const [ formFName, setFormFName ] = useState('');
+  const [ formLName, setFormLName ] = useState('');
   const [ formTel, setFormTel ] = useState('');
   const [ formEmail, setFormEmail ] = useState('');
+  const [ formText, setFormText ] = useState('Laissez nous un message.');
+  const [ formSent, setFormSent ] = useState(false);
+  const [ formError, setFormError ] = useState();
 
-  const handleChangeName = (event) => {
-    setFormName(event.target.value);
+  const handleFormError = (v) => {
+    setFormError(v);
   }
 
-  console.log("%c The vlue for the Name is : ", "color: purple; font-weight: bold", formName);
+  const handleChangeFName = (event) => {
+    setFormFName(event.target.value);
+  }
+
+  const handleChangeLName = (event) => {
+    setFormLName(event.target.value);
+  }
 
   const handleChangeTel = (event) => {
     setFormTel(event.target.value);
   }
 
-  console.log("%c The vlue for the Name is : ", "color: lime; font-weight: bold", formTel);
-
   const handleChangeEmail = (event) => {
     setFormEmail(event.target.value);
   }
+
+  const handleChangeText = (event) => {
+    setFormText(event.target.value);
+  }
+
+  const handleFormSubmit = (e) => {
+
+    const data = {
+      fname: formFName,
+      lname: formLName,
+      tel: formTel,
+      email: formEmail,
+      message: formText
+    };
+
+    e.preventDefault();
+    axios({
+      method: 'post',
+      url: `${API_PATH}`,
+      headers: { 
+        'content-type': 'application/json', 
+        // 'Access-Control-Allow-Origin': 'http://localhost:8080',  
+        // 'Access-Control-Allow-Headers': '*',
+      },
+      data: data
+    })
+      .then(result => {
+        setFormSent(result.data.sent);
+        console.log("%c The email was sent with success", "color: green; font-weight: bold;", result.data);
+      })
+      .catch(error => {
+        setFormError(error.message);
+        console.log("%c An error occured, here is the error message:", "color: red; font-weight: bold;", error);
+      });
+  };
 
   const mapsSelector = () => {
     if /* if we're on iOS, open in Apple Maps */
@@ -85,9 +131,21 @@ const ContactPage = () => {
 
             <h2> Envoyez nous un message</h2>
 
-            <div>
-            {/* <label>Name</label> */}
-            <input type="text" placeholder="Prénom Nom" value={formName} onChange={handleChangeName} />
+            <div className="contactpage__form--names-container">
+
+              <div>
+                {/* <label>Name</label> */}
+                <input type="text" placeholder="Prénom" value={formFName} 
+                  onChange={handleChangeFName} 
+                />
+              </div>
+
+              <div>
+                {/* <label>Name</label> */}
+                <input type="text" placeholder="Nom" value={formLName} 
+                  onChange={handleChangeLName} 
+                />
+              </div>
             </div>
 
             <div>
@@ -102,7 +160,16 @@ const ContactPage = () => {
 
             <div>
             {/* <label>Email</label> */}
-            <input type="submit" value="send" />
+            <textarea value={formText} 
+              onFocus={() => {if(formText === "Laissez nous un message."){ setFormText("")}}} 
+              onBlur={() => {if(formText === ""){ setFormText("Laissez nous un message.")}}} 
+              onChange={handleChangeText} 
+              />
+            </div>
+
+            <div>
+            {/* <label>Email</label> */}
+            <input type="submit" value="send" onClick={handleFormSubmit} />
             </div>
 
           </form>

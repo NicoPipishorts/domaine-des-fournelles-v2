@@ -63,10 +63,14 @@
 
     }
   
-    &__form input, &__form input::placeholder  {
+    &__form input, &__form textarea, &__form input::placeholder  {
       
-      font-size: 1.2rem;
+      font-size: 1rem;
   
+    }
+    
+    &__form textarea {
+      height: 200px;
     }
   
     &__form div:last-child {
@@ -144,10 +148,14 @@
 
     }
   
-    &__form input, &__form input::placeholder  {
+    &__form input, &__form textarea, &__form input::placeholder  {
       
-      font-size: 1.2rem;
+      font-size: 1rem;
   
+    }
+
+    &__form textarea {
+      height: 230px;
     }
   
     &__form div:last-child {
@@ -183,7 +191,7 @@
       
       margin-left: unset;
       padding: 1.5rem;
-      padding-top: 150px;
+      padding-top: 125px;
   
     }
   
@@ -209,10 +217,14 @@
       max-width: unset;
     }
   
-    &__form input, &__form input::placeholder  {
+    &__form input, &__form textarea, &__form input::placeholder  {
       
-      font-size: 1.2rem;
+      font-size: 1rem;
   
+    }
+
+    &__form textarea {
+      height: 180px;
     }
   
     &__form div:last-child {

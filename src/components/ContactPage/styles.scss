@@ -97,6 +97,16 @@
     flex-direction: column;
     flex-wrap: wrap;
 
+    &--names-container {
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+    }
+
+    &--names-container > div {
+      width: 46%;
+    }
+
   }
   
   &__form div:last-child {
@@ -106,7 +116,7 @@
 
   }
 
-  &__form input, &__form input::placeholder  {
+  &__form input, &__form textarea, &__form input::placeholder  {
     
     z-index: 1000;
     width: 100%;
@@ -124,6 +134,10 @@
     border-bottom: 1px solid vars.$color-yellow;
     outline: none;
 
+  }
+
+  &__form textarea {
+    height: 300px;
   }
 
   &__form input[type="submit"]  {

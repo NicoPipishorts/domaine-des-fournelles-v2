@@ -8,8 +8,8 @@ import NavbarButton from './Button';
 import './styles.scss';
 import IconDomaine from '../../assets/icons/domaine-w.png';
 import IconWine from '../../assets/icons/wine-w.png';
-import IconNews from '../../assets/icons/news-w.png';
-import IconBoutique from '../../assets/icons/boutique-w.png';
+// import IconNews from '../../assets/icons/news-w.png';
+// import IconBoutique from '../../assets/icons/boutique-w.png';
 import IconContact from '../../assets/icons/contact-w.png';
 
 const NavBar = () => {
