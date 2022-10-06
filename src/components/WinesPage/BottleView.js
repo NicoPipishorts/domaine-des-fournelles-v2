@@ -5,8 +5,10 @@ import DotRating from './DotRating';
 
 // -- IMPORT ASSETS
 import './styles.scss';
+import Data from "../../data";
 
 const BottleWiew = ( { 
+  lang,
   bottle, 
   region,
   appel,
@@ -22,7 +24,7 @@ const BottleWiew = ( {
   const dots =
     Object.entries(caract).map(([key, value]) => {      
       return (
-        <li key={key}><em className={bottle}>{key} : </em>
+        <li key={key}><em className={bottle}>{Data.winesPage.info[key][lang]} : </em>
           <DotRating caracts={value} bottle={bottle} />
         </li>
       );
@@ -50,28 +52,28 @@ const BottleWiew = ( {
           <div className={`winespage__bottles--info-title winespage__bottles--info-title-${bottle}`}></div>
       
           <p className={`${bottle}`}>
-            <em>COMMENTAIRE DE DEGUSTATION</em> 
+            <em>{Data.winesPage.comment[lang]}</em> 
             <br />
-            {desc}
+            {desc[lang]}
           </p>
           
           <p className={`${bottle}`}>
-            <em>ACCORD METS ET VINS</em> 
+            <em>{Data.winesPage.accord[lang]}</em> 
             <br /> 
-            {assoc}
+            {assoc[lang]}
           </p> 
       
-          <h3 className={`${bottle}`}>Information sur le vin</h3>
+          <h3 className={`${bottle}`}>{Data.winesPage.info.title[lang]}</h3>
 
           <aside>
             <ul className={`${bottle}`}>
-              <li><em className={`${bottle}`}>Domaine</em> : Domaine des Fournelles</li>
-              <li><em className={`${bottle}`}>Région</em> : {region}</li>
-              <li><em className={`${bottle}`}>Appellation</em> : {appel}</li>
-              <li><em className={`${bottle}`}>Cépage</em> : {cepage}</li>
-              <li><em className={`${bottle}`}>Conditionnement</em> : {conditionnement}</li>
-              <li><em className={`${bottle}`}>Garde</em> : {garde}</li>
-              <li><em className={`${bottle}`}>Caracterisque du Vin</em> : 
+              <li><em className={`${bottle}`}>{Data.winesPage.info.domaine[lang]}</em> : Domaine des Fournelles</li>
+              <li><em className={`${bottle}`}>{Data.winesPage.info.region[lang]}</em> : {region}</li>
+              <li><em className={`${bottle}`}>{Data.winesPage.info.appell[lang]}</em> : {appel}</li>
+              <li><em className={`${bottle}`}>{Data.winesPage.info.cepage[lang]}</em> : {cepage}</li>
+              <li><em className={`${bottle}`}>{Data.winesPage.info.condition[lang]}</em> : {conditionnement}</li>
+              <li><em className={`${bottle}`}>{Data.winesPage.info.garde[lang]}</em> : {garde}</li>
+              <li><em className={`${bottle}`}>{Data.winesPage.info.details[lang]}</em> : 
                 <ul>
                   {dots}
                 </ul>              

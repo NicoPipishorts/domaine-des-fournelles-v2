@@ -6,25 +6,26 @@ import NavbarButton from './Button';
 
 // -- IMPORT ASSETS
 import './styles.scss';
+import Data from '../../data';
 import IconDomaine from '../../assets/icons/domaine-w.png';
 import IconWine from '../../assets/icons/wine-w.png';
 // import IconNews from '../../assets/icons/news-w.png';
 // import IconBoutique from '../../assets/icons/boutique-w.png';
 import IconContact from '../../assets/icons/contact-w.png';
 
-const NavBar = () => {
+const NavBar = ( { lang } ) => {
 
   return (   
     
     <nav className="navbar">
       <ul className="navbar__container">
         <NavbarButton
-          title='Domaine'
+          title={Data.navBar.domaine[lang]}
           section='domaine'
           icon={IconDomaine}
         />
         <NavbarButton
-          title='Nos Vins'
+          title={Data.navBar.wines[lang]}
           section='vins'
           icon={IconWine}
         />
@@ -39,7 +40,7 @@ const NavBar = () => {
           icon={IconBoutique}
         /> */}
         <NavbarButton
-          title='Contact'
+          title={Data.navBar.contact[lang]}
           section='contact'
           icon={IconContact}
         />

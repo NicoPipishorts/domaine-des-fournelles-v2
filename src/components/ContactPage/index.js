@@ -8,8 +8,9 @@ import { setFormField, sendContactForm } from "../../actions/main";
 
 // -- IMPORT ASSETS
 import './styles.scss';
+import Data from "../../data";
 
-const ContactPage = () => {
+const ContactPage = ( { lang } ) => {
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -34,21 +35,32 @@ const ContactPage = () => {
         e.currentTarget.classList.remove("contactpage__form--valide");  
         e.currentTarget.classList.add("contactpage__form");            
       } else {
-        e.currentTarget.classList.add("contactpage__form--valide");        
+        e.currentTarget.classList.add("contactpage__form--valide");     
       }
+          
+      dispatch(setFormField(fieldName, fieldValue));   
 
     }
     
     //^ Verify the format of the phone number
     if(fieldName === "tel") {
 
-      const regex = /^(?!\s)[0-9-+ ]{10,17}$/;
+      const regex = /^[0-9-()]+(\s+[0-9-()]+)*$/;
+    
+      console.log("the value is now :", fieldValue);
 
-      if (regex.test(fieldValue)) { 
-
-        e.currentTarget.classList.add("contactpage__form--valide");        
-        
+      if (!regex.test(fieldValue)) { 
+        // console.log("the value fales the regex");
+        e.currentTarget.classList.remove("contactpage__form--valide");  
+        e.currentTarget.classList.add("contactpage__form");
+        dispatch(setFormField(fieldName, "")); 
+        return       
+      } else {
+        // console.log("the value passed the regex");
+        e.currentTarget.classList.add("contactpage__form--valide");     
       }
+
+      dispatch(setFormField(fieldName, fieldValue));    
 
     }
     
@@ -57,15 +69,22 @@ const ContactPage = () => {
 
       const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
 
-      if (regex.test(fieldValue)) { 
-
-        e.currentTarget.classList.add("contactpage__form--valide");        
-        
+      if (!regex.test(fieldValue)) { 
+        e.currentTarget.classList.remove("contactpage__form--valide");  
+        e.currentTarget.classList.add("contactpage__form");            
+      } else {
+        e.currentTarget.classList.add("contactpage__form--valide");     
       }
 
+      dispatch(setFormField(fieldName, fieldValue)); 
+
     }
-    
-    dispatch(setFormField(fieldName, fieldValue));
+
+    if(fieldName === "message") {
+
+      dispatch(setFormField(fieldName, fieldValue)); 
+
+    }
   
   }
 
@@ -89,7 +108,7 @@ const ContactPage = () => {
   return (
 
     <>
-    <NavBar />
+    <NavBar lang={lang} />
     
     <div className="contactpage__wrapper">
 
@@ -112,12 +131,12 @@ const ContactPage = () => {
           </p>
           
           <p>
-            Mariannick: +33 6 71 01 11 66 <br /> 
             Guillaume: +33 6 79 17 27 53 <br />
+            Mariannick: +33 6 71 01 11 66 <br /> 
           </p>
           
           <p>
-            <a href="mailto: domainedesfournelles@outlook.fr">Email: domainedesfournelles@outlook.fr</a>
+            <a href="mailto: domainedesfournelles@outlook.fr">domainedesfournelles@outlook.fr</a>
           </p>
         
         </section>
@@ -126,10 +145,10 @@ const ContactPage = () => {
           
           <h1 area-hidden="true">Contact</h1>          
 
-          <h2> Envoyez nous un message</h2>
+          <h2>{Data.contactPage.info1[lang]}</h2>
 
           <div className={ contact.sent ? `contactpage__col-right--sent-message` : `contactpage__col-right--sent-message-hidden`}> 
-            <h2>Merci pour votre message.</h2>
+            <h2>{Data.contactPage.thanks[lang]}</h2>
           </div>
 
           <form className={ contact.sent ? `contactpage__form-hide` : `contactpage__form`}>
@@ -138,47 +157,34 @@ const ContactPage = () => {
 
               <div>
                 {/* <label>Name</label> */}
-                <input type="text" placeholder="Prénom" name="fname" value={contact.fname} 
-                  onChange={handleFormField} 
-                />
+                <input type="text" placeholder={Data.contactPage.fname[lang]} name="fname" value={contact.fname} onChange={handleFormField} />
               </div>
 
               <div>
                 {/* <label>Name</label> */}
-                <input type="text" placeholder="Nom" name="lname" value={contact.lname} 
-                  onChange={handleFormField} 
-                />
+                <input type="text" placeholder={Data.contactPage.lname[lang]} name="lname" value={contact.lname} onChange={handleFormField} />
               </div>
             </div>
 
             <div>
             {/* <label>Téléphone</label> */}
-            <input type="text" placeholder="Numéro de téléphone" name="tel" value={contact.tel} onChange={handleFormField} />
+            <input type="tel" placeholder={Data.contactPage.tel[lang]} name="tel" value={contact.tel} onChange={handleFormField} />
             </div>
 
             <div>
             {/* <label>Email</label> */}
             <input 
-              type="email"
-              placeholder="Adresse Mail"  
-              name="email" 
-              value={contact.email} 
-              onChange={handleFormField} 
-            />
+              type="email" placeholder={Data.contactPage.email[lang]} name="email"  value={contact.email} onChange={handleFormField} />
             </div>
 
             <div>
             {/* <label>Email</label> */}
-            <textarea name="message" value={contact.message} 
-              onFocus={() => {if(contact.message === "Laissez nous un message."){dispatch(setFormField("message", ""))}}} 
-              onBlur={() => {if(contact.message === ""){dispatch(setFormField("message", "Laissez nous un message."))}}} 
-              onChange={handleFormField} 
-              />
+            <textarea name="message" value={contact.message} placeholder={Data.contactPage.message[lang]} onChange={handleFormField} />
             </div>
 
             <div>
             {/* <label>Email</label> */}
-            <input type="submit" value="send" onClick={handleFormSubmit} />
+            <input type="submit" value={Data.contactPage.button[lang]} onClick={handleFormSubmit} />
             </div>
 
           </form>

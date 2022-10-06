@@ -1,7 +1,7 @@
 // -- IMPORT NPM
 import { Routes, Route } from 'react-router-dom';
 // import { useEffect } from 'react';
-// import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 
 // --  IMPORT COMPONENTS
 import HeroPage from '../HeroPage';
@@ -15,6 +15,8 @@ import './styles.scss';
 
 const App = () => {
 
+  const lang = useSelector((store) => store.main.lang);
+
   return (
 
     <div className="wrapper"> 
@@ -22,23 +24,42 @@ const App = () => {
 
       <Route
         path='/'
-        element={<HeroPage />}
+        element={
+          <HeroPage 
+          lang= {lang}
+          />}
       /> 
       <Route
         path='/domaine' 
-        element={<DomainePage />} 
+        element={
+          <DomainePage
+          lang={lang}
+          />
+        } 
       />
       <Route
         path='/vins' 
-        element={<WinesPage />} 
+        element={
+          <WinesPage
+          lang={lang}
+          />
+        } 
       />
       <Route
         path='/boutique' 
-        element={<BoutiquePage />} 
+        element={
+          <BoutiquePage
+          lang={lang}
+          />
+        } 
       />
       <Route
         path='/contact' 
-        element={<ContactPage />} 
+        element={
+          <ContactPage
+          lang={lang}
+          />
+        } 
       />
     
     </Routes>

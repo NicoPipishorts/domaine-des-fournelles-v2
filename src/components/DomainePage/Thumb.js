@@ -18,9 +18,7 @@ const Thumb = ( { photo, thumb } ) => {
       className="domainepage__section-photos--li" 
       style={{ backgroundImage: `url(${thumb})`}}
     >
-      <button className="domainepage__section-photos--open" onClick={() => { setShow(true) }} >
-          ouvrir
-      </button>
+      <button className="domainepage__section-photos--open" onClick={() => { setShow(true) }} />
     </li>
     <ModalPhotos 
       photo={photo}

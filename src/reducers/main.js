@@ -9,6 +9,7 @@ import {
 export const initialState = {
   // state of visibility of Hero Page
   heroPage: true,
+  lang: "en",
   wines: [],
   contact: {
     fname: '',

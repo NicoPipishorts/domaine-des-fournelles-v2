@@ -9,14 +9,14 @@ import BottleView from './BottleView';
 import './styles.scss';
 import Data from '../../data';
 
-const WinesPage = () => {
+const WinesPage = ( { lang } ) => {
 
-  const DataElixir = Data.Elixir;
-  const DataGodefroy = Data.Godefroy;
-  const DataBrouilly = Data.Brouilly;
-  const DataCDB = Data.CDB;
-  const DataPassion = Data.Passion;
-  const DataSansArtifice = Data.SansArtifice;
+  const DataElixir = Data.winesPage.Elixir;
+  const DataGodefroy = Data.winesPage.Godefroy;
+  const DataBrouilly = Data.winesPage.Brouilly;
+  const DataCDB = Data.winesPage.CDB;
+  const DataPassion = Data.winesPage.Passion;
+  const DataSansArtifice = Data.winesPage.SansArtifice;
 
   let i=0;
   const slides  = document.getElementsByClassName('winespage__bottles--container');
@@ -47,7 +47,7 @@ const WinesPage = () => {
   return (
 
     <>
-    <NavBar />
+    <NavBar lang={lang} />
     <div className="winespage__controls">
       <ul>
         <li onClick={previousSlide}></li>
@@ -55,17 +55,17 @@ const WinesPage = () => {
       </ul>
     </div>
 
-    <BottleView bottle="Elixir" {...DataElixir} />
+    <BottleView lang={lang} bottle="Elixir" {...DataElixir} />
 
-    <BottleView bottle="Godefroy" {...DataGodefroy} />
+    <BottleView lang={lang} bottle="Godefroy" {...DataGodefroy} />
 
-    <BottleView bottle="Brouilly" {...DataBrouilly} />
+    <BottleView lang={lang} bottle="Brouilly" {...DataBrouilly} />
 
-    <BottleView bottle="CDB" {...DataCDB} />
+    <BottleView lang={lang} bottle="CDB" {...DataCDB} />
 
-    <BottleView bottle="SansArtifice" {...DataSansArtifice} />
+    <BottleView lang={lang} bottle="SansArtifice" {...DataSansArtifice} />
 
-    <BottleView bottle="Passion" {...DataPassion} />
+    <BottleView lang={lang} bottle="Passion" {...DataPassion} />
 
     </>
 
