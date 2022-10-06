@@ -55,6 +55,44 @@
 
   }
 
+  &__col-right {
+
+    &--sent-message {
+      
+      position: relative; 
+      width: 100%;
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      min-height: 40vh;
+      
+      ::before {
+        content: "";
+        position: absolute;
+        top: 0px;
+        right: 0px;
+        bottom: 0px;
+        left: 0px;
+        background-image: url(../../assets/icons/sent-orange.png);
+        background-repeat: no-repeat;
+        background-position: center left -20px;
+        opacity: 0.1;
+      }
+
+      h2 {
+        font-size: 2rem;
+        font-weight: 300;
+        color: vars.$color-yellow!important;
+      }
+
+    }
+
+    &--sent-message-hidden {
+      display: none;
+    }
+
+  }
+
   &__col-right > h1 {
     color: vars.$color-red!important;
   }
@@ -99,6 +137,10 @@
     flex-direction: column;
     flex-wrap: wrap;
 
+    &-hide {
+      display: none;
+    }
+
     &--names-container {
       display: flex;
       flex-direction: row;
@@ -107,6 +149,11 @@
 
     &--names-container > div {
       width: 46%;
+    }
+    
+    &--valide {
+      background-color: rgba(vars.$color-green, 0.3)!important;
+      border-bottom: 2px solid vars.$color-green!important;
     }
 
   }
@@ -126,7 +173,7 @@
     margin-bottom: .5rem;
     box-sizing: border-box;
     padding: .6rem 1rem;
-    padding-left: 5px;
+    padding-left: 15px;
     color: vars.$color-white;
     font-family: Roboto, "Helvetica Neue",;
     font-weight: 100;
@@ -136,6 +183,10 @@
     border-bottom: 1px solid vars.$color-yellow;
     outline: none;
 
+  }
+  
+  &__form input::placeholder {
+    padding-left: 0;
   }
 
   &__form textarea {

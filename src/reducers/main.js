@@ -2,6 +2,8 @@ import {
   SET_HERO_PAGE,
   SET_WINES,
   SET_FORM_FIELD,
+  RESET_FORM_SENT, 
+  SET_FORM_ERRORS,
 } from '../actions/main';
 
 export const initialState = {
@@ -34,12 +36,35 @@ const reducer = (state = initialState, action = {}) => {
       }
       
     case SET_FORM_FIELD:
-      console.log("I am in the reducer");
       return {
         ...state,
         contact: {
           ...state.contact,
           [action.field]: action.value
+        }
+      }
+    
+    case SET_FORM_ERRORS:
+      return {
+        ...state,
+        contact: {
+          ...state.contact,
+          sent: false,
+          errors: action.errors,
+        }
+      }
+    
+    case RESET_FORM_SENT:
+      return {
+        ...state,
+        contact: {
+          ...state.contact,
+          sent: true,
+          fname: '',
+          lname: '',
+          tel: '',
+          email: '',
+          message: 'Laissez nous un message.',
         }
       }
 

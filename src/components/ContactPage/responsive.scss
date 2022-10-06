@@ -31,6 +31,22 @@
   
     }
 
+    &__col-right {
+  
+      &--sent-message {
+
+        min-height: 20vh;
+        
+        ::before {
+          background-size: 80%;
+          background-position: center center;
+          opacity: 0.1;
+        }
+  
+      }
+  
+    }
+
     &__col-right, &__col-left {
   
       width: 90%;
@@ -113,6 +129,22 @@
       flex-wrap: nowrap;
       justify-content: center;
       align-items: center;
+  
+    }
+
+    &__col-right {
+  
+      &--sent-message {
+
+        min-height: 60vh;
+        
+        ::before {
+          background-size: 50%;
+          background-position: center left;
+          opacity: 0.1;
+        }
+  
+      }
   
     }
 
@@ -211,6 +243,22 @@
   
       font-size: 1rem;
       
+    }
+
+    &__col-right {
+  
+      &--sent-message {
+
+        min-height: 35vh;
+        
+        ::before {
+          background-size: 60%;
+          background-position: center left 40px;
+          opacity: 0.1;
+        }
+  
+      }
+  
     }
 
     &__form {

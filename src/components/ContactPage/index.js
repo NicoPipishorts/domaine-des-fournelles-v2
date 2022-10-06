@@ -1,50 +1,81 @@
 // -- IMPORT NPM
-import { useState, useEffect } from 'react';
+import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import axios from 'axios';
 
 // --  IMPORT COMPONENTS
 import NavBar from '../NavBar';
-import { setFormField } from "../../actions/main";
+import { setFormField, sendContactForm } from "../../actions/main";
 
 // -- IMPORT ASSETS
 import './styles.scss';
 
 const ContactPage = () => {
 
-  const API_PATH = process.env.REACT_APP_URL;
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, []
+  );
 
+  //^Declare dispatch construction
   const dispatch = useDispatch();
   const contact = useSelector((state) => state.main.contact);
 
+  //^Handle field validation and add to store
   const handleFormField = (e) => {
-    dispatch(setFormField(e.target.name, e.target.value));
+    const fieldName = e.target.name;
+    const fieldValue = e.target.value;
+    
+    //^ Verify the First (fname) and Last (lname) names
+    if(fieldName === "fname" || fieldName === "lname") {
+
+      const regex = /^(?!\s)([a-zA-Z]+([a-zA-Z]{4,30}(-| )[a-zA-Z]{4,30})*[a-zA-Z])$/i;
+
+      if (!regex.test(fieldValue)) { 
+        e.currentTarget.classList.remove("contactpage__form--valide");  
+        e.currentTarget.classList.add("contactpage__form");            
+      } else {
+        e.currentTarget.classList.add("contactpage__form--valide");        
+      }
+
+    }
+    
+    //^ Verify the format of the phone number
+    if(fieldName === "tel") {
+
+      const regex = /^(?!\s)[0-9-+ ]{10,17}$/;
+
+      if (regex.test(fieldValue)) { 
+
+        e.currentTarget.classList.add("contactpage__form--valide");        
+        
+      }
+
+    }
+    
+    //^ Verify the format of the email address
+    if(fieldName === "email") {
+
+      const regex = /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+      if (regex.test(fieldValue)) { 
+
+        e.currentTarget.classList.add("contactpage__form--valide");        
+        
+      }
+
+    }
+    
+    dispatch(setFormField(fieldName, fieldValue));
+  
   }
 
+  //^ Form Submit Handler
   const handleFormSubmit = (e) => {
-
-    const data = {
-    };
-
     e.preventDefault();
-    axios({
-      method: 'post',
-      url: `${API_PATH}`,
-      headers: { 
-        'content-type': 'application/json', 
-        // 'Access-Control-Allow-Origin': 'http://localhost:8080',  
-        // 'Access-Control-Allow-Headers': '*',
-      },
-      data: data
-    })
-      .then(result => {
-        console.log("%c The email was sent with success", "color: green; font-weight: bold;", result.data);
-      })
-      .catch(error => {
-        console.log("%c An error occured, here is the error message:", "color: red; font-weight: bold;", error);
-      });
+    dispatch(sendContactForm());
   };
 
+  //^ Detect the type of OS to open proper Maps APP
   const mapsSelector = () => {
     if /* if we're on iOS, open in Apple Maps */
       ((navigator.platform.indexOf("iPhone") != -1) || 
@@ -54,10 +85,6 @@ const ContactPage = () => {
   else /* else use Google */
       window.open("https://maps.google.com/maps?daddr=:46.10987668364198,4.6699302204054645&amp;ll=");
   }
-
-  useEffect(() => {
-    window.scrollTo(0, 0)
-  }, []);
 
   return (
 
@@ -97,11 +124,15 @@ const ContactPage = () => {
 
         <section className="contactpage__col-right">
           
-          <h1 area-hidden="true">Contact</h1>
+          <h1 area-hidden="true">Contact</h1>          
 
-          <form className="contactpage__form">
+          <h2> Envoyez nous un message</h2>
 
-            <h2> Envoyez nous un message</h2>
+          <div className={ contact.sent ? `contactpage__col-right--sent-message` : `contactpage__col-right--sent-message-hidden`}> 
+            <h2>Merci pour votre message.</h2>
+          </div>
+
+          <form className={ contact.sent ? `contactpage__form-hide` : `contactpage__form`}>
 
             <div className="contactpage__form--names-container">
 
@@ -127,7 +158,13 @@ const ContactPage = () => {
 
             <div>
             {/* <label>Email</label> */}
-            <input type="email" placeholder="Adresse Mail"  name="email" value={contact.email} onChange={handleFormField} />
+            <input 
+              type="email"
+              placeholder="Adresse Mail"  
+              name="email" 
+              value={contact.email} 
+              onChange={handleFormField} 
+            />
             </div>
 
             <div>
