@@ -59,7 +59,7 @@ const DomainePage = ( { lang } ) => {
     <>
     <NavBar lang={lang} />
 
-    <PageLogo className="contactpage__logo" />
+    <PageLogo className="" />
     
     <main className="domainepage-container">
 
