@@ -6,6 +6,14 @@ export const setHeroPage = (value) => ({
   value,
 });
 
+// ACTION TYPE SET_LANG
+export const SET_LANG = 'SET_LANG';
+// ACTION CREATOR setLang
+export const setLang = (value) => ({
+  type: SET_LANG,
+  value,
+});
+
 // ACTION TYPE GET_WINES
 export const GET_WINES = 'GET_WINES';
 // ACTION CREATOR setHeroPage

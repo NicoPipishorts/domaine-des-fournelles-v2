@@ -2,6 +2,7 @@
 
 // --  IMPORT COMPONENTS
 import DotRating from './DotRating';
+import PageLogo from '../App/PageLogo';
 
 // -- IMPORT ASSETS
 import './styles.scss';
@@ -29,15 +30,13 @@ const BottleWiew = ( {
         </li>
       );
       });
-
-  console.table(caract);
   
   return (
     <>
 
     <div className="winespage__bottles--container">
 
-      <div className="winespage__logo"></div>
+      <PageLogo className="winespage__logo" />
 
       <div className={`winespage__bottles`}>
       

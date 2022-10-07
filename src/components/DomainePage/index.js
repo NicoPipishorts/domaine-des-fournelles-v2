@@ -4,6 +4,7 @@ import { useEffect } from 'react';
 // --  IMPORT COMPONENTS
 import NavBar from '../NavBar';
 import Thumb from './Thumb';
+import PageLogo from '../App/PageLogo';
 
 // -- IMPORT ASSETS
 import './styles.scss';
@@ -57,6 +58,8 @@ const DomainePage = ( { lang } ) => {
   return (
     <>
     <NavBar lang={lang} />
+
+    <PageLogo className="contactpage__logo" />
     
     <main className="domainepage-container">
 

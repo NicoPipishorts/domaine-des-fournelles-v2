@@ -1,5 +1,6 @@
 import {
   SET_HERO_PAGE,
+  SET_LANG,
   SET_WINES,
   SET_FORM_FIELD,
   RESET_FORM_SENT, 
@@ -9,14 +10,14 @@ import {
 export const initialState = {
   // state of visibility of Hero Page
   heroPage: true,
-  lang: "en",
+  lang: "fr",
   wines: [],
   contact: {
     fname: '',
     lname: '',
     email: '',
     tel: '',
-    message: 'Laissez nous un message.',
+    message: '',
     sent: false,
     errors: '',
   }
@@ -28,6 +29,12 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         heroPage: action.value,
+      };
+    
+    case SET_LANG:
+      return {
+        ...state,
+        lang: action.value,
       };
       
     case SET_WINES:

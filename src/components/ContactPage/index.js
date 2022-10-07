@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 
 // --  IMPORT COMPONENTS
 import NavBar from '../NavBar';
+import PageLogo from '../App/PageLogo';
 import { setFormField, sendContactForm } from "../../actions/main";
 
 // -- IMPORT ASSETS
@@ -112,7 +113,7 @@ const ContactPage = ( { lang } ) => {
     
     <div className="contactpage__wrapper">
 
-      <div className="contactpage__logo"></div>   
+    <PageLogo className="contactpage__logo" />
 
       <main className="contactpage__container">
 

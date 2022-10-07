@@ -14,6 +14,7 @@
 
   &__controls li {
 
+    z-index: 20;
     position: relative;
     width: 5rem;
     height: 5rem;
@@ -372,7 +373,7 @@
       &-container > aside > ul.Brouilly, 
       &-container > aside > ul.CDB, 
       &-container > aside > ul.Passion,
-      &-container > aside > ul.SansArtifice, {
+      &-container > aside > ul.SansArtifice {
         color: vars.$color-white;
       }
 

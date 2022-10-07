@@ -1,3 +1,5 @@
+@use "../../styles/vars";
+
 .wrapper {
 
   width: 100%;
@@ -6,3 +8,48 @@
   margin: 0;
 
 }
+
+.langNav {
+
+  &__container {
+    
+    z-index: 10;
+    position: fixed;
+    display: flex; 
+    box-sizing: border-box;
+    align-items: flex-start;
+    left: 0;
+    padding-left: 20px;
+    padding-top: 30px;
+
+  }
+
+  &__button {
+    width: 2.8rem;
+    height: 2.8rem;
+    border: none;
+    margin-left: .7rem;
+    background-color: transparent;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-radius: 50%;
+    cursor: pointer;
+
+    &--fr {
+      background-image: url(../../assets/icons/flag-fr.png);
+    }
+
+    &--en {
+      background-image: url(../../assets/icons/flag-en.png);
+    }
+    
+    &--unselected {
+      opacity: .4;
+    }
+
+  }
+
+}
+
+@import './responsive.scss';

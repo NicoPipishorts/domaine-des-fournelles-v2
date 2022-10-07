@@ -7,8 +7,6 @@ import './styles.scss';
 
 const DotRating = ( { caracts, bottle } ) => {  
 
-console.log(caracts);
-
 return(
   <>
 
