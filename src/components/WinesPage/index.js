@@ -1,15 +1,20 @@
 // -- IMPORT NPM
 import React, { useEffect, useLayoutEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 // --  IMPORT COMPONENTS
 import NavBar from '../NavBar';
 import BottleView from './BottleView';
+import { setCurrentWineView } from '../../actions/main';
 
 // -- IMPORT ASSETS
 import './styles.scss';
 import Data from '../../data';
 
 const WinesPage = ( { lang } ) => {
+
+  const dispatch = useDispatch();
+  
 
   const DataElixir = Data.winesPage.Elixir;
   const DataGodefroy = Data.winesPage.Godefroy;
@@ -18,20 +23,29 @@ const WinesPage = ( { lang } ) => {
   const DataPassion = Data.winesPage.Passion;
   const DataSansArtifice = Data.winesPage.SansArtifice;
 
-  let i=0;
+  let i= useSelector((state) => state.main.currentWineIndex);
+
   const slides  = document.getElementsByClassName('winespage__bottles--container');
   const activeClass = 'winespage__bottles--container-active';
+
+  const handleSetWineViewChange = (v, i) => {
+    dispatch(setCurrentWineView(v, i));
+  }
 
   const nextSlide = () => {
     slides[i].classList.remove(activeClass);
     i = (i + 1) % slides.length;
     slides[i].classList.add(activeClass);
+    const wineName = slides[i].getAttribute("data-wine");
+    handleSetWineViewChange(wineName, i);
   }
 
   const previousSlide = () => {
     slides[i].classList.remove(activeClass);
     i = ((i - 1 + slides.length) % slides.length);
     slides[i].classList.add(activeClass);
+    const wineName = slides[i].getAttribute("data-wine");
+    handleSetWineViewChange(wineName, i);
   }
 
   useEffect(() => {

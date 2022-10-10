@@ -60,3 +60,12 @@ export const setFormErrors = (errors) => ({
   type: SET_FORM_ERRORS,
   errors,
 });
+
+// ACTION TYPE SET_CURRENT_WINE_VIEW
+export const SET_CURRENT_WINE_VIEW = 'SET_CURRENT_WINE_VIEW';
+// ACTION CREATOR setCurrentWineView
+export const setCurrentWineView = (value, index) => ({
+  type: SET_CURRENT_WINE_VIEW,
+  value,
+  index,
+});

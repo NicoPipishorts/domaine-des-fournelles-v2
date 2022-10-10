@@ -19,15 +19,13 @@
     
     &__buttons {
 
-      z-index: 40;
-      padding: 0;
       margin: 0;
+      width: unset;
       min-width: calc(100vw / 5);
-      max-height: unset;
-      height: 10vh;
-      box-sizing: border-box;
-      padding-top: .7rem;
-      padding-bottom: .7rem;
+      height: calc(100vw / 5);
+      padding: .4rem 0;
+      padding-bottom: env(safe-area-inset-bottom, 5px);
+      background-position: left;
 
       border-right: none;
       border-top: 4px solid vars.$color-white;
@@ -35,8 +33,7 @@
 
 
       &--icons {
-        width: 50%;
-        // margin-left: .4rem;
+        width: 50%;    
       }
 
       &--parent span {
@@ -121,12 +118,11 @@
     
     &__buttons {
       
-      padding: 0;
-      width: calc(100vh / 5);
-      height: calc(100vh / 5);
+      width: 2.6rem;
+      height: 2.6rem;
 
       &--icons {
-        width: calc(100vh / 5) -  5vh;
+        width: 120%;
       }
 
       &--parent span {
@@ -151,17 +147,16 @@
     
     &__buttons {
       
-      padding: 0;
-      width: calc(100vh / 10);
-      height: calc(100vh / 10);
+      width: 3rem;
+      height: 3rem;
 
       &--icons {
-        width: calc(100vh / 10)-2vh;
+        width: 120%;
       }
 
       &--parent span {
   
-        left: calc(100vh / 10);
+        left: 5rem;
         
       }
 

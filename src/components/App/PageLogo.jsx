@@ -24,12 +24,12 @@ const PageLogo = ( { className } ) => {
     <div className="langNav__container">
     
       <button 
-        className={`langNav__button langNav__button--fr ${lang === "fr" ? 'langNav__button--unselected' : ''}`} 
+        className={`${lang === "fr" ? 'langNav__button langNav__button--fr ' : 'langNav__button langNav__button--fr-unselected'}`} 
         value="fr"
         onClick={handleLangChange}
       />
       <button 
-        className={`langNav__button langNav__button--en ${lang === "en" ? 'langNav__button--unselected' : ''}`} 
+        className={`${lang === "en" ? 'langNav__button langNav__button--en ' : 'langNav__button langNav__button--en-unselected'}`} 
         value="en"
         onClick={handleLangChange}
       />

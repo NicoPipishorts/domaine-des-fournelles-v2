@@ -101,9 +101,9 @@ const ContactPage = ( { lang } ) => {
       ((navigator.platform.indexOf("iPhone") != -1) || 
        (navigator.platform.indexOf("iPad") != -1) || 
        (navigator.platform.indexOf("iPod") != -1))
-      window.open("maps://maps.google.com/maps?daddr=:46.10987668364198,4.6699302204054645&amp;ll=");
+      window.open("maps://maps.google.com/maps?daddr=:46.10987668364198,4.6699302204054645&amp;ll");
   else /* else use Google */
-      window.open("https://maps.google.com/maps?daddr=:46.10987668364198,4.6699302204054645&amp;ll=");
+      window.open("https://maps.google.com/maps?daddr=46.10987668364198,4.6699302204054645&amp;ll");
   }
 
   return (

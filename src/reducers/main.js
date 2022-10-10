@@ -1,6 +1,7 @@
 import {
   SET_HERO_PAGE,
   SET_LANG,
+  SET_CURRENT_WINE_VIEW,
   SET_WINES,
   SET_FORM_FIELD,
   RESET_FORM_SENT, 
@@ -11,6 +12,8 @@ export const initialState = {
   // state of visibility of Hero Page
   heroPage: true,
   lang: "fr",
+  currentWineView: "Elixir",
+  currentWineIndex: 0,
   wines: [],
   contact: {
     fname: '',
@@ -35,6 +38,13 @@ const reducer = (state = initialState, action = {}) => {
       return {
         ...state,
         lang: action.value,
+      };
+
+    case SET_CURRENT_WINE_VIEW:
+      return {
+        ...state,
+        currentWineView: action.value,
+        currentWineIndex: action.index
       };
       
     case SET_WINES:

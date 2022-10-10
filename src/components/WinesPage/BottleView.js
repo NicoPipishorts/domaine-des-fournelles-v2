@@ -34,7 +34,7 @@ const BottleWiew = ( {
   return (
     <>
 
-    <div className="winespage__bottles--container">
+    <div className="winespage__bottles--container" data-wine={bottle}>
 
       <PageLogo className="winespage__logo" />
 

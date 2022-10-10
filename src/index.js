@@ -5,6 +5,7 @@ import { Provider } from 'react-redux';
 import App from './components/App';
 
 import './styles/index.scss';
+import './index.css';
 import store from './store';
 
 const rootReactElement = (

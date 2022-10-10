@@ -5,8 +5,8 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: vars.$font;
-  padding-top: constant(safe-area-inset-top);
-  padding-top: env(safe-area-inset-top);
+  display: flex;
+  min-height: 100vh;
 }
 
 .hidden {
