@@ -3,7 +3,8 @@
   .contactpage {
 
     &__wrapper {
-  
+      
+      isolation: isolate;
       padding-bottom: calc(100vw/5);
       overflow-x: hidden;
       
