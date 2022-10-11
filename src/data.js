@@ -64,11 +64,15 @@ export default {
       },
       cepage: {
         fr: "Cépage",
-        en: "Grape Variety",
+        en: "Vine Stock",
       },
       condition: {
         fr: "Conditionnement",
         en: "Conditioning",
+      },
+      temp: {
+        fr: "Température de Servie",
+        en: "Best Served At",
       },
       garde: {
         fr: "Garde",
@@ -80,7 +84,7 @@ export default {
       },
       fruite: {
         fr: "Fruité",
-        en: "Fruity",
+        en: "Fruit",
       },
       mineral: {
         fr: "Minéral",
@@ -92,15 +96,15 @@ export default {
       } ,
       puissance: {
         fr: "puissance",
-        en: "strength",
+        en: "body",
       },
       floral: {
         fr: "floral",
-        en: "floral",
+        en: "flower",
       },
       boise: {
         fr: "boisé",
-        en: "woody",
+        en: "aok",
       } ,
       acidite: {
         fr: "acidité",

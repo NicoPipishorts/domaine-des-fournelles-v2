@@ -30,6 +30,8 @@ const BottleWiew = ( {
         </li>
       );
       });
+
+  const assocArray = assoc[lang].split(", ");
   
   return (
     <>
@@ -59,7 +61,13 @@ const BottleWiew = ( {
           <p className={`${bottle}`}>
             <em>{Data.winesPage.accord[lang]}</em> 
             <br /> 
-            {assoc[lang]}
+            <ul className="winespage__bottles--info__association-list">
+            {
+            assocArray.map((assoc) => (
+              <li>{assoc}</li>
+            ))
+            }
+            </ul>
           </p> 
       
           <h3 className={`${bottle}`}>{Data.winesPage.info.title[lang]}</h3>
@@ -70,6 +78,7 @@ const BottleWiew = ( {
               <li><em className={`${bottle}`}>{Data.winesPage.info.region[lang]}</em> : {region}</li>
               <li><em className={`${bottle}`}>{Data.winesPage.info.appell[lang]}</em> : {appel}</li>
               <li><em className={`${bottle}`}>{Data.winesPage.info.cepage[lang]}</em> : {cepage}</li>
+              <li><em className={`${bottle}`}>{Data.winesPage.info.temp[lang]}</em> : {temp}</li>
               <li><em className={`${bottle}`}>{Data.winesPage.info.condition[lang]}</em> : {conditionnement}</li>
               <li><em className={`${bottle}`}>{Data.winesPage.info.garde[lang]}</em> : {garde}</li>
               <li><em className={`${bottle}`}>{Data.winesPage.info.details[lang]}</em> : 

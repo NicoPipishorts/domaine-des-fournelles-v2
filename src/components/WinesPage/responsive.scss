@@ -152,6 +152,10 @@
           font-size: 1.2rem;
         }
     
+        &-container > p > ul {
+          text-align: left;
+        }
+    
         &-container > aside > ul {
           width: 85vw;
           font-size: .9rem;

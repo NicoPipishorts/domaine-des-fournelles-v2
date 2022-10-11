@@ -164,7 +164,7 @@
 
         &-Godefroy {
           border-top: 2px solid vars.$color-Godefroy-D;
-          background: linear-gradient(vars.$color-Godefroy-L,  vars.$color-Godefroy-D);
+          background: linear-gradient(vars.$color-Godefroy-L,  vars.$color-Godefroy-L);
           box-shadow: 0 5px 25px rgba(vars.$color-black, .8); 
         }
 
@@ -221,7 +221,7 @@
           }
 
           em.SansArtifice {
-            color: vars.$color-brown;
+            color: vars.$color-dgrey;
           }
 
         p > em {
@@ -274,7 +274,20 @@
             -webkit-text-fill-color: transparent;
           }
 
+      }
 
+      &__association-list {
+        margin-top: 0;
+        padding-left: 1.5rem;
+        list-style-type: circle;
+      }
+
+      &__association-list > li {
+        padding-bottom: .2rem;
+      }
+
+      &__association-list > li::first-letter {
+        text-transform: capitalize; 
       }
 
       &-title {
@@ -354,7 +367,7 @@
         }
 
         &-container > h3.SansArtifice {
-          color: vars.$color-brown;
+          color: vars.$color-dgrey;
         }
 
       &-container > aside > ul {
@@ -481,13 +494,13 @@
           } 
 
           &-container > aside > ul > li > ul > li > span.SansArtifice {
-            background-color: vars.$color-brown;
-            border-color: vars.$color-brown;
+            background-color: vars.$color-dgrey;
+            border-color: vars.$color-dgrey;
           } 
 
           &-container > aside > ul > li > ul > li > span.emptySansArtifice {
             background-color: transparent;
-            border-color: vars.$color-brown;
+            border-color: vars.$color-dgrey;
           } 
       
       &-hve {
@@ -538,8 +551,8 @@
         }
 
         &-SansArtifice{
-          background-image: url(../../assets/images/HVE-Br.png);
-          color: vars.$color-brown;
+          background-image: url(../../assets/images/HVE-DG.png);
+          color: vars.$color-dgrey;
         }
       
       }
