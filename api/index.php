@@ -20,164 +20,22 @@ if ($_POST)
 
 	http_response_code(200);
 	$subject = "Domaine des Fournelles, nouveau message de " . $_POST['fname'];
-	$to = "me@leshorts.com";
+	$to = "domainedesfournelles@outlook.fr";
 	$from = "contact@domainedesfournelles.com";
   $replyto = $_POST['email'];
 	
-	$msg = '
-	<!DOCTYPE html>
-  <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style type="text/css">
-
-    :root {
-      --main-text: #283556;
-      --secondary-text: #fefefe;
-    }
-
-    html, body {
-      margin: 0;
-      padding: 0;
-      font-size: 20px;
-      font-family: Helvetica, sans-serif;
-      font-weight: lighter;
-    }
-    .wrapper {
-      width: 100vw;
-      height: 100vh;
-      padding-left: 40px;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-    }
-    .logo {
-      position: absolute;
-      top: 0;
-      left: 30px;
-      width: 180px;
-      height: 180px;
-      background-image: url(http://www.domainedesfournelles.com/api/_imgs/PageLogo-B.png);
-      background-repeat: no-repeat;
-      background-size: contain;
-    }
-    .container {
-      width: 100%;
-      padding-top: 200px;
-      display: flex;
-      justify-content: flex-start;
-      align-items: flex-start;
-      flex-direction: column;
-      color: var(--main-text);
-    }
-    h1 {
-      font-size: 1.3rem;
-      line-height: 2.4rem;
-    }
-    em {
-      font-style: normal;
-      font-weight: bold;
-      background-color: var(--main-text);
-      color: var(--secondary-text);
-      padding: 8px 16px;
-      border-radius:5px;
-      white-space: nowrap;
-    }
-    .email-link {
-      color: var(--main-text);
-      text-decoration: none;
-    }
-    p {
-      margin-bottom: 20px;
-      font-weight: bold;
-    }
-    ul {
-      margin: 0;
-      list-style: none;
-    }
-    li {
-      margin-bottom: 10px;
-    }
-    .tags {
-      background-color: unset;
-      color: var(--main-text);
-      mix-blend-mode: unset;
-      font-size: 1rem;
-    }
-    .text-container {
-      z-index: 0;
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-top: -50px;
-      width: 100%;      
-    }
-    .message {
-      z-index: 5;
-      width: 94%;
-      margin-bottom: 100px;
-      padding-right: 65px;
-      box-sizing: border-box;
-      padding-top: 130px;
-      text-align: justify;
-    }
-    .quotes {
-      z-index: 0;
-      position: absolute;
-      font-family:"Times New Roman", serif;
-      font-size: 20rem;
-      color: rgba(40, 53, 86, 0.05);
-    }
-      .q-open {
-        top: 0;
-        left: 0;
-      }
-      .q-close {
-        bottom: 0;
-        right: 70px;
-        line-height: 0;
-      }
-    </style>
-  </head>
-  <body>
-
-  <div class="wrapper">
-
-    <div class="logo"></div>
-
-    <div class="container">
-
-      <h1>Hello, tu as reçu un nouveau message : '.$_POST['fname'].'</h1>
-
-      <p> 
-        Voici ses coordonées:
-        <ul>
-          <li><em class="tags">Tel :</em>'.$_POST['tel'].'</li>
-          <li><em class="tags">Email :</em> <a href="mailto:'.$_POST['email'].'" class="email-link">me@leshorts.com</a></li>
-        </ul>
-      </p>
-
-      <p> Et voici son message:</p>
-
-      <div class="text-container">
-        <div class="quotes q-open">&#x201C</div>
-        <div class="message">
-        '.nl2br($_POST['message']).'
-        </div>
-        <div class="quotes q-close">&#x201D</div>
-      </div>
-
-    </div>
-
-  </div>
-    
-  </body>
-  </html>
-	';
+	$msg = "
+          <img src='http://domainedesfournelles.com/api/_imgs/PageLogo-B.png' width='120' height='120' />
+          Hello, tu à reçu un nouveau message de : <b>".$_POST['fname']." ".$_POST['lname']." </b>
+          <br />
+          <b>Voici ses coordonnées:</b> 
+          Tel ".$_POST["tel"]."
+          Email ".$_POST["email"]."
+          <br />
+          <b>Voici son message:</b>
+          ".$_POST["message"]."
+          <br />
+          <br />";
 
 array_push($errors, 'Step 3 : passed email creation');
 
@@ -190,7 +48,7 @@ array_push($errors, 'Step 3 : passed email creation');
 
 array_push($errors, 'Step 4 : passed header declaration');
 	
-$sendmail = mail($to, $subject, $msg, $headers);
+$sendmail = mail($to, $subject, nl2br($msg), $headers);
 // $sendmail = true;
 
 if ($sendmail){

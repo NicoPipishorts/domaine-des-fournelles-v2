@@ -45,6 +45,7 @@ $color-Passion-D: #cfb0ae;
 $color-Passion-L: #eecdcb;
 $color-SansArtifice-D: #a49a95;
 $color-SansArtifice-L: #babcc1;
+$color-boutique-main: #F3F0EB;
 
 
 $color-hve: #B4CB60;
@@ -54,3 +55,6 @@ $shadow-color: rgba(25, 25, 25, 0.3);
 
 /* ----- MODAL STYLING ------ */
 $modal-bg-color: RGBA(138, 80, 40, .8);
+
+/* ----- RESPONSIVE VARS -----*/
+$mobile-padding-bottom: calc((100vw / 5) + 3rem);

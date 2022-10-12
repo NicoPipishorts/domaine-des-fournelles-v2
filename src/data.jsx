@@ -3,7 +3,7 @@ export default {
   navBar: {
     domaine: {
       fr: "domaine",
-      en: "domaine",
+      en: "the estate",
     },
     wines: {
       fr: "nos vins",
@@ -24,16 +24,16 @@ export default {
   },
   domainePage: {
     p1: {
-      fr: "En 1947, François Bernillon s'installe commme viticulteur sur les hauteurs du Mont Brouilly. En 1973, son fils Alain reprend l'exploitation et fait prospérer l'entreprise. Depuis 2015, le Domaine a été repris par sa fille et son gendre, Mariannick et Guillaume qui représente ainsi la 3eme génération de viticulteur. La propriété s'étend aujourd'hui sur 7 Hectares sur la commune de Saint-Lager. Notre domaine produit deux crus du Beaujolais : Brouilly et Côte de Brouilly.",
-      en: "In 1947, François Bernillon set up as a wine producer on the heights of the Mont Brouilly. In 1973, his son Alain took over the business and grew business. Since 2015, the Domaine has been taken over by his daughter and son-in-law, Mariannick and Guillaume, who thus represent the 3rd generation of wine producers. The property now extends over 7 Hectares in the municipality of Saint-Lager. Our estate produces two Beaujolais crus: Brouilly and Côte de Brouilly.",
+      fr: "Créé en 1947 par François et Claudine BERNILLON, la ferme était à l'origine une petite exploitation agricole avec quelques animaux en plus de la vigne. En 1973, le Domaine est repris par le fils Alain BERNILLON et son épouse Bernadette, l'élevage est arrêté afin de développer pleinement le travail de la vigne. De nouveaux marchés se développent Belgique, Restaurant Parisien, particuliers sur toute la France. En 2015, leur fille Mariannick et son mari Guillaume DUMONTET reprennent le Domaine. Une nouvelle dynamique est donnée pour développer le digital, la gamme de vin est élargie. Les pratiques sont revues pour être plus respectueuses de l'environnement.",
+      en: "Created in 1947 by François and Claudine BERNILLON, the farm was originally a small farm with some animals in addition to the vine. In 1973, the Domaine is taken over by the son Alain BERNILLON and his wife Bernadette, the animal breeding is stopped in order to fully develop the work of the vineyard. New markets are developing Belgium, Restaurant Parisien, individuals on the whole France. In 2015, their daughter Mariannick and her husband Guillaume DUMONTET took over the Domaine. A new dynamic is given to develop digital, the range of wine is expanded. Practices are reviewed to be more environmentally friendly.",
     },
     p2: {
-      fr: "Notre vignoble bien exposé à flanc de coteaux est situé sur le versant sud-est de la célèbre Montagne de Brouilly. Le plus grand soin est apporté tant à la culture qu'à la vinification. Nos crus sont élaborés à partir d'un cépage unique de Gamay noir à jus blanc. Les vendanges sont exclusivement manuelles et la récolte est triée méticuleusement.",
-      en: "Our well-exposed hillside vineyard is located on the south-eastern slope of the famous Montagne de Brouilly. The greatest care is taken both in the cultivation and in the vinification. Our wines are made from a single grape variety of 'Gamay noir à jus blanc'. The harvest is exclusively manual and is meticulously sorted."
+      fr: "Le Domaine, situé à St Lager, s'étend sur 8 hectares. Nous produisons principalement du Brouilly, du Côte de Brouilly et depuis peu des Beaujolais Villages Rouge et Rosé. Nous travaillons dans un cadre familial et gérons tout le processus du travail de la vigne à la commercialisation. Nous vendons 80% de notre production directement au particule.",
+      en: "The Estate, located in St Lager, covers 8 hectares. We produce mainly Brouilly, Côte de Brouilly and recently Beaujolais Villages Red and Rosé. We work in a family setting and manage the entire process of the work from the vineyard to the commercialization. We sell 80% of our production directly."
     },
     p3: {
-      fr: "Toute la saveur, l'originalité et la qualité des vins du domaine sont issues du savoir-faire d'une production élaborée dans les respect du terroir alliée aux connaissances scientifiques oenologiques, aux techniques de productions et de transformation les plus modernes.",
-      en: "All the flavor, originality and quality of the estate's wines come from the know-how of a production developed with respect for the terroir combined with scientific oenological knowledge, the most modern production and processing techniques."
+      fr: "Nous sommes certifiés HVE (Haute Valeur Environnementale), nous sommes en cours de Certification Biologique. Nous travaillons nos vignes manuellement : taille de coupe à la main, vendanges manuelles, attache de la vigne, ... La vinification se fait entièrement dans nos caves.",
+      en: "We have HVE certification (High Environmental Value), we are in the process of Organic Certification. We work our vines manually: cup size by hand, manual harvesting, attachment of the vine, ... The vinification is done entirely in our cellars."
     }
   },
   winesPage: {
@@ -112,10 +112,15 @@ export default {
       },
     },
     Elixir : {
+      price: "16,75",
       region : "Beaujolais",
       appel : "Côte de Brouilly",
       cepage : "Gamay ",
       conditionnement : "0.75 cL",
+      color: {
+        fr: "Rouge",
+        en: "Red",
+      },
       desc : {
         fr: "Une trame aromatique de fruits rouges bien mûrs accompagné d'une subtile nuance vanillée et boisée dûe à l'élevage de 8 mois en fûts de chêne. Vous pouvez le savourer dès à présent ou le déguster dans quelques années selon vos préférences. Découvrez cet Elixir du Beaujolais et laissez-vous surprendre par sa complexité.",
         en: "An complex aromatic mix of ripe red fruits accompanied by a subtle vanilla and woody nuance due to the aging of 8 months in oak barrels. You can enjoy it now or taste it in a few years according to your preferences. Discover this Beaujolais Elixir and let yourself be surprised by its complexity."
@@ -137,10 +142,15 @@ export default {
       },
     },
     Godefroy : {
+      price: "14,45",
       region : "Beaujolais",
       appel : "Côte de Brouilly",
       cepage : "Gamay ",
       conditionnement : "0.75 cL",
+      color: {
+        fr: "Rouge",
+        en: "Red",
+      },
       desc : {
         fr: "Souple, ronde et harmonieuse cette cuvée Godefroy s'ouvre sur un nez relativement discret. La bouche est quant à elle beaucoup plus intense. Des notes de fraises des bois et de framboise s'accordent parfaitement avec sa minéralité et ses tanins fins. La pivoine est également présente en milieu de bouche ce qui apporte un côté floral très flatteur.",
         en :"Supple, round and harmonious, this Godefroy cuvée opens with a relatively discreet nose. The body is much more intense. Notes of wild strawberries and raspberry go perfectly with its minerality and fine tannins. Peony is also present in the mid-body which brings a very flattering floral side.",
@@ -162,10 +172,15 @@ export default {
       },
     },
     Brouilly : {
+      price: "12,55",
       region : "Beaujolais",
       appel : "Brouilly",
       cepage : "Gamay ",
       conditionnement : "0.75 cL",
+      color: {
+        fr: "Rouge",
+        en: "Red",
+      },
       desc : {
         fr: "Voilà un Gamay qui ne manque pas de caractère ! Des notes de mûre, figue et prune confite animent la bouche. Rond, souple et fruité il se veut convivial et harmonieux. Préparez un buffet froid pour accompagner ce vin ou un chapon à la sauce forestière.",
         en: "This is a Gamay that does not lack character! Notes of blackberry, fig and candied plum enliven the body. Round, supple and fruity, it is friendly and harmonious. Prepare a cold buffet to accompany this wine or a capon with forest sauce.",
@@ -187,10 +202,15 @@ export default {
       },
     },
     CDB : {
+      price: "12,55",
       region : "Beaujolais",
       appel : "Côte de Brouilly",
       cepage : "Gamay ",
       conditionnement : "0.75 cL",
+      color: {
+        fr: "Rouge",
+        en: "Red",
+      },
       desc : {
         fr: "Ce cru du Beaujolais se caractérise par un fruité intense et une charpente bien présente. Des notes de mûres et de cassis en bouche accompagnent les tanins tendres de ce millésimé. Il est élégant et le fruité croquant de ses arômes saura charmer le palais le plus délicat.",
         en: "This Beaujolais cru is characterized by an intense fruitiness and a very present structure. Notes of blackberries and cassis on the palate accompany the soft tannins of this vintage. It is elegant and the crunchy fruitiness of its aromas will charm the most delicate palate",
@@ -212,10 +232,15 @@ export default {
       },
     },
     Passion : {
+      price: "10,70",
       region : "Beaujolais",
       appel : "Beaujolais Village",
       cepage : "Gamay ",
       conditionnement : "0.75 cL",
+      color: {
+        fr: "Rosé",
+        en: "Rosé",
+      },
       desc : {
         fr: "Mordant, frais, ce rosé 'Passion' du domaine des Fournelles est parfait pour ces chaudes journées d'été qui s'annoncent. Il saura vous rafraichir et vous égayer avec ces notes fruitées et acidulées. La finale autour du bonbon est surprenante et gourmande.",
         en: "Punchy, fresh, this 'Passion' rosé from the Domaine des Fournelles is perfect for those hot summer days ahead. It will refresh and cheer you up with its fruity and tangy notes. The candy is surprising and tasty.",
@@ -237,10 +262,15 @@ export default {
       },
     },
     BeaujolaisVillage : {
+      price: "8,90",
       region : "Beaujolais",
       appel : "Beaujolais Village",
       cepage : "Gamay ",
       conditionnement : "0.75 cL",
+      color: {
+        fr: "Rouge",
+        en: "Red",
+      },
       desc : {
         fr: "Ce Beaujolais Villages élaboré traditionnellement vous surprendra par sa rondeur, son fruité et sa gourmandise. De légères notes de fruits rouges comme la cerise ou la groseille viendront égayer vos papilles. Dégustez le entre amis avec un barbecue ou une plancha et vous serez comblé!",
         en: "This traditionally produced Beaujolais Villages will surprise you with its fruitiness, delicacy and rounded flavor. Slight notes of red fruits such as cherry or redcurrant will brighten up your taste buds. Enjoy it with friends at a barbecue or around a plancha and you will be delighted!f",
@@ -262,10 +292,15 @@ export default {
       },
     },
     SansArtifice : {
+      price: "16,10",
       region : "Beaujolais",
       appel : "Brouilly",
       cepage : "Gamay ",
       conditionnement : "0.75 cL",
+      color: {
+        fr: "Rouge",
+        en: "Red",
+      },
       desc : {
         fr: "Un somptueux Brouilly sans sulfites ajoutés d'une belle couleur rubis. Des arômes frais et fruités s'ouvrent au nez sur des touches de fruits noirs : myrtille et mûre. Tendue et équilibrée, la bouche révèle une finale délicatement schisteuse et crayeuse apportant du relief à l'ensemble. Une finale longue et droite qui prolonge le plaisir de longues secondes ! L'étiquette et le texte présent sur la contre étiquette ont été pensées en collaboration avec monsieur Dumontet, le vigneron, et Maïa Mazaurette autrice et peintre française très connue du grand public. Autant d'atout invitant à découvrir cette délicieuse cuvée.",
         en: "A sumptuous Brouilly without added sulphites with a beautiful ruby color. Fresh and fruity aromas open on the nose with touches of black fruit: blueberry and blackberry. Taut and balanced, the body reveals a delicately schistous and chalky finish bringing depth to the wine. A long, straight finish that prolongs the pleasure for the seconds that follow! The label and the text on the back were designed in collaboration with Mr. Dumontet, the winemaker, and Maïa Mazaurette, a French author and painter well known to the general public. All these particularites are a calling card to discover this delicious vintage.",

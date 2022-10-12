@@ -117,7 +117,7 @@ const ContactPage = ( { lang } ) => {
 
       <main className="contactpage__container">
 
-        <section className="contactpage__col-left">
+        <address className="contactpage__col-left">
           
           <h1>Contact</h1>
 
@@ -125,22 +125,27 @@ const ContactPage = ( { lang } ) => {
           
           <p>Guillaume et Mariannick Dumontet.</p>
           
-          <p>
+          <p onClick={mapsSelector}>
             137 Montée de Godefoyr, <br /> 
             69220 Saint-Lager, <br />
             France
           </p>
           
           <p>
-            Guillaume: +33 6 79 17 27 53 <br />
-            Mariannick: +33 6 71 01 11 66 <br /> 
+          <a href="tel: 0033679172753">Guillaume: +33 6 79 17 27 53 </a><br />
+          <a href="tel: 0033671011166">Mariannick: +33 6 71 01 11 66 </a><br /> 
           </p>
           
           <p>
             <a href="mailto: domainedesfournelles@outlook.fr">domainedesfournelles@outlook.fr</a>
           </p>
+          
+          <p className="copyright">
+          {(new Date().getFullYear())} &copy; www.dimainedesfournelles.com
+          <br />
+          </p>
         
-        </section>
+        </address>
 
         <section className="contactpage__col-right">
           

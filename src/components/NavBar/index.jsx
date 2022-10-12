@@ -10,7 +10,7 @@ import Data from '../../data';
 import IconDomaine from '../../assets/icons/domaine-w.png';
 import IconWine from '../../assets/icons/wine-w.png';
 // import IconNews from '../../assets/icons/news-w.png';
-// import IconBoutique from '../../assets/icons/boutique-w.png';
+import IconBoutique from '../../assets/icons/boutique-w.png';
 import IconContact from '../../assets/icons/contact-w.png';
 
 const NavBar = ( { lang } ) => {
@@ -33,12 +33,12 @@ const NavBar = ( { lang } ) => {
           title='News'
           section='news'
           icon={IconNews}
-        />
+        /> */}
         <NavbarButton
           title='Boutique'
           section='boutique'
           icon={IconBoutique}
-        /> */}
+        />
         <NavbarButton
           title={Data.navBar.contact[lang]}
           section='contact'

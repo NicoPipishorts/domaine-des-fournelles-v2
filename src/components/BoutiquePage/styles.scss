@@ -4,34 +4,223 @@
 
   &__wrapper {
 
-    min-width: 100%;
-    min-height: 100%;
+    min-width: 100vw;
+    min-height: 100vh;
     box-sizing: border-box;
     padding: 3rem;
+    padding-left: 10vw;
+    padding-top: 5rem;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: flex-start;
     align-items: flex-start;
-    // background-image: radial-gradient(circle, vars.$color-CDB-L, vars.$color-CDB-D);
-
-  }
-
-  &__wrapper h1 {
-
-    font-size: 3rem;
+    background-color: vars.$color-boutique-main;
 
   }
 
   &__logo {
 
     position: absolute;
-    top: 20px;
-    right: 50px;
-    width: 180px;
-    height: 180px;
-    background-image: url(../../assets/images/PageLogo-W.png);
+    top: 10px;
+    right: 20px;
+    width: 150px;
+    height: 150px;
+    background-image: url(../../assets/images/PageLogo-B.png);
     background-repeat: no-repeat;
     background-size: contain;
 
   }
 
+  &__cart {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    width: 2.2rem;
+    height: 8rem;
+    padding-bottom: 10px;
+    font-size: 1rem;
+    background-image: url(../../assets/icons/boutique-cart-empty.png);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center left;
+
+    &--container {
+
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-start;
+      align-items: center;
+      padding-left: 2rem;
+
+      span { 
+        padding-bottom: .6rem;
+        text-decoration: underline;
+        text-underline-offset: .4rem;
+      }
+
+      span:last-child {
+        text-decoration: unset;
+      }
+
+    }
+  }
+
+  &__cards--wrapper {
+
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+  }
+
+  &__card {
+
+      width: calc(((100vw - 10vw) / 4) - (3vw * 2));
+      margin-left: 3vw;
+      margin-bottom: 2rem;
+      padding: .8rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: center;
+      color: vars.$color-Elixir-D;
+      box-shadow: 0 0 15px rgba(vars.$color-black, .15);
+
+    &--header {
+      width: 100%;
+
+      span {
+        font-size: .8rem;
+      }
+
+      span:first-child {
+        font-size: unset;
+      }
+
+      span:last-child {
+        display: none;
+      }
+    }
+
+    &--main {
+
+
+      min-width: 100%;
+    }
+
+    &--image {
+
+      min-width: 100%;
+      min-height: 300px;
+      background-size: contain;
+      background-position: center;
+      background-repeat: no-repeat;
+
+      &-Elixir {
+        background-image: url(../../assets/images/Wine-BottleElixir.png);
+      }
+
+      &-Godefroy {
+        background-image: url(../../assets/images/Wine-BottleGodefroy.png);
+      }
+
+      &-Brouilly {
+        background-image: url(../../assets/images/Wine-BottleBrouilly.png);
+      }
+
+      &-CDB {
+        background-image: url(../../assets/images/Wine-BottleCDB.png);
+      }
+
+      &-SansArtifice {
+        background-image: url(../../assets/images/Wine-BottleSansArtifice.png);
+      }
+
+      &-Passion {
+        background-image: url(../../assets/images/Wine-BottlePassion.png);
+      }
+
+    }
+
+    &--details {
+
+      min-width: 100%;
+      margin-bottom: .6rem;
+
+      span {
+        font-size: .7rem;
+      }
+
+      span:first-child {
+        font-size: .9rem;
+      }
+
+    }
+
+    &--price {
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: .9rem;
+
+      div:first-child {
+        display: flex;
+        align-items: flex-start;
+      }
+
+      span:nth-child(2) {
+        font-size: .8rem;
+        align-self: flex-end;
+      }
+
+      span:last-child {
+        font-size: .7rem;
+      }
+
+    }
+
+    &--buttons {
+
+      display: flex;
+      align-items: center;
+
+      span { 
+        
+        display: flex;
+        justify-content: center;
+        min-width: 1.2rem;
+        padding: .5rem;
+
+      }
+
+      button {
+
+        width: 1.3rem;
+        height: 1.3rem;
+        background-color: transparent;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        border: 0;
+
+        &:first-child {
+          background-image: url(../../assets/icons/boutique-cart-add.png);
+        }
+
+        &:last-child {
+          background-image: url(../../assets/icons/boutique-cart-remove.png);
+        }
+
+      }
+
+    }
+
+  }
+
 }
+
+@import "./responsive.scss";

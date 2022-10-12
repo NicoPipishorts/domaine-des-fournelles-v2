@@ -49,10 +49,19 @@
     text-decoration: none;
   }
 
+  &__col-left .copyright {
+    font-size: .85rem;
+    color: vars.$color-yellow;
+  }
+
   &__col-right, &__col-left {
 
     width: 40%;
 
+  }
+
+  &__col-left {
+    font-style: unset;
   }
 
   &__col-right {

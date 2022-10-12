@@ -24,7 +24,7 @@
       min-width: calc(100vw / 5);
       height: calc(100vw / 5);
       padding: .4rem 0;
-      padding-bottom: env(safe-area-inset-bottom, 5px);
+      padding-bottom: env(safe-inset-area-bottom, .6rem);
       background-position: left;
 
       border-right: none;
