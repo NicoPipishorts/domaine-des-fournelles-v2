@@ -28,7 +28,7 @@ export default {
       en: "Created in 1947 by François and Claudine BERNILLON, the farm was originally a small farm with some animals in addition to the vine. In 1973, the Domaine is taken over by the son Alain BERNILLON and his wife Bernadette, the animal breeding is stopped in order to fully develop the work of the vineyard. New markets are developing Belgium, Restaurant Parisien, individuals on the whole France. In 2015, their daughter Mariannick and her husband Guillaume DUMONTET took over the Domaine. A new dynamic is given to develop digital, the range of wine is expanded. Practices are reviewed to be more environmentally friendly.",
     },
     p2: {
-      fr: "Le Domaine, situé à St Lager, s'étend sur 8 hectares. Nous produisons principalement du Brouilly, du Côte de Brouilly et depuis peu des Beaujolais Villages Rouge et Rosé. Nous travaillons dans un cadre familial et gérons tout le processus du travail de la vigne à la commercialisation. Nous vendons 80% de notre production directement au particule.",
+      fr: "Le Domaine, situé à St Lager, s'étend sur 8 hectares. Nous produisons principalement du Brouilly, du Côte de Brouilly et depuis peu des Beaujolais Villages Rouge et Rosé. Nous travaillons dans un cadre familial et gérons tout le processus du travail de la vigne à la commercialisation. Nous vendons 80% de notre production directement au particulier.",
       en: "The Estate, located in St Lager, covers 8 hectares. We produce mainly Brouilly, Côte de Brouilly and recently Beaujolais Villages Red and Rosé. We work in a family setting and manage the entire process of the work from the vineyard to the commercialization. We sell 80% of our production directly."
     },
     p3: {

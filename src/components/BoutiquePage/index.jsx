@@ -49,11 +49,19 @@ const BoutiquePage = () => {
     <div className="boutique__wrapper"> 
 
       <div className="boutique__cart--container">
-      
-        <span>Votre panier contient</span>&nbsp;
-        <div className="boutique__cart">{cart}</div>
-        &nbsp;<span>produits</span>&nbsp;
-        <span>.</span>
+
+        <div>
+          <span>Votre panier contient</span>&nbsp;
+          <div className="boutique__cart--image">{cart}</div>
+          &nbsp;<span>produits</span>&nbsp;
+          <span>.</span>
+        </div>
+        
+        <div>
+          <button>voir mon panier</button>
+        </div>
+
+
       
       </div>
 

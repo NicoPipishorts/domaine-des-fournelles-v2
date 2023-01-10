@@ -15,6 +15,8 @@ import IconContact from '../../assets/icons/contact-w.png';
 
 const NavBar = ( { lang } ) => {
 
+  console.log(Data.navBar.domaine[lang])
+
   return (   
     
     <nav className="navbar">
@@ -35,7 +37,7 @@ const NavBar = ( { lang } ) => {
           icon={IconNews}
         /> */}
         <NavbarButton
-          title='Boutique'
+          title={Data.navBar.store[lang]}
           section='boutique'
           icon={IconBoutique}
         />
