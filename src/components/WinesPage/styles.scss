@@ -5,10 +5,11 @@
 
   &__controls {
 
+    z-index: 100;
     position: fixed;
     top:50%;
     transform: translateY(-50%);
-    right: 0;
+    right: 30px;
 
   }
 
@@ -48,6 +49,11 @@
     margin-left: unset;
     margin-right: .6rem;
   }
+
+  &__swipe-zone {
+    min-height: 100vh;
+    touch-action: pan-y;
+  }
   
   &-wrapper {
 
@@ -77,17 +83,30 @@
 
   &__bottles {
 
-    &--container {
+      &--container {
 
-      display: none;
+        display: none;
+        overflow: hidden;
 
-      &-active {
+        &-active {
 
-        display: block;
+          display: block;
 
-      }
+        }
+
+        &-slide-next {
+          .winespage__bottles {
+            animation: wine-slide-from-right .45s ease both;
+          }
+        }
+
+        &-slide-previous {
+          .winespage__bottles {
+            animation: wine-slide-from-left .45s ease both;
+          }
+        }
       
-    }
+      }
 
     &--bottle {
     
@@ -561,6 +580,30 @@
 
   }
 
+}
+
+@keyframes wine-slide-from-right {
+  from {
+    opacity: 0;
+    transform: translateX(4rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes wine-slide-from-left {
+  from {
+    opacity: 0;
+    transform: translateX(-4rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
 @import './responsive.scss';

@@ -1,4 +1,5 @@
-import ReactDom from 'react-dom';
+import React from 'react';
+import { createRoot } from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import { Provider } from 'react-redux';
 
@@ -10,7 +11,7 @@ import store from './store';
 
 const rootReactElement = (
   <Provider store={store}>
-    <BrowserRouter basename={"/"}>
+    <BrowserRouter basename="/">
       <App />
     </BrowserRouter>
   </Provider>
@@ -18,4 +19,4 @@ const rootReactElement = (
 
 const target = document.getElementById('root');
 
-ReactDom.render(rootReactElement, target);
+createRoot(target).render(rootReactElement);
