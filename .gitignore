@@ -2,7 +2,9 @@
 
 # dependencies
 /node_modules
-/src/assets/videos
+/src/assets/videos/*
+!/src/assets/videos/
+!/src/assets/videos/HeroVideo-720.mp4
 /.pnp
 .pnp.js
 
