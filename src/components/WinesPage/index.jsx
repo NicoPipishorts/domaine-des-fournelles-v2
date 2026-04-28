@@ -1,11 +1,13 @@
 // -- IMPORT NPM
-import React, { useEffect, useLayoutEffect, useRef } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
 // --  IMPORT COMPONENTS
 import NavBar from '../NavBar';
 import BottleView from './BottleView';
 import { setCurrentWineView } from '../../actions/main';
+import { wines as fallbackWines } from '../../content/wines';
+import { fetchPublicWines, hasSupabaseWineReadConfig } from '../../supabase/wines';
 
 // -- IMPORT ASSETS
 import './styles.scss';
@@ -15,16 +17,10 @@ const WinesPage = ( { lang } ) => {
 
   const dispatch = useDispatch();
   const touchStart = useRef(null);
-  
-
-  const DataElixir = Data.winesPage.Elixir;
-  const DataGodefroy = Data.winesPage.Godefroy;
-  const DataBrouilly = Data.winesPage.Brouilly;
-  const DataCDB = Data.winesPage.CDB;
-  const DataPassion = Data.winesPage.Passion;
-  const DataSansArtifice = Data.winesPage.SansArtifice;
+  const [wineList, setWineList] = useState(fallbackWines);
 
   let i= useSelector((state) => state.main.currentWineIndex);
+  const currentWineView = useSelector((state) => state.main.currentWineView);
 
   const slides  = document.getElementsByClassName('winespage__bottles--container');
   const activeClass = 'winespage__bottles--container-active';
@@ -101,10 +97,57 @@ const WinesPage = ( { lang } ) => {
     window.scrollTo(0, 0)
   }, []);
 
+  useEffect(() => {
+    let ignore = false;
+
+    if (!hasSupabaseWineReadConfig) {
+      return undefined;
+    }
+
+    fetchPublicWines()
+      .then((response) => {
+        if (ignore || !response?.length) {
+          return;
+        }
+
+        setWineList(response);
+
+        const selectedIndex = response.findIndex((wine) => wine.bottle === currentWineView);
+
+        if (selectedIndex >= 0) {
+          handleSetWineViewChange(response[selectedIndex].bottle, selectedIndex);
+          return;
+        }
+
+        handleSetWineViewChange(response[0].bottle, 0);
+      })
+      .catch((error) => {
+        console.error('Failed to fetch wines from Supabase', error);
+      });
+
+    return () => {
+      ignore = true;
+    };
+  }, [currentWineView]);
+
   useLayoutEffect(
     () => {
-      slides[i].classList.add(activeClass)
-    } ,[]
+      if (!slides.length) {
+        return;
+      }
+
+      const safeIndex = Math.min(i, slides.length - 1);
+
+      Array.from(slides).forEach((slide) => {
+        slide.classList.remove(activeClass, nextAnimationClass, previousAnimationClass);
+      });
+
+      slides[safeIndex].classList.add(activeClass);
+
+      if (safeIndex !== i) {
+        handleSetWineViewChange(slides[safeIndex].getAttribute("data-wine"), safeIndex);
+      }
+    }, [i, wineList.length]
   );
 
   return (
@@ -123,17 +166,13 @@ const WinesPage = ( { lang } ) => {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <BottleView lang={lang} bottle="Elixir" {...DataElixir} />
-
-      <BottleView lang={lang} bottle="Godefroy" {...DataGodefroy} />
-
-      <BottleView lang={lang} bottle="Brouilly" {...DataBrouilly} />
-
-      <BottleView lang={lang} bottle="CDB" {...DataCDB} />
-
-      <BottleView lang={lang} bottle="SansArtifice" {...DataSansArtifice} />
-
-      <BottleView lang={lang} bottle="Passion" {...DataPassion} />
+      {wineList.map((wine) => (
+        <BottleView
+          key={wine.bottle}
+          lang={lang}
+          {...wine}
+        />
+      ))}
     </div>
 
     </>

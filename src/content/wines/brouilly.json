@@ -1,0 +1,30 @@
+{
+  "bottle": "Brouilly",
+  "wineName": {
+    "fr": "Brouilly",
+    "en": "Brouilly"
+  },
+  "region": "Beaujolais",
+  "appel": "Brouilly",
+  "cepage": "Gamay",
+  "conditionnement": "0.75 cL",
+  "garde": "3 à 7 ans (garde moyenne)",
+  "temp": "12 - 14°C",
+  "desc": {
+    "fr": "Voilà un Gamay qui ne manque pas de caractère ! Des notes de mûre, figue et prune confite animent la bouche. Rond, souple et fruité il se veut convivial et harmonieux. Préparez un buffet froid pour accompagner ce vin ou un chapon à la sauce forestière.",
+    "en": "This is a Gamay that does not lack character! Notes of blackberry, fig and candied plum enliven the body. Round, supple and fruity, it is friendly and harmonious. Prepare a cold buffet to accompany this wine or a capon with forest sauce."
+  },
+  "caract": {
+    "fruite": 3,
+    "mineral": 1,
+    "epice": 1,
+    "puissance": 4,
+    "floral": 2,
+    "boise": 1,
+    "acidite": 3
+  },
+  "assoc": {
+    "fr": "Charcuteries et viandes salées, hors d'oeuvre froids et salades, hors d’oeuvre chauds et tartes salées, pâtes et riz, terrines et pâtés, viandes blanches grillées et rôties, viandes en sauce brune, viandes en sauce claire, viandes rouges grillées et rôties",
+    "en": "Cold cuts and cured meats, cold appetizers and salads, hot appetizers and savory pies, pasta and rice, terrines and pâtés, grilled and roasted white meats, meats in brown sauce, meats in light sauce, grilled red meats and roasted"
+  }
+}

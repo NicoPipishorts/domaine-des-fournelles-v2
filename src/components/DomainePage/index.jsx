@@ -1,5 +1,5 @@
 // -- IMPORT NPM
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 // --  IMPORT COMPONENTS
 import NavBar from '../NavBar';
@@ -8,7 +8,8 @@ import PageLogo from '../App/PageLogo';
 
 // -- IMPORT ASSETS
 import './styles.scss';
-import Data from '../../data';
+import { domainPageDefault } from '../../content/site';
+import { fetchSiteContent } from '../../supabase/site';
 import Image1 from '../../assets/images/DomainePage-1.jpg';
 import Image2 from '../../assets/images/DomainePage-2.jpg';
 import Image3 from '../../assets/images/DomainePage-3.jpg';
@@ -50,9 +51,26 @@ const GalleryImages = [
 ]
 
 const DomainePage = ( { lang } ) => {
+  const [content, setContent] = useState(domainPageDefault);
 
   useEffect(() => {
     window.scrollTo(0, 0)
+  }, []);
+
+  useEffect(() => {
+    let ignore = false;
+
+    fetchSiteContent('domain_page')
+      .then((data) => {
+        if (!ignore && data) {
+          setContent(data);
+        }
+      })
+      .catch(() => {});
+
+    return () => {
+      ignore = true;
+    };
   }, []);
 
   return (
@@ -67,23 +85,23 @@ const DomainePage = ( { lang } ) => {
 
         <div className="domainepage__section-text--logo"></div>
         
-        <h1><span className="domainepage__section--h1-span">Domaine des fournelles</span></h1>
+        <h1><span className="domainepage__section--h1-span">{content.title[lang]}</span></h1>
 
         <div className="domainepage__section-text--p-container">
           <p className="domainepage__section-text--p1">
-            {Data.domainePage.p1[lang]}
+            {content.paragraphs.p1[lang]}
           </p>
         </div>
 
         <div className="domainepage__section-text--p-container domainepage__section-text--p-container--right">
           <p className="domainepage__section-text--p2">
-            {Data.domainePage.p2[lang]}
+            {content.paragraphs.p2[lang]}
           </p>
         </div>
 
         <div className="domainepage__section-text--p-container">
           <p className="domainepage__section-text--p3">
-            {Data.domainePage.p3[lang]}
+            {content.paragraphs.p3[lang]}
           </p>
         </div>
     

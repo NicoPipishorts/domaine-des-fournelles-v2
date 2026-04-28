@@ -11,6 +11,7 @@ import Data from "../../data";
 const BottleWiew = ( { 
   lang,
   bottle, 
+  wineName,
   region,
   appel,
   cepage,
@@ -20,6 +21,8 @@ const BottleWiew = ( {
   garde,
   temp,
   assoc,
+  bottleImageUrl,
+  titleImageUrl,
 } ) => {
   
   const dots =
@@ -36,15 +39,26 @@ const BottleWiew = ( {
   return (
     <>
 
-    <div className="winespage__bottles--container" data-wine={bottle}>
+    <div
+      className="winespage__bottles--container"
+      data-wine={bottle}
+      data-wine-name={wineName?.[lang] || bottle}
+    >
 
       <PageLogo className="winespage__logo" />
 
       <div className={`winespage__bottles`}>
       
         <div className={`winespage__bottles--bottle-container winespage__bottles--bottle-container-${bottle}`}>
+        <div
+          className={`winespage__bottles--bottle-image${bottleImageUrl ? ' winespage__bottles--bottle-image-custom' : ''}`}
+          style={bottleImageUrl ? { backgroundImage: `url(${bottleImageUrl})` } : undefined}
+        />
       
-          <div className={`winespage__bottles--bottle-name winespage__bottles--bottle-name-${bottle}`}></div>
+          <div
+            className={`winespage__bottles--bottle-name winespage__bottles--bottle-name-${bottle}${titleImageUrl ? ' winespage__bottles--bottle-name-custom' : ''}`}
+            style={titleImageUrl ? { backgroundImage: `url(${titleImageUrl})` } : undefined}
+          ></div>
           
         </div>
       

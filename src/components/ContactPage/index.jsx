@@ -1,5 +1,5 @@
 // -- IMPORT NPM
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
 // --  IMPORT COMPONENTS
@@ -9,14 +9,32 @@ import { setFormField, sendContactForm } from "../../actions/main";
 
 // -- IMPORT ASSETS
 import './styles.scss';
-import Data from "../../data";
+import { contactPageDefault } from '../../content/site';
+import { fetchSiteContent } from '../../supabase/site';
 
 const ContactPage = ( { lang } ) => {
+  const [content, setContent] = useState(contactPageDefault);
 
   useEffect(() => {
     window.scrollTo(0, 0)
   }, []
   );
+
+  useEffect(() => {
+    let ignore = false;
+
+    fetchSiteContent('contact_page')
+      .then((data) => {
+        if (!ignore && data) {
+          setContent(data);
+        }
+      })
+      .catch(() => {});
+
+    return () => {
+      ignore = true;
+    };
+  }, []);
 
   //^Declare dispatch construction
   const dispatch = useDispatch();
@@ -119,25 +137,25 @@ const ContactPage = ( { lang } ) => {
 
         <section className="contactpage__col-left">
           
-          <h1>Contact</h1>
+          <h1>{content.left.pageTitle[lang]}</h1>
 
-          <h2> Domaine des Fournelles</h2>
+          <h2>{content.left.estateTitle[lang]}</h2>
           
-          <p>Guillaume et Mariannick Dumontet.</p>
+          <p>{content.left.owners[lang]}</p>
           
           <p>
-            137 Montée de Godefoyr, <br /> 
-            69220 Saint-Lager, <br />
-            France
+            {content.left.addressLine1[lang]} <br /> 
+            {content.left.addressLine2[lang]} <br />
+            {content.left.addressLine3[lang]}
           </p>
           
           <p>
-            Guillaume: +33 6 79 17 27 53 <br />
-            Mariannick: +33 6 71 01 11 66 <br /> 
+            Guillaume: {content.left.phoneGuillaume} <br />
+            Mariannick: {content.left.phoneMariannick} <br /> 
           </p>
           
           <p>
-            <a href="mailto: domainedesfournelles@outlook.fr">domainedesfournelles@outlook.fr</a>
+            <a href={`mailto:${content.left.email}`}>{content.left.email}</a>
           </p>
         
         </section>
@@ -146,10 +164,10 @@ const ContactPage = ( { lang } ) => {
           
           <h1 area-hidden="true">Contact</h1>          
 
-          <h2>{Data.contactPage.info1[lang]}</h2>
+          <h2>{content.form.info1[lang]}</h2>
 
           <div className={ contact.sent ? `contactpage__col-right--sent-message` : `contactpage__col-right--sent-message-hidden`}> 
-            <h2>{Data.contactPage.thanks[lang]}</h2>
+            <h2>{content.form.thanks[lang]}</h2>
           </div>
 
           <form className={ contact.sent ? `contactpage__form-hide` : `contactpage__form`}>
@@ -158,34 +176,34 @@ const ContactPage = ( { lang } ) => {
 
               <div>
                 {/* <label>Name</label> */}
-                <input type="text" placeholder={Data.contactPage.fname[lang]} name="fname" value={contact.fname} onChange={handleFormField} />
+                <input type="text" placeholder={content.form.fname[lang]} name="fname" value={contact.fname} onChange={handleFormField} />
               </div>
 
               <div>
                 {/* <label>Name</label> */}
-                <input type="text" placeholder={Data.contactPage.lname[lang]} name="lname" value={contact.lname} onChange={handleFormField} />
+                <input type="text" placeholder={content.form.lname[lang]} name="lname" value={contact.lname} onChange={handleFormField} />
               </div>
             </div>
 
             <div>
             {/* <label>Téléphone</label> */}
-            <input type="tel" placeholder={Data.contactPage.tel[lang]} name="tel" value={contact.tel} onChange={handleFormField} />
+            <input type="tel" placeholder={content.form.tel[lang]} name="tel" value={contact.tel} onChange={handleFormField} />
             </div>
 
             <div>
             {/* <label>Email</label> */}
             <input 
-              type="email" placeholder={Data.contactPage.email[lang]} name="email"  value={contact.email} onChange={handleFormField} />
+              type="email" placeholder={content.form.email[lang]} name="email"  value={contact.email} onChange={handleFormField} />
             </div>
 
             <div>
             {/* <label>Email</label> */}
-            <textarea name="message" value={contact.message} placeholder={Data.contactPage.message[lang]} onChange={handleFormField} />
+            <textarea name="message" value={contact.message} placeholder={content.form.message[lang]} onChange={handleFormField} />
             </div>
 
             <div>
             {/* <label>Email</label> */}
-            <input type="submit" value={Data.contactPage.button[lang]} onClick={handleFormSubmit} />
+            <input type="submit" value={content.form.button[lang]} onClick={handleFormSubmit} />
             </div>
 
           </form>

@@ -1,0 +1,30 @@
+{
+  "bottle": "Elixir",
+  "wineName": {
+    "fr": "Elixir",
+    "en": "Elixir"
+  },
+  "region": "Beaujolais",
+  "appel": "Côte de Brouilly",
+  "cepage": "Gamay",
+  "conditionnement": "0.75 cL",
+  "garde": "3 à 7 ans (garde moyenne)",
+  "temp": "12 - 14°C",
+  "desc": {
+    "fr": "Une trame aromatique de fruits rouges bien mûrs accompagné d'une subtile nuance vanillée et boisée dûe à l'élevage de 8 mois en fûts de chêne. Vous pouvez le savourer dès à présent ou le déguster dans quelques années selon vos préférences. Découvrez cet Elixir du Beaujolais et laissez-vous surprendre par sa complexité.",
+    "en": "An complex aromatic mix of ripe red fruits accompanied by a subtle vanilla and woody nuance due to the aging of 8 months in oak barrels. You can enjoy it now or taste it in a few years according to your preferences. Discover this Beaujolais Elixir and let yourself be surprised by its complexity."
+  },
+  "caract": {
+    "fruite": 3,
+    "mineral": 1,
+    "epice": 1,
+    "puissance": 3,
+    "floral": 2,
+    "boise": 2,
+    "acidite": 2
+  },
+  "assoc": {
+    "fr": "Fromages, hors d'oeuvre chauds et tartes salées, légumes, terrines et pâtés, viandes blanches grillées et rôties, viandes en sauce claire, viandes rouges grillées et rôties",
+    "en": "Cheeses, hot appetizers and savory pies, vegetables, terrines and pâtés, grilled and roasted white meats, meats in light sauce, grilled and roasted red meats"
+  }
+}

@@ -1,4 +1,5 @@
 // -- IMPORT NPM
+import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 import {Helmet} from "react-helmet";
@@ -11,6 +12,8 @@ import WinesPage from '../WinesPage';
 import ContactPage from '../ContactPage';
 import BoutiquePage from '../BoutiquePage';
 
+const AdminPage = lazy(() => import('../AdminPage'));
+
 // -- IMPORT ASSETS
 import './styles.scss';
 
@@ -18,11 +21,14 @@ const App = () => {
 
   const location = useLocation();
   const lang = useSelector((store) => store.main.lang);
-  const currentWine = useSelector((store) => store.main.currentWineView);
   let pageLoc = (location.pathname).substring(1);
   
   if(!pageLoc) {
     pageLoc = "hero";
+  }
+
+  if (pageLoc.startsWith('admin')) {
+    pageLoc = 'admin';
   }
 
   const metaTags = {
@@ -50,14 +56,20 @@ const App = () => {
       title: "Contacter le Domaine des Fournelles",
       themeColor: "#9F2032",
     },
+    admin: {
+      title: "Domaine des Fournelles CMS",
+      themeColor: "#000",
+    },
   };
+
+  const currentMeta = metaTags[pageLoc] || metaTags.hero;
 
 
   return (
 
     <div className="wrapper"> 
     <Helmet>
-        <title>{metaTags[pageLoc].title}</title>
+        <title>{currentMeta.title}</title>
     </Helmet>
     <Routes>
 
@@ -99,6 +111,14 @@ const App = () => {
           lang={lang}
           />
         } 
+      />
+      <Route
+        path='/admin/*'
+        element={
+          <Suspense fallback={null}>
+            <AdminPage />
+          </Suspense>
+        }
       />
     
     </Routes>

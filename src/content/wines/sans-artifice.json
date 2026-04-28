@@ -1,0 +1,30 @@
+{
+  "bottle": "SansArtifice",
+  "wineName": {
+    "fr": "Sans Artifice",
+    "en": "Sans Artifice"
+  },
+  "region": "Beaujolais",
+  "appel": "Brouilly",
+  "cepage": "Gamay",
+  "conditionnement": "0.75 cL",
+  "garde": "1 à 3 ans (à boire jeune)",
+  "temp": "14 - 16°C",
+  "desc": {
+    "fr": "Un somptueux Brouilly sans sulfites ajoutés d'une belle couleur rubis. Des arômes frais et fruités s'ouvrent au nez sur des touches de fruits noirs : myrtille et mûre. Tendue et équilibrée, la bouche révèle une finale délicatement schisteuse et crayeuse apportant du relief à l'ensemble. Une finale longue et droite qui prolonge le plaisir de longues secondes ! L'étiquette et le texte présent sur la contre étiquette ont été pensées en collaboration avec monsieur Dumontet, le vigneron, et Maïa Mazaurette autrice et peintre française très connue du grand public. Autant d'atout invitant à découvrir cette délicieuse cuvée.",
+    "en": "A sumptuous Brouilly without added sulphites with a beautiful ruby color. Fresh and fruity aromas open on the nose with touches of black fruit: blueberry and blackberry. Taut and balanced, the body reveals a delicately schistous and chalky finish bringing depth to the wine. A long, straight finish that prolongs the pleasure for the seconds that follow! The label and the text on the back were designed in collaboration with Mr. Dumontet, the winemaker, and Maïa Mazaurette, a French author and painter well known to the general public. All these particularites are a calling card to discover this delicious vintage."
+  },
+  "caract": {
+    "fruite": 4,
+    "mineral": 3,
+    "epice": 0,
+    "puissance": 3,
+    "floral": 1,
+    "boise": 0,
+    "acidite": 2
+  },
+  "assoc": {
+    "fr": "Charcuteries et viandes salées, desserts, légumes, pâtes et riz",
+    "en": "Deli meats and cured meats, desserts, vegetables, pasta and rice"
+  }
+}

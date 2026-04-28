@@ -58,6 +58,7 @@
           
           height: 85vh;
           background-position: top 10vh center;
+          position: relative;
 
           &-Elixir {
             background-color: vars.$color-Elixir-D;
@@ -101,6 +102,19 @@
                               radial-gradient(circle, vars.$color-SansArtifice-L, vars.$color-SansArtifice-D);
           }
         
+        }
+
+        &-image {
+          position: absolute;
+          inset: 0;
+          background-position: top center;
+          background-size: contain;
+          background-repeat: no-repeat;
+          pointer-events: none;
+
+          &-custom {
+            z-index: 1;
+          }
         }
   
       }

@@ -1,0 +1,30 @@
+{
+  "bottle": "Passion",
+  "wineName": {
+    "fr": "Passion",
+    "en": "Passion"
+  },
+  "region": "Beaujolais",
+  "appel": "Beaujolais Village",
+  "cepage": "Gamay",
+  "conditionnement": "0.75 cL",
+  "garde": "1 à 3 ans (à boire jeune)",
+  "temp": "8 - 10°C",
+  "desc": {
+    "fr": "Mordant, frais, ce rosé 'Passion' du domaine des Fournelles est parfait pour ces chaudes journées d'été qui s'annoncent. Il saura vous rafraichir et vous égayer avec ces notes fruitées et acidulées. La finale autour du bonbon est surprenante et gourmande.",
+    "en": "Punchy, fresh, this 'Passion' rosé from the Domaine des Fournelles is perfect for those hot summer days ahead. It will refresh and cheer you up with its fruity and tangy notes. The candy is surprising and tasty."
+  },
+  "caract": {
+    "fruite": 3,
+    "mineral": 2,
+    "epice": 0,
+    "puissance": 2,
+    "floral": 1,
+    "boise": 0,
+    "acidite": 4
+  },
+  "assoc": {
+    "fr": "Apéritif, hors d'oeuvre froids et salades, pâtes et riz, viandes blanches grillées et rôties, viandes en sauce claire, oeufs",
+    "en": "Aperitif, cold appetizers and salads, pasta and rice, grilled and roasted white meats, meats in light sauce, eggs"
+  }
+}

@@ -38,7 +38,6 @@ const NavBar = ( { lang } ) => {
           title='Boutique'
           section='boutique'
           icon={IconBoutique}
-          outsideUrl='https://domainedesfournelles.plugwine.com/vins'
         />
         <NavbarButton
           title={Data.navBar.contact[lang]}

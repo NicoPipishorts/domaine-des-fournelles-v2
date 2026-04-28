@@ -1,0 +1,30 @@
+{
+  "bottle": "CDB",
+  "wineName": {
+    "fr": "Côte de Brouilly",
+    "en": "Côte de Brouilly"
+  },
+  "region": "Beaujolais",
+  "appel": "Côte de Brouilly",
+  "cepage": "Gamay",
+  "conditionnement": "0.75 cL",
+  "garde": "3 à 7 ans (garde moyenne)",
+  "temp": "12 - 14°C",
+  "desc": {
+    "fr": "Ce cru du Beaujolais se caractérise par un fruité intense et une charpente bien présente. Des notes de mûres et de cassis en bouche accompagnent les tanins tendres de ce millésimé. Il est élégant et le fruité croquant de ses arômes saura charmer le palais le plus délicat.",
+    "en": "This Beaujolais cru is characterized by an intense fruitiness and a very present structure. Notes of blackberries and cassis on the palate accompany the soft tannins of this vintage. It is elegant and the crunchy fruitiness of its aromas will charm the most delicate palate"
+  },
+  "caract": {
+    "fruite": 4,
+    "mineral": 2,
+    "epice": 1,
+    "puissance": 4,
+    "floral": 2,
+    "boise": 1,
+    "acidite": 2
+  },
+  "assoc": {
+    "fr": "Charcuteries et viandes salées, hors d'oeuvre froids et salades, pâtes et riz, Soupes et potages, terrines et pâtés, tiandes blanches grillées et rôties, tiandes rouges grillées et rôties",
+    "en": "Deli meats and salted meats, cold appetizers and salads, pasta and rice, soups and soups, terrines and pâtés, grilled and roasted white meats, grilled and roasted red meats."
+  }
+}
