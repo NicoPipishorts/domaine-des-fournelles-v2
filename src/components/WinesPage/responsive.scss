@@ -101,6 +101,13 @@
             background-image: url(../../assets/images/Wine-BottleSansArtifice.png), 
                               radial-gradient(circle, vars.$color-SansArtifice-L, vars.$color-SansArtifice-D);
           }
+
+          &-BlancDeGamay {
+            background-color: vars.$color-BlancDeGamay-D;
+            background-position: top center;
+            background-image: url(../../assets/images/Wine-BottleBlancDeGamay.png),
+                              radial-gradient(circle at 50% 32%, rgba(vars.$color-BlancDeGamay-L, .98), rgba(vars.$color-BlancDeGamay-D, .92) 62%, #32445d 100%);
+          }
         
         }
 
@@ -140,7 +147,9 @@
           &-Brouilly,
           &-CDB,
           &-Passion,
-          &-SansArtifice {
+          &-SansArtifice,
+          &-BlancDeGamay,
+          &-textual {
             min-width: 90vw;
             max-height: 8vh;
             background-size: 70vw;
@@ -152,6 +161,18 @@
           
           &-SansArtifice {
             background-size: 80vw;
+          }
+
+          &-textual {
+            min-height: auto;
+            max-height: none;
+
+            span {
+              width: auto;
+              max-width: 80vw;
+              padding: .55rem 1rem;
+              font-size: clamp(1.6rem, 6vw, 2.4rem);
+            }
           }
   
         }

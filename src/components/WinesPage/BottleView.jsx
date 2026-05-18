@@ -8,6 +8,16 @@ import PageLogo from '../App/PageLogo';
 import './styles.scss';
 import Data from "../../data";
 
+const titleVisualBottles = new Set([
+  'Elixir',
+  'Godefroy',
+  'Brouilly',
+  'CDB',
+  'BlancDeGamay',
+  'Passion',
+  'SansArtifice',
+]);
+
 const BottleWiew = ( { 
   lang,
   bottle, 
@@ -24,6 +34,8 @@ const BottleWiew = ( {
   bottleImageUrl,
   titleImageUrl,
 } ) => {
+  const localizedWineName = wineName?.[lang] || wineName?.fr || bottle;
+  const hasTitleVisual = Boolean(titleImageUrl || titleVisualBottles.has(bottle));
   
   const dots =
     Object.entries(caract).map(([key, value]) => {      
@@ -42,7 +54,7 @@ const BottleWiew = ( {
     <div
       className="winespage__bottles--container"
       data-wine={bottle}
-      data-wine-name={wineName?.[lang] || bottle}
+      data-wine-name={localizedWineName}
     >
 
       <PageLogo className="winespage__logo" />
@@ -56,15 +68,18 @@ const BottleWiew = ( {
         />
       
           <div
-            className={`winespage__bottles--bottle-name winespage__bottles--bottle-name-${bottle}${titleImageUrl ? ' winespage__bottles--bottle-name-custom' : ''}`}
+            className={`winespage__bottles--bottle-name winespage__bottles--bottle-name-${bottle}${titleImageUrl ? ' winespage__bottles--bottle-name-custom' : ''}${!hasTitleVisual ? ' winespage__bottles--bottle-name-textual' : ''}`}
             style={titleImageUrl ? { backgroundImage: `url(${titleImageUrl})` } : undefined}
-          ></div>
+          >
+            
+          </div>
           
         </div>
       
         <article className={`winespage__bottles--info-container winespage__bottles--info-container-${bottle}`}>
       
-          <div className={`winespage__bottles--info-title winespage__bottles--info-title-${bottle}`}></div>
+          <div className={`winespage__bottles--info-title winespage__bottles--info-title-${bottle}`}>
+          </div>
       
           <p className={`${bottle}`}>
             <em>{Data.winesPage.comment[lang]}</em> 

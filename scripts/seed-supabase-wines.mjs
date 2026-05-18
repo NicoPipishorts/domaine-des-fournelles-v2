@@ -42,6 +42,7 @@ const wineFiles = [
   'src/content/wines/brouilly.json',
   'src/content/wines/cdb.json',
   'src/content/wines/sans-artifice.json',
+  'src/content/wines/blanc-de-gamay.json',
   'src/content/wines/passion.json',
 ];
 

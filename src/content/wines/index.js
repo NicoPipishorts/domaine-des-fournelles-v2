@@ -3,6 +3,7 @@ import godefroy from './godefroy.json';
 import brouilly from './brouilly.json';
 import cdb from './cdb.json';
 import sansArtifice from './sans-artifice.json';
+import blancDeGamay from './blanc-de-gamay.json';
 import passion from './passion.json';
 
 export const wines = [
@@ -11,6 +12,7 @@ export const wines = [
   brouilly,
   cdb,
   sansArtifice,
+  blancDeGamay,
   passion,
 ].map((wine, index) => ({
   ...wine,

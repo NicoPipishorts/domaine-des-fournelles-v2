@@ -8,7 +8,7 @@ import PageLogo from '../App/PageLogo';
 
 // -- IMPORT ASSETS
 import './styles.scss';
-import { domainPageDefault } from '../../content/site';
+import { domainPageDefault, getDomainParagraphEntries } from '../../content/site';
 import { fetchSiteContent } from '../../supabase/site';
 import Image1 from '../../assets/images/DomainePage-1.jpg';
 import Image2 from '../../assets/images/DomainePage-2.jpg';
@@ -52,6 +52,7 @@ const GalleryImages = [
 
 const DomainePage = ( { lang } ) => {
   const [content, setContent] = useState(domainPageDefault);
+  const paragraphEntries = getDomainParagraphEntries(content.paragraphs);
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -87,23 +88,16 @@ const DomainePage = ( { lang } ) => {
         
         <h1><span className="domainepage__section--h1-span">{content.title[lang]}</span></h1>
 
-        <div className="domainepage__section-text--p-container">
-          <p className="domainepage__section-text--p1">
-            {content.paragraphs.p1[lang]}
-          </p>
-        </div>
-
-        <div className="domainepage__section-text--p-container domainepage__section-text--p-container--right">
-          <p className="domainepage__section-text--p2">
-            {content.paragraphs.p2[lang]}
-          </p>
-        </div>
-
-        <div className="domainepage__section-text--p-container">
-          <p className="domainepage__section-text--p3">
-            {content.paragraphs.p3[lang]}
-          </p>
-        </div>
+        {paragraphEntries.map(([paragraphKey, paragraphValue], index) => (
+          <div
+            key={paragraphKey}
+            className={`domainepage__section-text--p-container${index % 2 === 1 ? ' domainepage__section-text--p-container--right' : ''}`}
+          >
+            <p className={`domainepage__section-text--${paragraphKey}`}>
+              {paragraphValue?.[lang]}
+            </p>
+          </div>
+        ))}
     
       </article>
 

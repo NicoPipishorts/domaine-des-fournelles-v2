@@ -117,6 +117,7 @@ export default {
     Godefroy: winesByBottle.Godefroy,
     Brouilly: winesByBottle.Brouilly,
     CDB: winesByBottle.CDB,
+    BlancDeGamay: winesByBottle.BlancDeGamay,
     Passion: winesByBottle.Passion,
     BeaujolaisVillage : {
       region : "Beaujolais",

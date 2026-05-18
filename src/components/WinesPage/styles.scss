@@ -68,6 +68,7 @@
 
   &__logo {
 
+    z-index: 120;
     position: fixed;
     top: 0;
     right: 0;
@@ -159,7 +160,52 @@
           background-image: url(../../assets/images/Wine-BottleSansArtifice.png), 
                             radial-gradient(circle, vars.$color-SansArtifice-L, vars.$color-SansArtifice-D);
         }
+
+        &-BlancDeGamay {
+          background-color: vars.$color-BlancDeGamay-D;
+          background-position: top center;
+          background-image: url(../../assets/images/Wine-BottleBlancDeGamay.png),
+                            radial-gradient(circle at 50% 32%, rgba(vars.$color-BlancDeGamay-L, .98), rgba(vars.$color-BlancDeGamay-D, .92) 62%, #32445d 100%);
+        }
       
+      }
+
+      &-name {
+        position: absolute;
+        left: 50%;
+        bottom: 3rem;
+        transform: translateX(-50%);
+        z-index: 2;
+        background-position: center center;
+        background-size: contain;
+        background-repeat: no-repeat;
+
+        &-textual {
+          width: min(82vw, 30rem);
+          min-height: 4.5rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+
+          span {
+            display: inline-block;
+            padding: .75rem 1.15rem;
+            border: 1px solid rgba(vars.$color-white, .28);
+            border-radius: .4rem;
+            background: rgba(24, 37, 54, .3);
+            color: vars.$color-white;
+            font-size: clamp(1.5rem, 3vw, 2.4rem);
+            font-weight: 300;
+            line-height: 1.2;
+            text-shadow: 0 0.25rem 1rem rgba(13, 21, 33, .35);
+          }
+        }
+
+        &-custom {
+          width: min(82vw, 30rem);
+          height: 7rem;
+        }
       }
 
       &-image {
@@ -224,6 +270,12 @@
           background: linear-gradient(vars.$color-SansArtifice-D,  vars.$color-SansArtifice-L);
           box-shadow: 0 5px 25px rgba(vars.$color-black, .8); 
         }
+
+        &-BlancDeGamay {
+          border-top: 2px solid rgba(vars.$color-BlancDeGamay-A, .92);
+          background: linear-gradient(#6a87ab, vars.$color-BlancDeGamay-D);
+          box-shadow: 0 5px 25px rgba(31, 44, 63, .72);
+        }
         
         //* ----- Color for the LI list EM tabgs  ----------------------------------------
         em {
@@ -255,6 +307,10 @@
 
           em.SansArtifice {
             color: vars.$color-dgrey;
+          }
+
+          em.BlancDeGamay {
+            color: vars.$color-BlancDeGamay-A;
           }
 
         p > em {
@@ -303,6 +359,12 @@
 
           p.SansArtifice {
             background: -webkit-linear-gradient(#fefefe, #F0F0F0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+
+          p.BlancDeGamay {
+            background: -webkit-linear-gradient(#fffef8, #eef4ff);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
           }
@@ -369,6 +431,34 @@
           background-image: url(../../assets/images/Wine-TitleSansArtifice.png);
         }
 
+        &-BlancDeGamay {
+          min-width: 580px;
+          height: 180px;
+          background-image: url(../../assets/images/Wine-TitleGammay.png);
+        }
+
+        &-textual {
+          min-width: min(80vw, 32rem);
+          min-height: 7rem;
+          display: flex;
+          align-items: flex-end;
+          justify-content: center;
+          text-align: center;
+
+          span {
+            display: inline-block;
+            padding: .7rem 1.4rem;
+            border: 1px solid rgba(vars.$color-white, .28);
+            border-radius: .4rem;
+            background: rgba(30, 44, 67, .22);
+            box-shadow: 0 1.5rem 3rem rgba(13, 21, 33, .18);
+            color: vars.$color-white;
+            font-size: clamp(2.1rem, 4vw, 3.4rem);
+            font-weight: 300;
+            text-shadow: 0 0.25rem 1rem rgba(13, 21, 33, .32);
+          }
+        }
+
         &-custom {
           background-position: center center;
           background-size: contain;
@@ -411,6 +501,10 @@
           color: vars.$color-dgrey;
         }
 
+        &-container > h3.BlancDeGamay {
+          color: vars.$color-BlancDeGamay-A;
+        }
+
       &-container > aside > ul {
         width: 70vw;
         font-size: 1.4rem;
@@ -427,7 +521,8 @@
       &-container > aside > ul.Brouilly, 
       &-container > aside > ul.CDB, 
       &-container > aside > ul.Passion,
-      &-container > aside > ul.SansArtifice {
+      &-container > aside > ul.SansArtifice,
+      &-container > aside > ul.BlancDeGamay {
         color: vars.$color-white;
       }
 
@@ -543,6 +638,21 @@
             background-color: transparent;
             border-color: vars.$color-dgrey;
           } 
+
+        //* ----- Dot Notation for Blanc de Gamay --------------------------------------------
+        &-container > aside > ul > li > ul > li > em.BlancDeGamay {
+          color: vars.$color-white;
+        }
+
+          &-container > aside > ul > li > ul > li > span.BlancDeGamay {
+            background-color: vars.$color-BlancDeGamay-A;
+            border-color: vars.$color-BlancDeGamay-A;
+          }
+
+          &-container > aside > ul > li > ul > li > span.emptyBlancDeGamay {
+            background-color: transparent;
+            border-color: vars.$color-BlancDeGamay-A;
+          }
       
       &-hve {
 
@@ -594,6 +704,11 @@
         &-SansArtifice{
           background-image: url(../../assets/images/HVE-DG.png);
           color: vars.$color-dgrey;
+        }
+
+        &-BlancDeGamay{
+          background-image: url(../../assets/images/HVE-B.png);
+          color: vars.$color-BlancDeGamay-A;
         }
       
       }

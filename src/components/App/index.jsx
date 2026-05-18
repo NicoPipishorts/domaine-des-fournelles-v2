@@ -45,8 +45,8 @@ const App = () => {
       themeColor: "#000",
     },
     boutique: {
-      title: "",
-      themeColor: "",
+      title: "Boutique du Domaine des Fournelles",
+      themeColor: "#8a5028",
     },
     news: {
       title: "",

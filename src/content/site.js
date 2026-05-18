@@ -19,6 +19,15 @@ export const domainPageDefault = {
   },
 };
 
+export const getDomainParagraphEntries = (paragraphs = {}) => (
+  Object.entries(paragraphs)
+    .sort(([keyA], [keyB]) => {
+      const orderA = Number(String(keyA).replace(/\D/g, '')) || 0;
+      const orderB = Number(String(keyB).replace(/\D/g, '')) || 0;
+      return orderA - orderB;
+    })
+);
+
 export const contactPageDefault = {
   left: {
     pageTitle: {

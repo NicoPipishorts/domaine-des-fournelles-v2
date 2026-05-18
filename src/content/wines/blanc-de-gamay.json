@@ -1,0 +1,30 @@
+{
+  "bottle": "BlancDeGamay",
+  "wineName": {
+    "fr": "Blanc de Gamay",
+    "en": "Blanc de Gamay"
+  },
+  "region": "Beaujolais",
+  "appel": "Blanc de Gamay",
+  "cepage": "Gamay noir à jus blanc",
+  "conditionnement": "0.75 cL",
+  "garde": "À préciser",
+  "temp": "8 - 10°C",
+  "desc": {
+    "fr": "Nouvelle cuvée blanche du domaine, élaborée à partir de Gamay noir à jus blanc. Les informations de dégustation détaillées peuvent être complétées dans l'administration.",
+    "en": "New white cuvee from the estate, made from Gamay noir à jus blanc. Detailed tasting notes can be completed in the admin."
+  },
+  "caract": {
+    "fruite": 3,
+    "mineral": 2,
+    "epice": 0,
+    "puissance": 2,
+    "floral": 2,
+    "boise": 0,
+    "acidite": 3
+  },
+  "assoc": {
+    "fr": "Accords à compléter dans l'administration",
+    "en": "Pairings to complete in the admin"
+  }
+}

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { hasSupabaseConfig, supabaseClient, wineBucketName } from '../../supabase/client';
 import logo from '../../assets/images/PageLogo-B.png';
-import { contactPageDefault, domainPageDefault } from '../../content/site';
+import { contactPageDefault, domainPageDefault, getDomainParagraphEntries } from '../../content/site';
 import './styles.scss';
 
 const emptyCredentials = {
@@ -21,7 +21,16 @@ const profileFields = [
   { label: 'Appellation', path: 'appel' },
   { label: 'Cépage', path: 'cepage' },
   { label: 'Conditionnement', path: 'conditionnement' },
-  { label: 'Prix', path: 'price', placeholder: 'Ex. 14,50 €' },
+  {
+    label: (
+      <>
+        Prix
+        <small>champ retiré si non indiqué</small>
+      </>
+    ),
+    path: 'price',
+    placeholder: 'Ex. 14,50 €',
+  },
   { label: 'Garde', path: 'garde' },
   { label: 'Température de service', path: 'temp' },
 ];
@@ -110,6 +119,32 @@ const TextareaField = ({ label, value, onChange, rows = 6 }) => (
   </label>
 );
 
+const RatingField = ({ label, value, onChange }) => (
+  <div className="admin-page__rating-field">
+    <span className="admin-page__field-label">{label}</span>
+    <div className="admin-page__rating-scale" role="radiogroup" aria-label={label}>
+      {[1, 2, 3, 4, 5].map((note) => {
+        const active = Number(value) >= note;
+
+        return (
+          <button
+            key={note}
+            type="button"
+            role="radio"
+            aria-checked={Number(value) === note}
+            className={`admin-page__rating-dot${active ? ' admin-page__rating-dot--active' : ''}`}
+            onClick={() => onChange(note)}
+            title={`${label} : ${note}/5`}
+          >
+            <span className="admin-page__rating-dot-core" />
+          </button>
+        );
+      })}
+      <span className="admin-page__rating-value">{Number(value) || '—'}/5</span>
+    </div>
+  </div>
+);
+
 const PanelSection = ({ title, description, aside, children }) => (
   <section className="admin-page__panel-section">
     <div className="admin-page__section-header">
@@ -119,7 +154,9 @@ const PanelSection = ({ title, description, aside, children }) => (
       </div>
       {aside}
     </div>
-    {children}
+    <div className="admin-page__section-body">
+      {children}
+    </div>
   </section>
 );
 
@@ -194,12 +231,22 @@ const ProductListItem = ({ wine, active, onSelect }) => (
   </button>
 );
 
-const SiteContentFieldGroup = ({ title, children }) => (
-  <div className="admin-page__site-group">
-    <h4>{title}</h4>
-    <div className="admin-page__fields-grid admin-page__fields-grid--two">
+const SiteContentFieldGroup = ({ title, className = '', columnsClass = 'admin-page__fields-grid--two', children }) => (
+  <div className={`admin-page__site-group${className ? ` ${className}` : ''}`}>
+    {title ? <h4>{title}</h4> : null}
+    <div className={`admin-page__fields-grid ${columnsClass}`}>
       {children}
     </div>
+  </div>
+);
+
+const ParagraphCard = ({ title, actions, children }) => (
+  <div className="admin-page__paragraph-card">
+    <div className="admin-page__paragraph-card-head">
+      <h4>{title}</h4>
+      {actions}
+    </div>
+    {children}
   </div>
 );
 
@@ -479,6 +526,10 @@ const AdminPage = () => {
 
   const activeLocale = activeLocaleBySection[activeSection] || 'fr';
   const currentSectionPresentation = sectionPresentation[activeSection] || sectionPresentation.products;
+  const domainParagraphEntries = useMemo(
+    () => getDomainParagraphEntries(siteContent.domain_page?.paragraphs),
+    [siteContent.domain_page],
+  );
 
   const productDirty = Boolean(selectedWine && originalSelectedWine && serialize(selectedWine) !== serialize(originalSelectedWine));
   const siteDirty = Boolean(activeSiteContent && originalActiveSiteContent && serialize(activeSiteContent) !== serialize(originalActiveSiteContent));
@@ -507,17 +558,19 @@ const AdminPage = () => {
     if (sectionId === 'domain') {
       const current = siteContent.domain_page;
       const original = originalSiteContent.domain_page;
+      const currentParagraphs = Object.fromEntries(
+        getDomainParagraphEntries(current?.paragraphs).map(([key, value]) => [key, value?.[locale] || '']),
+      );
+      const originalParagraphs = Object.fromEntries(
+        getDomainParagraphEntries(original?.paragraphs).map(([key, value]) => [key, value?.[locale] || '']),
+      );
 
       return serialize({
         title: current?.title?.[locale] || '',
-        p1: current?.paragraphs?.p1?.[locale] || '',
-        p2: current?.paragraphs?.p2?.[locale] || '',
-        p3: current?.paragraphs?.p3?.[locale] || '',
+        paragraphs: currentParagraphs,
       }) !== serialize({
         title: original?.title?.[locale] || '',
-        p1: original?.paragraphs?.p1?.[locale] || '',
-        p2: original?.paragraphs?.p2?.[locale] || '',
-        p3: original?.paragraphs?.p3?.[locale] || '',
+        paragraphs: originalParagraphs,
       });
     }
 
@@ -589,6 +642,42 @@ const AdminPage = () => {
       return {
         ...current,
         [contentKey]: nextSection,
+      };
+    });
+  };
+
+  const addDomainParagraph = () => {
+    setSiteContent((current) => {
+      const nextDomainPage = structuredClone(current.domain_page);
+      const entries = getDomainParagraphEntries(nextDomainPage.paragraphs);
+      const lastKey = entries.at(-1)?.[0] || 'p0';
+      const nextIndex = (Number(String(lastKey).replace(/\D/g, '')) || 0) + 1;
+
+      nextDomainPage.paragraphs[`p${nextIndex}`] = {
+        fr: '',
+        en: '',
+      };
+
+      return {
+        ...current,
+        domain_page: nextDomainPage,
+      };
+    });
+  };
+
+  const removeDomainParagraph = (paragraphKey) => {
+    setSiteContent((current) => {
+      const nextDomainPage = structuredClone(current.domain_page);
+
+      if (Object.keys(nextDomainPage.paragraphs || {}).length <= 1) {
+        return current;
+      }
+
+      delete nextDomainPage.paragraphs[paragraphKey];
+
+      return {
+        ...current,
+        domain_page: nextDomainPage,
       };
     });
   };
@@ -1050,7 +1139,6 @@ const AdminPage = () => {
 
                 <PanelSection
                   title={`Contenu ${activeLocale.toUpperCase()}`}
-                  description="Nom commercial, description et accords dans la langue sélectionnée."
                 >
                   <div className="admin-page__fields-grid">
                     <Field
@@ -1099,18 +1187,15 @@ const AdminPage = () => {
 
                 <PanelSection
                   title="Profil aromatique"
-                  description="Notes de 0 à 4 utilisées pour le radar simplifié du vin."
+                  description="Notes de 1 à 5 affichées avec les mêmes pastilles que sur la fiche vin."
                 >
                   <div className="admin-page__fields-grid admin-page__fields-grid--metrics">
                     {characterFields.map((field) => (
-                      <Field
+                      <RatingField
                         key={field.path}
                         label={field.label}
-                        type="number"
-                        min="0"
-                        max="4"
                         value={getFieldValue(selectedWine, field.path)}
-                        onChange={(event) => updateWineField(field.path, Number(event.target.value))}
+                        onChange={(nextValue) => updateWineField(field.path, nextValue)}
                       />
                     ))}
                   </div>
@@ -1177,6 +1262,15 @@ const AdminPage = () => {
             <PanelSection
               title={`Contenu ${activeLocale.toUpperCase()}`}
               description="Titre principal et paragraphes du récit de domaine."
+              aside={(
+                <button
+                  type="button"
+                  className="admin-page__secondary-button"
+                  onClick={addDomainParagraph}
+                >
+                  Ajouter un paragraphe
+                </button>
+              )}
             >
               <div className="admin-page__fields-grid">
                 <Field
@@ -1184,21 +1278,29 @@ const AdminPage = () => {
                   value={siteContent.domain_page.title[activeLocale]}
                   onChange={(event) => updateSiteField('domain_page', `title.${activeLocale}`, event.target.value)}
                 />
-                <TextareaField
-                  label="Paragraphe 1"
-                  value={siteContent.domain_page.paragraphs.p1[activeLocale]}
-                  onChange={(event) => updateSiteField('domain_page', `paragraphs.p1.${activeLocale}`, event.target.value)}
-                />
-                <TextareaField
-                  label="Paragraphe 2"
-                  value={siteContent.domain_page.paragraphs.p2[activeLocale]}
-                  onChange={(event) => updateSiteField('domain_page', `paragraphs.p2.${activeLocale}`, event.target.value)}
-                />
-                <TextareaField
-                  label="Paragraphe 3"
-                  value={siteContent.domain_page.paragraphs.p3[activeLocale]}
-                  onChange={(event) => updateSiteField('domain_page', `paragraphs.p3.${activeLocale}`, event.target.value)}
-                />
+              </div>
+              <div className="admin-page__paragraph-list">
+                {domainParagraphEntries.map(([paragraphKey, paragraphValue], index) => (
+                  <ParagraphCard
+                    key={paragraphKey}
+                    title={`Paragraphe ${index + 1}`}
+                    actions={Object.keys(siteContent.domain_page.paragraphs || {}).length > 1 ? (
+                      <button
+                        type="button"
+                        className="admin-page__ghost-neutral-button"
+                        onClick={() => removeDomainParagraph(paragraphKey)}
+                      >
+                        Supprimer
+                      </button>
+                    ) : null}
+                  >
+                    <TextareaField
+                      label={`Texte ${activeLocale.toUpperCase()}`}
+                      value={paragraphValue?.[activeLocale] || ''}
+                      onChange={(event) => updateSiteField('domain_page', `paragraphs.${paragraphKey}.${activeLocale}`, event.target.value)}
+                    />
+                  </ParagraphCard>
+                ))}
               </div>
             </PanelSection>
           </form>
@@ -1239,14 +1341,8 @@ const AdminPage = () => {
 
             <PanelSection
               title="Colonne coordonnées"
-              description="Bloc d’informations statiques affiché à gauche."
             >
-              <SiteContentFieldGroup title={`Texte ${activeLocale.toUpperCase()}`}>
-                <Field
-                  label={`Titre page ${activeLocale.toUpperCase()}`}
-                  value={siteContent.contact_page.left.pageTitle[activeLocale]}
-                  onChange={(event) => updateSiteField('contact_page', `left.pageTitle.${activeLocale}`, event.target.value)}
-                />
+              <SiteContentFieldGroup className="admin-page__site-group--contact-title" columnsClass="">
                 <Field
                   label={`Nom du domaine ${activeLocale.toUpperCase()}`}
                   value={siteContent.contact_page.left.estateTitle[activeLocale]}
@@ -1258,6 +1354,9 @@ const AdminPage = () => {
                   onChange={(event) => updateSiteField('contact_page', `left.owners.${activeLocale}`, event.target.value)}
                   rows={3}
                 />
+              </SiteContentFieldGroup>
+
+              <SiteContentFieldGroup>
                 <Field
                   label="Ligne 1"
                   value={siteContent.contact_page.left.addressLine1[activeLocale]}
@@ -1275,7 +1374,7 @@ const AdminPage = () => {
                 />
               </SiteContentFieldGroup>
 
-              <div className="admin-page__fields-grid admin-page__fields-grid--two">
+              <SiteContentFieldGroup>
                 <Field
                   label="Téléphone Guillaume"
                   value={siteContent.contact_page.left.phoneGuillaume}
@@ -1291,7 +1390,7 @@ const AdminPage = () => {
                   value={siteContent.contact_page.left.email}
                   onChange={(event) => updateSiteField('contact_page', 'left.email', event.target.value)}
                 />
-              </div>
+              </SiteContentFieldGroup>
             </PanelSection>
           </form>
         ) : null}
