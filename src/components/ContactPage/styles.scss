@@ -49,6 +49,16 @@
     text-decoration: none;
   }
 
+  &__credit {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    font-size: .8rem;
+
+    a { opacity: .6; transition: opacity .2s; }
+    a:hover { opacity: 1; }
+  }
+
   &__col-right, &__col-left {
 
     width: 40%;
@@ -240,3 +250,45 @@ textarea::placeholder {
 }
 
 @import './responsive.scss';
+// Oxid Studio logo — keyframes copied from oxidstudio.fr
+.oxid-logo {
+  display: block;
+  width: 4.5rem;
+  height: auto;
+  overflow: visible;
+  --logo-neg: #{vars.$color-red};
+
+  &__ball { transform-box: fill-box; transform-origin: 50% center; rotate: 25.2deg; }
+  &__dot--neg { fill: var(--logo-neg); }
+
+  &:hover &__dot { animation: oxid-pierce 1.4s ease both; }
+  &:hover &__ball { animation: oxid-recoil 1.4s ease both; }
+}
+
+@keyframes oxid-pierce {
+  0% { animation-timing-function: ease-out; translate: 0; }
+  14% { animation-timing-function: cubic-bezier(.6, 0, .8, .5); translate: 7px 3.3px; }
+  44% { animation-timing-function: ease-out; translate: -80px -37.6px; }
+  54% { animation-timing-function: cubic-bezier(.6, 0, .9, .5); translate: -86px -40.4px; }
+  70% { animation-timing-function: ease-in-out; translate: 13px 6.1px; }
+  82% { animation-timing-function: ease-in-out; translate: -6px -2.8px; }
+  92% { animation-timing-function: ease-in-out; translate: 2.5px 1.2px; }
+  100% { translate: 0; }
+}
+
+@keyframes oxid-recoil {
+  0%, 28%, 100% { translate: 0; scale: 1; }
+  32% { translate: -1.5px -.7px; scale: .88 1.09; }
+  38% { translate: -3px -1.4px; scale: .97 1.03; }
+  43% { translate: -4.5px -2.1px; scale: 1.17 .88; }
+  51% { translate: 1px .5px; scale: .94 1.05; }
+  59% { translate: 0; scale: 1.02 .99; }
+  64% { translate: 1.5px .7px; scale: .91 1.07; }
+  69% { translate: 3px 1.4px; scale: 1.12 .91; }
+  79% { translate: -1px -.5px; scale: .96 1.04; }
+  90% { translate: .4px .2px; scale: 1.02 .985; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .oxid-logo:hover .oxid-logo__dot, .oxid-logo:hover .oxid-logo__ball { animation: none; }
+}
