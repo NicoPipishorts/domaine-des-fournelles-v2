@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 // --  IMPORT COMPONENTS
 import NavBar from '../NavBar';
 import PageLogo from '../App/PageLogo';
+import OxidLogo from './OxidLogo';
 import { setFormField, sendContactForm } from "../../actions/main";
 
 // -- IMPORT ASSETS
@@ -157,7 +158,12 @@ const ContactPage = ( { lang } ) => {
           <p>
             <a href={`mailto:${content.left.email}`}>{content.left.email}</a>
           </p>
-        
+
+          <p className="contactpage__credit">
+            {lang === 'fr' ? 'Site réalisé par' : 'Website by'}{' '}
+            <a href="https://oxidstudio.fr" target="_blank" rel="noopener"><OxidLogo /></a>
+          </p>
+
         </section>
 
         <section className="contactpage__col-right">
